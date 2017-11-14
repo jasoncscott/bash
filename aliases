@@ -1,0 +1,109 @@
+# =============================================================================
+# Personal Aliases
+# =============================================================================
+
+# =============================================================================
+# VARIABLES
+# =============================================================================
+
+export EDITOR='vi'
+export HISTCONTROL=erasedups
+export HISTIGNORE='&:ls:[bf]g;exit'
+export HISTTIMEFORMAT='%F %T '
+
+
+# =============================================================================
+# COMMANDS
+# =============================================================================
+
+alias path='echo ${PATH} | sed "s|:|\n|g"'
+alias src='source ~/.bashrc'
+alias screensaver-off='xset dpms force on'
+
+
+# =============================================================================
+# DEFAULT OPTIONS/FLAGS
+# =============================================================================
+
+alias chgrp='chgrp --changes'
+alias chmod='chmod --changes'
+alias chown='chown --changes'
+alias chrome='chrome &'
+alias date='date +%Y-%m-%d'
+alias df='df -hT'
+alias du='du -b'
+alias firefox='firefox &'
+alias fox='firefox'
+alias grep='grep -i --color=auto'
+alias kcalc='kcalc &'
+alias ls='ls --almost-all --classify --group-directories-first -Cv --color=auto'
+alias pidgin='pidgin &> /dev/null &'
+alias pylint='pylint --reports=n'
+alias rsync='rsync --verbose --progress --recursive --links --perms --times --omit-dir-times --owner --devices --specials'
+    # Not group, because Groups don't match across locations
+    #-a = --(r)ecursive --(l)inks --(p)erms --(t)imes --(g)roup --(o)wner (--devices --specials)(-D) (no -H,-A,-X)
+#alias ssh="ssh -Y"
+alias ssh='ssh -c arcfour128,arcfour,blowfish-cbc -Y'
+alias sudo='sudo '
+alias tree='tree -afpsuCD -I ".snapshot|.git|build"'
+#alias type='type -P'
+
+
+# =============================================================================
+# NAVIGATION
+# =============================================================================
+
+alias bin='cd ~/Documents/bin/'
+alias docs='cd ~/Documents/'
+
+
+# =============================================================================
+# REMAPPING
+# =============================================================================
+
+alias acroread='okular'
+alias tkdiff='xxdiff'
+#alias which='type'
+
+# =============================================================================
+
+unalias groups 2>/dev/null
+.groups() {
+    if [ $# -eq 0 ]; then
+        set -- ${USER}
+    fi
+
+    for user in ${@}; do
+        echo ${user}
+        \groups ${user} | sed 's|^.*: ||' | sed 's| |\n|g' | sort | nl
+     done
+}
+alias groups='.groups'
+
+# =============================================================================
+
+unalias id 2>/dev/null
+.id() {
+    \id ${@} | sed 's|[ ,]|\n|g' | sed 's|groups=|groups=\n|' | nl -b 'p^[0-9]'
+}
+alias id='.id'
+alias ids='.id'
+
+# =============================================================================
+
+.ll() {
+   ls -lAh --color=always ${@} | more
+}
+alias ll='.ll'
+
+# =============================================================================
+
+mate-terminal-tab-name () {
+    echo -n -e "\033]0;★${1}\007"
+}
+
+# =============================================================================
+
+calc() {
+    echo "${@}" | bc
+}

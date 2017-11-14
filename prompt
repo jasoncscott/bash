@@ -1,0 +1,128 @@
+# =============================================================================
+# PROMPT
+# =============================================================================
+
+.git_info() {
+    # Print current git branch (with text)
+    if [[ $(__git_ps1) ]]; then
+        printf "\ngit Repo$(__git_ps1)"
+
+        git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+
+        # Test only for tools_legacy_core package--once gone, can remove test
+        if [ ${git_root} != "/sw/dev/skao/src/MPIPE/toolstd_legacy_core" ]; then
+            # Get git short status (for the current branch)
+            git_status=$(git status -sb 2>/dev/null)
+
+            # Print number of commits ahead/behind
+            if [ $? -eq 0 ]; then
+                if [ "$(echo \"${git_status}\" | grep -w ahead)" != "" ]; then
+                    num=$(echo "${git_status}" | grep -w ahead | tr ']' ' ' | awk '{print $NF}')
+                    printf " (+${num} Commits)"
+                elif [ "$(echo \"${git_status}\" | grep -w behind)" != "" ]; then
+                    num=$(echo "${git_status}" | grep -w behind | tr ']' ' ' | awk '{print $NF}')
+                    printf " (-${num} Commits)"
+                fi
+            fi
+        fi
+
+        # Determine if under techpub control
+        if [ -f ${git_root}/.techpub.yaml ]; then
+            printf " \e[7m(TECHPUB)"
+        fi
+    fi
+}
+
+# Set default values for variables that don't exist yet
+if [[ $- == *i* ]]; then
+    if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
+fi
+
+.m_variables() {
+    if [ -z "${M_JOB}" ]; then printf "[none]"; else printf "${M_JOB}"; fi
+    if [ -z "${M_SEQUENCE}" ]; then printf "/[none]"; else printf "/${M_SEQUENCE}"; fi
+    if [ -z "${M_SHOT}" ]; then printf "/[none]"; else printf "/${M_SHOT}"; fi
+    if [ -z "${M_TASK}" ]; then printf ":[none]"; else printf ":${M_TASK}"; fi
+}
+
+# New variable since "${M_LOCATION^^}" for uppercase is only in bash v4+
+if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
+export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
+
+.ssh_level() {
+    ssh_process=$(ps -no-headers -o comm ${PPID} | grep "sshd")
+
+    if [ "${ssh_process}" != "sshd" ]; then
+        printf "Local"
+    else
+        printf "\e[7mRemote"
+    fi
+}
+
+# Prompt Command (and PS1)
+export PROMPT_COMMAND='\
+    PS1="\n\n";\
+
+    PS1="${PS1}\[${BIRed}\]";\
+    PS1="${PS1}$(printf '%4s' ${M_LOCATION_UPPER})";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${BIGreen}\]";\
+    PS1="${PS1}\t";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${BIBlue}\]";\
+    PS1="${PS1}\h (${METHOD_OS})";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${IWhite}\]";\
+    PS1="${PS1}\u";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${BIYellow}\]";\
+    PS1="${PS1}SHLVL: ${SHLVL}";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${BIPurple}\]";\
+    PS1="${PS1}$(.ssh_level)";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1} | ";\
+
+    PS1="${PS1}\[${ICyan}\]";\
+    PS1="${PS1}$(.m_variables)";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1}\[${White}\]";\
+    PS1="${PS1}$(.git_info)";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1}\n";\
+
+    PS1="${PS1}\[${BWhite}\]";\
+    PS1="${PS1}\w";\
+    PS1="${PS1}\[${Color_Off}\]";\
+
+    PS1="${PS1}\n> ";
+# Add this for title control
+#    echo -ne "\033]0;${TAB_TITLE}\007";
+'
+
+# Discuss with Sam Kao how best to use this
+#export MSS_PROMPT='\n\n${promptLocation} | ${promptTime} | ${promptHost} | ${promptEntity}\n${promptCwd}\n${promptSHLVL} > ';
+
+# Change Konsole Tab Title
+if [ -n "${KONSOLE_DBUS_SESSION}" ]; then
+    qdbus org.kde.konsole ${KONSOLE_DBUS_SESSION} org.kde.konsole.Session.setTitle 1 ${M_LEVEL}:${M_TASK};
+fi
+

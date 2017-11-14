@@ -1,0 +1,115 @@
+# =============================================================================
+# .bashrc
+# =============================================================================
+
+# =============================================================================
+# VARIABLES
+# =============================================================================
+
+if [ -f ~/Documents/bash/inputrc ]; then
+    export INPUTRC=${HOME}/Documents/bash/inputrc
+fi
+
+if [ -f ~/Documents/bash/vimrc ]; then
+    export MYVIMRC=${HOME}/Documents/bash/vimrc
+fi
+
+if [ -f ~/Documents/bash/python/.python_startup ]; then
+    export PYTHONSTARTUP=${HOME}/Documents/bash/pythonstartup
+fi
+
+
+# =============================================================================
+# ALIASES
+# =============================================================================
+
+# Source personal aliases
+if [ -f ~/Documents/bash/aliases ]; then
+    source ~/Documents/bash/aliases
+fi
+
+# Source Method aliases
+if [ -f ~/Documents/bash/aliases.method ]; then
+    source ~/Documents/bash/aliases.method
+fi
+
+
+# =============================================================================
+# INPUTRC
+# =============================================================================
+
+# Source only if interactive shell (test special parameter for "i" option)
+if [[ $- == *i* ]]; then
+    bind -f ${INPUTRC}
+fi
+
+
+# =============================================================================
+# COLORS
+# =============================================================================
+
+if [ -f ~/Documents/bash/bash_colors ]; then
+    source ~/Documents/bash/bash_colors
+fi
+
+if [ -f ~/Documents/bash/tput_colors ]; then
+    source ~/Documents/bash/tput_colors
+fi
+
+
+# =============================================================================
+# GIT
+# =============================================================================
+
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+    export GIT_PS1_SHOWDIRTYSTATE=true
+fi
+
+
+# =============================================================================
+# LESS
+# =============================================================================
+
+# Due to desire to use external commands in LESS environment variables (e.g.,
+# `tput`), source own file
+if [ -f ~/Documents/bash/lessrc ]; then
+    source ~/Documents/bash/lessrc  # Custom-naming following other 'rc' files
+fi
+
+
+# =============================================================================
+# PROMPT
+# =============================================================================
+
+if [ -f ~/Documents/bash/prompt ]; then
+    source ~/Documents/bash/prompt
+fi
+
+
+# =============================================================================
+# METHOD STARTUP
+# =============================================================================
+
+# For Interactive Shells
+if [[ $- == *i* ]]; then
+    echo
+    echo
+    echo -e ${On_Red}"OS Information"${Color_Off}
+    echo -e "/etc/redhat-release: "$(< /etc/redhat-release)
+    echo -e "\${METHOD_SYS}: "${METHOD_SYS}
+    echo
+    echo
+    echo -e ${On_Green}"Shell Information"${Color_Off}
+    echo -e "Current Shell Options (\${SHELLOPTS}): "${SHELLOPTS}
+    echo -e "Special Variables (\$-): " $-
+    echo
+    echo
+    echo -e ${On_Blue}"Bash Information"${Color_Off}
+    echo -e "\${BASH_VERSION}: "${BASH_VERSION}
+    echo -e "Current Bash Options (\${BASHOPTS}): "${BASHOPTS}
+    echo
+    echo
+    echo -e ${On_IWhite}${BIBlack}"Method Bootstrap"${Color_Off}
+    view_bootstrap
+fi

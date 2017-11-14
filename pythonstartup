@@ -1,0 +1,53 @@
+# =============================================================================
+# Python Startup
+# =============================================================================
+"""Python Startup
+
+"""
+
+
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+# Non-Method Imports
+from atexit import register
+from os import path
+import readline
+
+
+# =============================================================================
+# GLOBALS
+# =============================================================================
+
+# History Location
+python_history = path.expanduser("~/Documents/bash/python_history")
+
+
+# =============================================================================
+# PUBLIC FUNCTIONS
+# =============================================================================
+
+def save_history(python_history=python_history):
+    """Hander for saving history."""
+    import readline
+    readline.write_history_file(python_history)
+
+
+# =============================================================================
+# STARTUP
+# =============================================================================
+
+# Reading History
+if path.exists(python_history):
+    readline.set_history_length(10000)
+    readline.read_history_file(python_history)
+
+# Register Saving History Handler
+register(save_history)
+
+# Enable Completion
+readline.parse_and_bind('tab: complete')
+
+# Cleanup
+del readline, register, path, save_history, python_history

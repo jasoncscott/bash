@@ -1,0 +1,14 @@
+# =============================================================================
+# READLINE SETTINGS
+# =============================================================================
+
+$include /etc/inputrc
+
+set completion-ignore-case off
+set show-all-if-ambiguous on
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[1;3D": backward-word
+"\e[1;3C": forward-word
+

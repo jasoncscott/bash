@@ -1,0 +1,33 @@
+[user]
+	name = Jason Scott
+	email = jason.scott@methodstudios.com
+[core]
+	editor = vi
+[push]
+	default = current
+[merge]
+	defaultToUpstream = True
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[color]
+	showBranch = true
+	status = true
+	branch = true
+	diff = true
+	ui = true
+	default = --all
+[status]
+	# Not available in current git version
+	# branch = true
+	# short = true
+	relativePaths = true
+[color "status"]
+	branch = green
+	added = cyan
+	changed = red
+	untracked = magenta
+[http]
+	sslverify = false
+

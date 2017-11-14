@@ -1,0 +1,187 @@
+# =============================================================================
+# Method-Specific Aliases
+# =============================================================================
+
+# =============================================================================
+# GLOBALS
+# =============================================================================
+
+# Hosts
+export MY_HOST_LA='la-ws011'
+export MY_HOST_NY='ny-wsx8028'
+export MY_HOST_VAN='van-ws001'
+
+# Debug
+#export M_DEBUG=1
+#export METHOD_DEBUG_=1
+#export MONIKER_CONFIG_FILE=~/Documents/moniker.xml
+#export M_LOGLEVEL=DEBUG
+export M_MAIN_LOGLEVEL=DEBUG
+export MTHD_RV_DEBUG
+export OPTICAL_FLARES_VERBOSE_CONSOLE=1
+export HOUDINI_OUTLINEFONT_PATH=~/.fonts/
+export NUKE_FONT_PATH=~/.fonts/
+
+
+# =============================================================================
+# COMMANDS
+# =============================================================================
+
+alias q='qubeArtistView &'
+alias imgls='imgls -light | sort'
+
+
+# =============================================================================
+# NAVIGATION
+# =============================================================================
+
+# Need double quotes to properly expand environment variables
+alias dev="cd ${METHOD_USER_DEV_ROOT}/"
+alias dev-src="cd ${METHOD_USER_DEV_ROOT}/src/"
+alias dev-git="cd ${METHOD_USER_DEV_ROOT}/src/git/"
+alias tmp="cd ${METHOD_USER_DEV_ROOT}/TMP/"
+
+# solsm01
+alias cd-mmake-root='cd /opt/django/src/mmake_uds/django/mmake'
+
+# Studio/Facility/Global
+alias cd-core-studio='cd /sw/resources/suites/global/core/${METHOD_SYS}/'
+alias cd-core-location='cd /sw/resources/suites/${M_LOCATION}/core/${METHOD_SYS}/'
+#alias cd-core-tools-thereIsNoLocation='cd /tools/share/suites/facility/'
+alias cd-uds-studio='cd /tools/share/suites/global/uds-1.1/default/'
+alias cd-uds-location='cd /tools/share/suites/${M_LOCATION}/uds-1.1/default/'
+
+# Job
+alias assets='cd ${M_JOB_PATH}/assets/'
+alias cd-show-color='cd ${M_JOB_PATH}/TECH/config/color/'
+alias cd-show-contexts='cd ${M_JOB_PATH}/TECH/lib/rez/suites/default/'
+alias cd-show-luts='cd ${M_JOB_PATH}/TECH/config/color/luts/'
+alias cd-show-presets='cd ${M_JOB_PATH}/COMMON/lib/submissions/'
+alias cd-show-profiles='cd ${M_JOB_PATH}/TECH/mconfig/profiles/'
+alias cd-show-representations='cd ${M_JOB_PATH}/COMMON/lib/representations/'
+alias cd-show-resolutions='cd ${M_JOB_PATH}/TECH/config/mresolution/resolutions/'
+
+# Other
+alias logs='cd /SERVER/frack/qube_logs/qube/job/'
+
+
+# =============================================================================
+
+job-switch() {
+    cd `~/Documents/bin/aux/job_path.py ${1:-${M_JOB}}`
+}
+
+# =============================================================================
+
+job-diff() {
+    diff ${1} $(~/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
+}
+
+# =============================================================================
+
+job-meld() {
+    meld ${1} $(~/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
+}
+
+# =============================================================================
+
+rdiff() {
+    if [ "${2}" = "la" ]; then
+        ssh ${MY_HOST_LA} "cat $(readlink -f ${1})" | diff ${1} -
+    elif [ "${2}" = "ny" ]; then
+        ssh ${MY_HOST_NY} "cat $(readlink -f ${1})" | diff ${1} -
+    elif [ "${2}" = "van" ]; then
+        ssh ${MY_HOST_VAN} "cat $(readlink -f ${1})" | diff ${1} -
+    else
+        echo "Invalid location"
+    fi
+}
+
+# =============================================================================
+
+rmeld() {
+    if [ "${2}" = "la" ]; then
+        ssh ${MY_HOST_LA} "cat $(readlink -f ${1})" | meld ${1} -
+    elif [ "${2}" = "ny" ]; then
+        ssh ${MY_HOST_NY} "cat $(readlink -f ${1})" | meld ${1} -
+    elif [ "${2}" = "van" ]; then
+        ssh ${MY_HOST_VAN} "cat $(readlink -f ${1})" | meld ${1} -
+    else
+        echo "Invalid location"
+    fi
+}
+
+# =============================================================================
+
+rez-list() {
+  join -a 1 <(rez-search --format='{qualified_name}: {base}' -s "$1") <(rez-search --format='{qualified_name}: {base}' -s --nl "$1") | sed 's|\( .*\)\1|\1|g'
+}
+
+# =============================================================================
+
+rez-cd() {
+  cd $(rez-search --format='{base}' -s -l "$1")
+}
+
+# =============================================================================
+
+rrez-context-diff() {
+    if [ "${2}" = "la" ]; then
+        rez-context ${1} --diff <(ssh ${MY_HOST_LA} "cat ${PWD}/${1}")
+    elif [ "${2}" = "ny" ]; then
+        rez-context ${1} --diff <(ssh ${MY_HOST_NY} "cat ${PWD}/${1}")
+    elif [ "${2}" = "van" ]; then
+        rez-context ${1} --diff <(ssh ${MY_HOST_VAN} "cat ${PWD}/${1}")
+    else
+        echo "Invalid location"
+    fi
+}
+
+# =============================================================================
+
+rrm() {
+    if [ "${2}" = "la" ]; then
+        ssh ${MY_HOST_LA} "rm $(readlink -f ${1})"
+    elif [ "${2}" = "ny" ]; then
+        ssh ${MY_HOST_NY} "rm $(readlink -f ${1})"
+    elif [ "${2}" = "van" ]; then
+        ssh ${MY_HOST_VAN} "rm $(readlink -f ${1})"
+    else
+        echo "Invalid location"
+    fi
+}
+
+# =============================================================================
+
+unalias qbjobs 2>/dev/null
+.qbjobs() {
+    # 13 total fields
+    #  1. Percent
+    #  2. ID
+    #  3. PID (Off)
+    #  4. PGRP
+    #  5. Label
+    #  6. Status
+    #  7. User
+    #  8. Type (Off)
+    #  9. Name
+    # 10. CPUs
+    # 11. Priority
+    # 12. Cluster
+    # 13. Groups (Off)
+    qbjobs --delimit '#' ${@} | sed 's/name/shot file [type]/' | awk -F'#' '{OFS="#"}{print $1,$2,$4,$5,$6,$7,$9,$10,$11,$12}' | sed 's/total: /total:#/' | sed 's/cpu(s)/cpu(s)#/' | column -s '#' -t
+}
+alias qbjobs='.qbjobs'
+
+# =============================================================================
+
+unalias qube 2>/dev/null
+.qube() {
+    \cp -rf ~/Documents/bash/qube/ ~/
+    qube
+}
+alias qube='.qube'
+alias qube-la-prod01='.qube --supervisor=10.1.220.130'
+alias qube-la-sec01='.qube --supervisor=10.5.0.12'
+alias qube-la-sec02='.qube --supervisor=10.1.220.131'
+alias qube-van-prod01='.qube --supervisor=van-qbsupervisor'

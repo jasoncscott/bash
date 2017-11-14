@@ -1,0 +1,2266 @@
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/home/scottj/Documents/Development/texture_renamer'])
+print hello
+hello=3
+print hello
+hello
+import os
+os.isfile('test')
+os.path.isfile('test')
+import deluxe_email
+deluxe_email.uname_to_email(sputnik-pub)
+print deluxe_email.uname_to_email("sputnik-pub")
+print deluxe_email.uname_to_email("sputnik-pub@methodstudios.com")
+print deluxe_email.uname_to_email("scottj")
+exit()\
+import deluxe_email
+print deluxe_email.uname_to_email("sputnik-pub")
+addressList=['scottj','sputnik-pub','achu']
+for address in addressList:
+    pass
+addresses=[]
+for address in addressList:
+    addresses.append(deluxe_email.uname_to_email(address))
+addresses
+import md5
+import hashlib
+m = hashlib.md5()
+import hashlib
+hash = hashlib.md5()
+f = open("Headshot.jpg")
+f = open("/home/scottj/Pictures/Headshot.jpg")
+hash.update(f)
+chunk = f.read(4096)
+hash.update(chunk)
+hash.hexdigest()
+f = open("/home/scottj/Pictures/Headshot2.jpg")
+chunk = f.read(4096)
+hash.update(chunk)
+hash.hexdigest()
+hashlib.md5("/home/scottj/Pictures/Headshot.jpg").hexdigest()
+hashlib.md5("/home/scottj/Pictures/Headshot2.jpg").hexdigest()
+hashlib.md5(open('/home/scottj/Pictures/Headshot.jpg', 'rb').read()).hexdigest()
+hashlib.md5(open('/home/scottj/Pictures/Headshot2.jpg', 'rb').read()).hexdigest()
+hashlib.md5(open('/home/scottj/Headshot.jpg', 'rb').read()).hexdigest()
+importer termcolor
+import termcolor
+import datetime
+datetime()
+date.today()
+today()
+today = date.today()
+today = datetime.date.today()
+today
+today.strftime()
+today.strftime("%B")
+today.strftime("%Y")
+today.strftime("%Y-%M-%D")
+today.strftime("%Y-%m-%D")
+today.strftime("%Y-%m-%d")
+import datetime
+today = datetime.date.today().strftime("%Y-%m-%d")
+today
+exit)_
+import mHost
+mHost.__file__
+import mPipe.job
+mPipe.job.__file__
+import elemLib.browser
+elemLib.browse.__file__
+elemLib.browser.__file__
+import elemLib.browser as elb
+import element as elElem
+import elemLib.element as elElem
+elElem.Element()
+import hvTools.pyqt.utils as qtt
+qtt.__file__
+impot hQtGui
+import hQtGui
+import mQtX.depUi as depUi
+depUi.__file__
+import hvTools.shows.elemLib as elRoot
+elRoot.__file__
+import pickle
+pickle.load('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import mTools.utils as mT
+mT.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+print mT.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import hvTools.utils as hvu
+hvu.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+print hvu.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import mPipe.job as mJ
+mJ.Job
+import mPipe.job as mJ
+mJ.Job('/jobs/element_library')
+lib = mJ.Job('/jobs/element_library')
+lib
+lib.getShots()
+import os
+os.listdir('/data/warehouse/2Delement/library_v002')
+sort(os.listdir('/data/warehouse/2Delement/library_v002'))
+sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+import os
+sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+categories = sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+for category in categories:
+    pass
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+categories
+for category in categories:
+    sorted(os.listdir(library_root + '/' + category)
+    
+    
+    
+)
+import os
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+for category in categories:
+    sorted(os.listdir(library_root + '/' + category))
+import os
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+categories
+for category in categories:                  
+    elements = sorted(os.listdir(library_root + '/' + category))
+elements
+foo
+import os
+import mconfig
+from mproduction import mconfig
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/home/scottj/Documents/Development/texture_renamer'])
+print hello
+hello=3
+print hello
+hello
+import os
+os.isfile('test')
+os.path.isfile('test')
+import deluxe_email
+deluxe_email.uname_to_email(sputnik-pub)
+print deluxe_email.uname_to_email("sputnik-pub")
+print deluxe_email.uname_to_email("sputnik-pub@methodstudios.com")
+print deluxe_email.uname_to_email("scottj")
+exit()\
+import deluxe_email
+print deluxe_email.uname_to_email("sputnik-pub")
+addressList=['scottj','sputnik-pub','achu']
+for address in addressList:
+    pass
+addresses=[]
+for address in addressList:
+    addresses.append(deluxe_email.uname_to_email(address))
+addresses
+import md5
+import hashlib
+m = hashlib.md5()
+import hashlib
+hash = hashlib.md5()
+f = open("Headshot.jpg")
+f = open("/home/scottj/Pictures/Headshot.jpg")
+hash.update(f)
+chunk = f.read(4096)
+hash.update(chunk)
+hash.hexdigest()
+f = open("/home/scottj/Pictures/Headshot2.jpg")
+chunk = f.read(4096)
+hash.update(chunk)
+hash.hexdigest()
+hashlib.md5("/home/scottj/Pictures/Headshot.jpg").hexdigest()
+hashlib.md5("/home/scottj/Pictures/Headshot2.jpg").hexdigest()
+hashlib.md5(open('/home/scottj/Pictures/Headshot.jpg', 'rb').read()).hexdigest()
+hashlib.md5(open('/home/scottj/Pictures/Headshot2.jpg', 'rb').read()).hexdigest()
+hashlib.md5(open('/home/scottj/Headshot.jpg', 'rb').read()).hexdigest()
+importer termcolor
+import termcolor
+import datetime
+datetime()
+date.today()
+today()
+today = date.today()
+today = datetime.date.today()
+today
+today.strftime()
+today.strftime("%B")
+today.strftime("%Y")
+today.strftime("%Y-%M-%D")
+today.strftime("%Y-%m-%D")
+today.strftime("%Y-%m-%d")
+import datetime
+today = datetime.date.today().strftime("%Y-%m-%d")
+today
+exit)_
+import mHost
+mHost.__file__
+import mPipe.job
+mPipe.job.__file__
+import elemLib.browser
+elemLib.browse.__file__
+elemLib.browser.__file__
+import elemLib.browser as elb
+import element as elElem
+import elemLib.element as elElem
+elElem.Element()
+import hvTools.pyqt.utils as qtt
+qtt.__file__
+impot hQtGui
+import hQtGui
+import mQtX.depUi as depUi
+depUi.__file__
+import hvTools.shows.elemLib as elRoot
+elRoot.__file__
+import pickle
+pickle.load('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import mTools.utils as mT
+mT.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+print mT.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import hvTools.utils as hvu
+hvu.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+print hvu.objRead('/data/warehouse/element_library_999999/common/resources/cache/blood00001.pickle')
+import mPipe.job as mJ
+mJ.Job
+import mPipe.job as mJ
+mJ.Job('/jobs/element_library')
+lib = mJ.Job('/jobs/element_library')
+lib
+lib.getShots()
+import os
+os.listdir('/data/warehouse/2Delement/library_v002')
+sort(os.listdir('/data/warehouse/2Delement/library_v002'))
+sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+import os
+sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+categories = sorted(os.listdir('/data/warehouse/2Delement/library_v002'))
+for category in categories:
+    pass
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+categories
+for category in categories:
+    sorted(os.listdir(library_root + '/' + category)
+    
+    
+    
+)
+import os
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+for category in categories:
+    sorted(os.listdir(library_root + '/' + category))
+import os
+library_root = '/data/warehouse/2Delement/library_v002'
+categories = sorted(os.listdir(library_root))
+categories
+for category in categories:                  
+    elements = sorted(os.listdir(library_root + '/' + category))
+elements
+foo
+import os
+import os
+exit()
+import os.
+import os
+exit()
+import mconfig
+from mproduction import mconfig
+exit()
+import os
+os.getEnv['USER']
+os.getenv['USER']
+os.getenv('USER')
+exit()
+import tc
+exit()
+import timecode
+import pytimecode
+exit()
+import os
+os.getcwd()
+path = os.getcwd()
+os.path.split()
+os.path.split(os.getcwd()
+_)
+os.path.split(os.getcwd())
+os.getcwd().split('/')
+os.getcwd().split('/', 1)
+os.getcwd().split('/', 2)
+os.getcwd().split('/', 3)
+directory_current_parts = os.getcwd().split('/', 3)
+directory_current_parts[2] = 'vfx_geostorm'
+directory_current_parts
+'/'.join(directory_current_parts)
+exit()
+import sequence
+exit()
+task = 'texture.test'
+task
+task.split('.')
+task.split('.', 1)
+task.split('.', 0)
+task.split('.', 1)
+task.partition
+task.partition('.')
+task = texture
+task = 'texture'
+task.split('.')[0]
+task = 'texture.test'
+task.split('.')[0]
+exit
+exit()
+import os
+os.getenv['M_TASK']
+os.getenv('M_TASK')
+exit()
+deptCriteria = []
+if deptCriteria: True
+if not deptCriteria: True
+exit()
+import os
+return [os.getenv('M_TASK').split('.')[0]]
+[os.getenv('M_TASK').split('.')[0]]
+print [os.getenv('M_TASK').split('.')[0]]
+exit()
+import uuid
+uuid.uuid()
+exit()
+import timecode
+exit()
+import timecode
+exit()
+from timecode import Timecode
+Timecode('29.97', '00:00:00:00')
+Timecode('29.97', '00:00:00:10')
+ls
+tc1 = Timecode('24', '00:0001:10')
+tc1 = Timecode('24', '00:00:01:10')
+tc1
+tc1 = 1001
+tc1.frames_to_tc()
+tc1 = Timecode()
+tc1 = Timecode('24')
+tc1.frames_to_tc(1001)
+tc1
+tc1.frames_to_tc(1001).join(':')
+tc1.frames_to_tc(1001)
+tc1.frames_to_tc(1001)[0]
+tc1.frames_to_tc(1001)[3]
+tc1.frames_to_tc(1001)[4]
+tc1.frames_to_tc(1001)[3]
+':'.join(tc1.frames_to_tc(1001))
+type(tc1.frames_to_tc(1001)
+str(tc1.frames_to_tc(1001))
+tc1.frames_to_tc(1001)
+tc1.frames_to_tc(1001
+exit
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'mjpeg', 24)
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'mjpeg', 24)
+exit
+exit()
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+from timecode import Timecode
+tc = Timecode(24)
+tc
+tc.frames_to_tc(1099)
+tc = Timecode(24, frames=1099)
+tc
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+exit()
+import dloShotBuilder.ShotBuild
+exit()
+import dloShotBuilder.ShotBuild
+exit()
+import dloUtils
+exit()
+import dloUtils
+exit()
+import os
+os.listdir('.')
+os.listdir('test')
+exit()
+import os
+os.listdir('.')
+exit()
+import method_services
+exit()
+import method_services
+method_services.__file__
+exit()
+from method_services.services import PeekService
+PeekService.__file__
+p = PeekService()
+p.__file__
+exit()
+from sequence import sequence
+exit()
+from MSubmit.QtEncode.QtEncodeTools import buildFFmpegCmd
+buildFFmpegCmd('/jobs/vfx_sputnik/tra/tra0840/PRODUCTS/images/comp/tra0840_comp_v0009/review_hd_vdb8_tif/tra0840_comp_v0009-review_hd_vdb8.%04d.tif', '/home/scottj/tra0840_comp_v0009-review_hd_vdb8.mov', 'dnxhd-115', 24)
+buildFFmpegCmd('/jobs/vfx_sputnik/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2kaxa_lnf_exr/dev1000_light_test_v0001-masterLayer-2kaxa_lnf.%04d.exr', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+buildFFmpegCmd('/jobs/vfx_sputnik/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2kaxa_lnf_exr/dev1000_light_test_v0001-masterLayer-2kaxa_lnf.%04d.exr', '/home/scottj/timecode.mov', 'dnxhd-115', 23.976)
+exit()
+import MSubmit.QtEncode.QtEncodeTools as qte
+qte.generateQTLocal('/jobs/vfx_sputnik/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2kaxa_lnf_exr/dev1000_light_test_v0001-masterLayer-2kaxa_lnf.%04d.exr', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+qte.generateQTLocal('/jobs/vfx_sputnik/tra/tra0810/PRODUCTS/images/comp/tra0810_comp.backplates_v0001/scottj_spkwork_vdb8_tif/tra0810_comp.backplates_v0001-spkwork_vdb8.%04d.tif', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+qte.generateQTLocal('/jobs/vfx_sputnik/tra/tra0810/PRODUCTS/images/comp/tra0810_comp.backplates_v0001/scottj_spkwork_vdb8_tif/tra0810_comp.backplates_v0001-scottj_spkwork_vdb8.%04d.tif', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+qte.generateQTLocal('/jobs/vfx_sputnik/tra/tra0810/PRODUCTS/images/comp/tra0810_comp.backplates_v0001/scottj_spkwork_vdb8_tif/tra0810_comp.backplates_v0001-scottj_spkwork_vdb8.%04d.tif', '/home/scottj/timecode.mov', 'mpeg', 24)
+qte.generateQTLocal('/jobs/vfx_sputnik/bes/bes1020/PRODUCTS/images/plates/bes1020_plates_v0001/mp-aviddnxhd115_hd_vdf8_tif/bes1020_plates_v0001-mp-aviddnxhd115_hd_vdf8.%04d.tif', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+exit
+exit()
+import MSubmit.QtEncode.QtEncodeTools as qte
+qte.generateQTLocal('/jobs/vfx_sputnik/bes/bes1020/PRODUCTS/images/plates/bes1020_plates_v0001/mp-aviddnxhd115_hd_vdf8_tif/bes1020_plates_v0001-mp-aviddnxhd115_hd_vdf8.%04d.tif', '/home/scottj/timecode.mov', 'dnxhd-115', 24)
+exit()
+from timecode import Timecode
+tc = Timecode(24, 1001)
+tc = Timecode(24, frames=1001)
+tc
+exit
+exit()
+import os
+os.path.expandvars('/${M_JOB}')
+os.path.expandvars('/jobs/${M_JOB}')
+exit()
+import os
+os.path.expandvars('/jobs/${M_JOB}')
+os.path.expandvars('/${M_JOB}')
+exit()
+import mp-config
+import mconfig
+exit
+exit()
+from QubeSubmitter import mConfigInitializer
+from QueueSubmission.QubeSubmitter import mConfigInitializer
+from QueueSubmission import QubeSubmitter
+import QueueSubmission
+QueueSubmission.QubeSubmitter.mConfigInitializer('cluster')
+qsubmitter = QubeSubmitter()
+qsubmitter = QueueSubmission.QubeSubmitter()
+exit()
+import QueueSubmission.Config
+mc = Config.MConfig()
+mc = QueueSubmission.Config.MConfig()
+exit()
+import QueueSubmission
+mc = QueueSubmission.Config.MConfig()
+mc = QueueSubmission.MConfig()
+mc = QueueSubmission.Config()
+import QueueSubmission.Config
+exit()
+import Config
+qs = QueueSubmission()
+exit()
+config = (['default'], {'default': {'default': {'default': None}}, 'cluster': '/${M_JOB}', 'Houdini': {'default': {'default': {'description': 'houdini default', 'taskNameHints': {'task': 'houdini', 'mode': 'Script'}}}, 'restrictions': '/${M_JOB}/houdini || /${M_JOB}/houdini/+', 'maxCpusCap': '60'}})
+config
+'maxCpusCap' in config
+'cluster' in config
+config = {'default': {'default': {'default': {'default': None}}, 'cluster': '/${M_JOB}', 'Houdini': {'default': {'default': {'description': 'houdini default', 'taskNameHints': {'task': 'houdini', 'mode': 'Script'}}}, 'restrictions': '/${M_JOB}/houdini || /${M_JOB}/houdini/+', 'maxCpusCap': '60'}}}
+'cluster' in config
+exit()
+from mproduction import get_current_entity
+entity = get_currenty_entity
+entity = get_currenty_entity()
+entity = get_current_entity()
+exit()
+import mproduction
+mproduction.get_context()
+mproduction.get_entity()
+mproduction.get_entity(job='target_odyssey')
+mproduction.get_current_entity()
+mproduction.context()
+mproduction.context.site()
+exit()
+from mproduction import context
+context.site
+context.job
+from mproduction import get_entity
+get_entity(job='target_odyssey')
+target = get_entity(job='target_odyssey')
+target
+from mproduction import get_current_entity
+get_current_entity()
+target.config('main')
+target.config('farmJobSettings_Qube')
+config = target.config('farmJobSettings_Qube')
+'cluster' in config
+'Houdini' in config
+'default' in config
+config = config['default']
+config
+'Houdini' in config
+'default' in config
+'maxCpusCap' in config
+config 
+from collections import Mapping
+isinstance(config,Mapping)
+config = config['Houdini']
+isinstance(config,Mapping)
+config
+'maxCpusCap' in config
+'restrictions' in config
+value = config['restrictions']
+value
+value = config['maxCpusCap']
+value
+config
+config.pprint()
+configString = {'default': {'default': {'default': None}}, 'cluster': '/${M_JOB}', 'Houdini': {'default': {'default': {'description': 'houdini default', 'taskNameHints': {'task': 'houdini', 'mode': 'Script'}}}, 'restrictions': '/${M_JOB}/houdini || /${M_JOB}/houdini/+', 'maxCpusCap': '60'}}
+configString
+configString.pprint()
+'default' in configString
+'cluster' in configString
+'Houdini' in configString
+'restrictions' in configString
+configString = configString['Houdini']
+configString
+'restrictions' in configString
+'maxCpusCap' in configString
+exit()
+import mproduction
+exit()
+from mproduction get_current_entity
+from mproduction get get_current_entity
+from mproduction import get_current_entity
+get_current_entity
+get_current_entity().pprint()
+get_current_entity.pprint()
+get_current_entity.pprint
+exit()
+import MayaUtils.NamingHelp as NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp.getInstanceFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0002')
+namingHelp.getInstanceFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+exit()
+import handlers
+from MayaUtils import NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp
+namingHelp.__file__
+NamingHelp.__file__
+namingHelp.getInstanceFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'anim', 'v0001')
+namingHelp.getInstanceFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+namingHelp.getInstances()
+namingHelp.getInstances('vfx_sputnik', 'dev', 'dev666', 'light')
+namingHelp.getInstanceDotFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+namingHelp.getInstanceDotFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0002')
+namingHelp.getInstanceDotFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+namingHelp.getInstanceFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+namingHelp.getInstanceDotFiles('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001', rep='xml', ext='xml')
+namingHelp.getNextTaskInstanceVersion('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light')
+namingHelp.listSubHints()
+import common
+common.__file__
+exit()
+from MayaUtils import NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp.getTaskInstanceVersionPath('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+exit()
+from MayaUtils import NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp.getTaskInstanceVersionPath('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+exit()
+from MayaUtils import NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp.getTaskInstanceVersionPath('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+exit()
+from MayaUtils import NamingHelp
+namingHelp = NamingHelp.getNamingHelper()
+namingHelp.getTaskInstanceVersionPath('capShield1', 'vfx_sputnik', 'dev', 'dev666', 'light', 'v0001')
+exit()
+from showSpec.showSpecLoadType import YamlLoad
+configLoader = YamlLoad('showspec', configName='maya_showConfig', packageName='mayaShowConfig')
+configDict = configLoader.inheritConfigUpEnv()
+configDict
+configDict.get('sync')
+print configDict.get('sync')
+print configDict.get('intersiteSync')
+exit()
+shot='dev666'
+task='anim'
+ns='v0002'
+ns='capShield1'
+version='v0002'
+signiantJobName = '{shot}_{task}_taskPub_{ns}_{version}'.format(shot=shot, task=task, ns=ns, version=version)
+print signiantJobName
+instanceVersionPath='/jobs/vfx_sputnik/dev/dev666/PRODUCTS/instances/capShield1/anim/v0002'
+dest='van'
+cmd = 'signiant-cp {path} -d {dest} -n {name}'.format(path=instanceVersionPath, dest=dest, name=signiantJobName)
+print cmd
+from subprocess import call
+call(cmd, shell=True)
+exit()
+shot='dev666'
+task='anim'
+ns='capShield1'
+version='v0002'
+signiantJobName = '{shot}_{task}_taskPub_{ns}_{version}'.format(shot=shot, task=task, ns=ns, version=version)
+instanceVersionPath='/jobs/vfx_sputnik/dev/dev666/PRODUCTS/instances/capShield1/anim/v0002'
+dest='van'
+cmd = 'signiant-cp {path} -d {dest} -n {name}'.format(path=instanceVersionPath, dest=dest, name=signiantJobName)
+from subprocess import call
+call(cmd, shell=True)
+signiantJobName = '{shot}_taskPub_{ns}_{version}'.format(shot=shot, ns=ns, version=version)
+cmd = 'signiant-cp {path} -d {dest} -n {name}'.format(path=instanceVersionPath, dest=dest, name=signiantJobName)
+print cmd
+call(cmd, shell=True)
+signiantJobName = '{shot}_{ns}_{version}'.format(shot=shot, ns=ns, version=version)
+cmd = 'signiant-cp {path} -d {dest} -n {name}'.format(path=instanceVersionPath, dest=dest, name=signiantJobName)
+call(cmd, shell=True)
+exit()
+import signiant
+exit()
+from signiant.service.scheduler import SchedulerService
+exit()
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()
+jobs = ss.listJobs()
+for i, job in enumerate(jobs):                                                                                                                                                                                                                                                 print ss.getJobStatus(job)
+jobvs
+jobs
+ss.getJobInfo(u'VAN_2_VAN__vanreview01__20160122_141204_539820')
+for i, job in enumerate(jobs):                                                                                                                                                                                                                                                 print ss.getJobInfo(job)
+for i, job in enumerate(jobs):                                                                                                                                                                                                                                                 print ss.getJobInfo(job).MediaReplicatorOwner.Schedule.priority
+for i, job in enumerate(jobs):                                                                                                                                                                                                                                                 print ss.getActiveStatus(job)
+for i, job in enumerate(jobs):                                                                                                                                                                                                                                                 print ss.getJobActiveState(job)
+ss.getJobInfo(jobs[0])
+ss.getJobInfo(jobs[0]).get(jobName)
+ss.getJobScheduledState(jobs[0])
+ss.getJobStatus(jobs[0])
+ss.getActiveStatus(jobs[0])
+ss.getActiveStatusMsg(jobs[0])
+ss.getJobActiveState(jobs[0])
+ss.getJobInfo(jobs[0])
+for x in ss.getJobInfo(jobs[0]):
+print x
+for x in ss.getJobInfo(jobs[0]):
+print x
+for x in ss.getJobInfo(jobs[0]):
+    print x
+for x in ss.getJobInfo(jobs[0]):
+    print x, x.get()
+for keys,values in ss.getJobInfo(jobs[0]):
+    print keys, values
+for keys,values in ss.getJobInfo(jobs[0]):
+    print keys
+for x in ss.getJobInfo(jobs[0]):
+    print ss.getJobInfo(jobs[0]).get(x)
+for job in jobs:
+    if ss.getJobStatus(job) == 'INCOMPLETE':
+        print ss.getJobInfo(job).get('jobName')
+for job in jobs:
+    if ss.getJobStatus(job) == "IDLE+DORMANT":
+        print ss.getJobStatus(job).get('jobName')
+        ss.removeJob(job)
+for job in jobs:
+    if ss.getJobStatus(job) == "IDLE+DORMANT":
+        print ss.getJobInfo(job).get('jobName')
+        ss.removeJob(job)
+for job in jobs:
+    if ss.getJobInfo(job).get('jobName)' == 'VAN_@_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139':
+for job in jobs:
+    if ss.getJobInfo(job).get('jobName') == 'VAN_@_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139':
+        print ss.getJobStatus(job)
+for job in jobs:
+    if ss.getJobInfo(job).get('jobName') == 'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139':
+        print ss.getJobStatus(job)
+exit
+exit()
+from signiant.service.scheduler import SchedulerService                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                               
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+jobs
+for job in jobs:
+    if ss.getJobInfo(job).get('jobName') == 'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139':
+        print ss.getJobStatus(job)
+print ss.getJobStatus(u'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139')
+print ss.getInfo(u'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139')
+print ss.getJobInfo(u'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139')
+ss.getJobInfo(jobs[0])
+for x in ss.getJobInfo(jobs[0]):
+    print ss.getJobInfo(jobs[0]).get(x)
+for x in ss.getJobInfo(jobs[0]):
+    print x, ss.getJobInfo(jobs[0]).get(x)
+ss.getLastJobResult(u'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139')
+ss.getLastJobResult(u'LA_@_LA__lareview01__20160122_142651_017162')
+ss.getLastJobResult(u'LA_2_LA__lareview01__20160122_142651_017162')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies__2016-121_111554_450915')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies__2016011_111554_450915')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies__20160211_111554_450915')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies__20160121_111554_450915')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getJobStatuS(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getJobStatus(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getJobStatus(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getActiveJobState(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getJobActiveState(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getActiveStatus(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getActiveStatusMsg(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getActiveStatusMsg(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getActiveStatus(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getJobScheduledState(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getStats(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getJobActiveState(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+print ss.getLastJobResult(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+ss.getLastJobResult(u'LA_2_LA__lareview01__20160122_142651_017162')
+print ss.getJobActiveState(u'LA_2_LA__lareview01__20160122_142651_017162')
+twojobs=(u'LA_2_LA__lareview01__20160122_142651_017162', u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+for job in twojobs:
+    print ss.getActiveStatus(job)
+    print ss.getActiveStatusMsg(job)
+    print ss.getJobActiveState(job)
+    print ss.getJobScheduledState(job)
+    print ss.getJobStatus(job)
+    print ss.getLastJobResult(job)
+ss.listQueuedJobs)
+ss.listQueuedJobs
+ss.listQueuedJobs()
+ss.getStats()
+for job in twojobs:
+    print ss.getStats(job)
+    print ss.getStats(job).get('unrecovered_errors')
+for job in twojobs:
+    print ss.getStats(job).get('unrecovered_errors')
+twojobs=(u'LA_2_LA__lareview01__20160122_142651_017162', u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915')
+for job in twojobs:
+    print ss.getStats(job).get('unrecovered_errors')
+print ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162').get('unrecovered_errors')
+print ss.getStats(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756').get('unrecovered_errors')
+print ss.getStats(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
+print ss.getJobInfo(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
+exit()
+from signiant.service.scheduler import SchedulerService                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                               
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+print ss.getJobInfo(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
+print ss.getJobInfo(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756').get('unrecovered_errors')
+print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fields='agent_end_time')
+print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fields=('agent_end_time'))
+print ss.getStats(jobName='VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fields='agent_end_time')
+print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fields='agent_end_time')
+print ss.getLastJobResult(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getLastJobResult(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fields='agent_end_time')
+ss.getLastJobResult(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fieldSep=',')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fieldSep='\,')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756', fieldSep=',')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162')
+ss.getJobInfo(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getActiveState(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getJobActiveState(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162')
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=failed_files)
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields='failed_files')
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['failed_files'])
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['failed_files', 'failed_directories'])
+ss.getStats(u'VAN_2_LA__nsq_0240_comp_2k_crop_dailies___20160121_111554_450915', fields=['failed_files', 'failed_directories'])
+ss.getStats(u'LA_2_VAN__scottj__20160122_175221_663007', fields=['failed_files', 'failed_directories'])
+ss.getStats(u'LA_2_VAN__scottj__20160122_175437_392108', fields=['failed_files', 'failed_directories'])
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status'])
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status']).get('status')
+ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status']).get('status') == 'COMPLETE'
+jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+for job in jobs:
+    try:
+        ss.getStats(job, fields=['status'])
+    except:
+        pass
+for job in jobs:
+    try:
+        if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
+            print 'Removing {job}'.format(job=ss.getJobInfo(job).get('jobName'))
+            ss.removeJob(job)
+    except:
+        pass
+for job in jobs:
+    try:
+        if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
+            print 'Removing {job}'.format(job=ss.getJobInfo(job).get('jobName'))
+            ss.removeJob(job)
+    except:
+        pass
+jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+for job in jobs:
+...     try:
+...         if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
+...             print 'Removing {job}'.format(job=ss.getJobInfo(job).get('jobName'))
+...             ss.removeJob(job)
+...     except:
+...         pass
+for job in jobs:
+    try:
+        if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
+            print 'Removing {job}'.format(job=ss.getJobInfo(job).get('jobName'))
+            ss.removeJob(job)
+    except:
+        pass
+jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+for job in jobs:
+    try:
+        if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
+            print 'Removing {job}'.format(job=ss.getJobInfo(job).get('jobName'))
+            ss.removeJob(job)
+    except:
+        pass
+exit()
+from signiant.service.scheduler import SchedulerService
+exit()
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+from signiant.service.scheduler import SchedulerService
+exit()
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss.listGroups()
+jobs = ss.listJobs()
+ss.listJobs()
+ss.listJobs(jobGroupName='Method_VFX')
+ss.listJobs('jobGroupName'='Method_VFX')
+ss.listJobs(jobGroupName='Method_VFX')
+ss.getJobInfo(u'VAN_2_LA__yakimchc_peek_001_of_001__20160123_105422_642268')
+exit()
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+exit()
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+jobs = ss.listJobs()
+jobs
+ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445')
+ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time'])
+ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time'])
+ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('transfer_end_time')
+endtime = ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('transfer_end_time')
+time.localtime(endtime)
+import time
+time.localtime(endtime)
+time.localtime(1453783554237897)
+float(endtime)
+time.localtime(float(endtime))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)))
+endtime = ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('remote_end_time')
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime//1000)))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime//100)))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime/1000)))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)/1000))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)/100))
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)/1000000))
+endtime = ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('transfer_end_time')
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)/1000000))
+endtime = ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('remote_end_time')
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(endtime)/1000000))
+time.timedelta(microseconds=float(endtime))
+import datetime
+datetime.timedelta(microseconds=float(endtime))
+str(datetime.timedelta(microseconds=float(endtime)))
+datetime.datetime(datetime.timedelta(microseconds=float(endtime)))
+datetime.datetime(datetime.timedelta(microseconds=endtime))
+datetime.datetime(datetime.timedelta(microseconds=int(endtime)))
+datetime.datetime(int(datetime.timedelta(microseconds=endtime)))
+datetime.datetime(datetime.timedelta(microseconds=int(endtime)))
+str(datetime.timedelta(microseconds=float(endtime)))
+datetime.time(float(endtime))
+datetime.time(int(endtime))
+remoteendtime = ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445', fields=['remote_end_time', 'transfer_end_time']).get('remote_end_time')
+datetime.time()
+datetime.time.time()
+datetime.date.today()
+datetime.date.fromtimestamp()
+time.time()
+date.fromtimestamp(time.time())
+datetime.fromtimestamp(time.time())
+datetime.date.fromtimestamp(time.time())
+time.time()
+datetime.timedelta(seconds=time.time())
+datetime.timedelta(microseconds=float(endtime))
+datetime.timedelta(seconds=time.time()) - datetime.timedelta(microseconds=float(endtime))
+print datetime.timedelta(seconds=time.time()) - datetime.timedelta(microseconds=float(endtime))
+exit()
+import signiant
+exit()
+import signiant
+exit()
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()                                                                                                                                                                                                                                                        
+jobs = ss.listJobs()
+for job in jobs:
+    jobName = ss.getJobInfo(job).get('jobName')
+    jobGroupName = ss.getJobInfo(job).get('jobGroup')
+    jobStats = None
+    jobStats = ss.getStats(job, fields=['status', 'remote_end_time'])
+for job in jobs:
+    jobName = ss.getJobInfo(job).get('jobName')
+    jobStats = None
+    jobStats = ss.getStats(job, fields=['status', 'remote_end_time'])
+    print jobStats
+exit()
+line = 'version = \'0.0.1\''
+line
+re.sub(r' \'', '', line)
+import re
+re.sub(r' \'', '', line)
+line.translate(None, '\' ')
+line.translate(None, '\' ').split('=')[1]
+exit
+exit()
+import qb
+import MethodPlatform.ConfigLoader as ConfigLoader
+exit()
+import qb
+qb.getResources()
+qb.getresources()
+exit()
+import qb
+qb.getresources()
+exit()
+import qb
+qb.getresources()
+import os
+os.getenv('QUBE_SUPERVISOR_OVERRIDE')
+qb.getsupervisor()
+qb.getsupervisor('la-qube02')
+qb.hostinfo()
+qb.sys
+qb.stats()
+qb.setsupervisor('la-qube02')
+qb.getresources()
+qb.setsupervisor('la-qube01')
+qb.getresources()
+qb.setsupervisor('la-qube01')
+qb.getresources()
+qb.setsupervisor('la-qube02')
+qb.getresources()
+qb.Host()
+host = qb.Host()
+host.name()
+host.address()
+host.address
+address = host.address
+print address
+name = host.name()
+exit()
+import os
+import qb
+qb.getresources()
+qb.setsupervisor('la-qube02')
+qb.getresources()
+qb.setsupervisor('la-qube01')
+qb.getresources()
+exit()
+import qb
+qb.getresources()
+qb.os()
+qb.os
+qb.qbPythonVer
+qb.isadmin('branchmanager')
+qb.isadmin('scottj')
+qb.isadmin('lsprague')
+qb.getsupervisor()
+qb.getsupervisor('la-qube02')
+qb.getusers()
+qb.setsupervisor('la-qube02')
+qb.getusers()
+qb.getresources()
+qb.setsupervisor('la-qube01')
+qb.getresources()
+exit()
+import uuid
+uuid.uuid()
+uuid.uuid4()
+exit()
+import signiant.copy.base
+import signiant
+signiant.client.service.listJobs()
+exit()
+import suds
+suds.__file__
+exit
+exit()
+import suds
+suds.__file__
+exit()
+import qb
+exit()
+import signiant.service.scheduler
+exit()
+import os
+os.getenv('PYTHONPATH')
+from signiant.service.scheduler import SchedulerService
+SchedulerService.__file__
+signiant.service.scheduler.__file__
+import signiant
+signiant.__file__
+signiant.service.scheduler.__file__
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+jobs = scheduler.listJobs()
+jobs
+scheduler.getJobInfo(u'LA_2_VAN__ematranga_peek_001_of_002__20160212_184759_487226')
+job = u'LA_2_VAN__ematranga_peek_001_of_002__20160212_184759_487226'
+job_name = scheduler.getJobInfo(job).get('jobName')
+job_name
+job+stats = scheduler.getStats(job)
+job_stats = scheduler.getStats(job)
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+job = u'LA_2_VAN__wlai__20160202_143830_064495'
+job_name = scheduler.getJobInfo(job).get('jobName')
+job_name
+job_stats = scheduler.getStats(job)
+job_stats
+job_stats = scheduler.getStats(job, fields=['status', 'remote_end_time'])
+job_stats
+job_endtime = int(job_stats.get('remote_end_time'))
+remote_end_time_bad = job_stats.get('remote_end_time')
+remote_end_time_bad
+job_endtime = int(remote_end_time_bad.split(':')[0])
+job_endtime
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+job = u'LA_2_LA__lareview01__20160212_091257_352125'
+job_stats = scheduler.getStats(job, fields=['status', 'remote_end_time'])
+job = u'LA_2_LA__lareview01__20160212_091257_352126'
+job_stats = scheduler.getStats(job, fields=['status', 'remote_end_time'])
+job_name = scheduler.getJobInfo(job).get('jobName')
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except: Exception as ex:
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except Exception as ex:
+    type(ex).__name__
+    ex.args
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except WebFault:
+    print 'no job'
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except suds.WebFault:
+    print 'no job'
+    job_name = scheduler.getJobInfo(job).get('jobName')
+job_name = scheduler.getJobInfo(job).get('jobName')
+import suds
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except suds.WebFault:
+    print 'no job'
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except WebFault:
+    print 'no job'
+from suds import WebFault
+try:
+    job_name = scheduler.getJobInfo(job).get('jobName')
+except WebFault:
+    print 'no job'
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+try:
+    scheduler = SchedulerService()
+except Exception as ex:
+    type(ex).__name__
+    ex.args
+try:
+    scheduler = SchedulerService()
+except scheduler.Exception as ex:
+    print 'hi'
+try:
+    scheduler = SchedulerService()
+except SchedulerService.Exception as ex:
+    print 'hi'
+import signiant.service.scheduler.Exception as foo
+import signiant.service.Exception as foo
+import signiant.Exception
+import signiant.base.Exception
+exit()
+import rez-pub
+import rez-pub.main
+exit()
+import rez-pub
+exit()
+import signiant_cleanup
+import os
+os.getenv('PYTHONPATH')
+exit
+exit()
+import os
+os.getenv('PYTHONPATH')
+import signiant_cleanup
+exit()
+import os
+os.getenv('PYTHONPATH')
+import rez-pub
+import rez-Pub
+import rez_pub
+exit()
+import signiant_cleanup
+exit()
+import signiant_cleanup
+exit()
+import signiant_cleanup
+import os
+exit()
+import signiant_cleanup
+import os
+os.getenv('SIGNIANT_COPY_CONFIG_FILE')
+exit()
+import signiant_cleanup
+signiant_cleanup
+signiant_cleanup.main()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'DEBUG'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'DEBUG'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'DEBUG'])
+signiant_cleanup.main(['--log-level', foo'])
+signiant_cleanup.main(['--log-level', 'foo'])
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+exit()
+import signiant_cleanup
+signiant_cleanup.main(['--log-level', 'foo'])
+signiant_cleanup.main(['foo'])
+signiant_cleanup.main(['--log-level', 'DEBUG'])
+exit()
+import common.lib.FileVerLib
+exit()
+import paramiko
+exit()
+import uuid
+uuid.uuid4()
+uuid.uuid4().hex
+exit()
+import mproduction
+from mproduction import get_entity
+get_entity
+get_entity(job='vfx_sputnik', sequence='assets')
+get_entity(job='vfx_sputnik', sequence='assets', shot='env.vienna.oldCity')
+exit
+exit()
+import rezpub
+import os
+os.getenv('PYTHONPATH')
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+import signiant_cleanup.py
+import os
+os.getenv('PYTHONPATH')
+exit()
+import mpconfig
+import mp-config
+from mproduction import config
+exit()
+from mproduction import get_current_entity
+t = get_current_entity()
+t
+t.configs
+t.config('refpub')
+exit()
+from mproduction import mp-cnofig
+exit()
+import uvdeluxe
+import UVDeluxe
+exit()
+import UVDeluxe
+exit()
+import rezpub
+exit
+exit()
+import rezpub
+exit()
+import os
+os.getenv('PYTHONPATH')
+exit()
+import os
+os.getenv('PYTHONPATH')
+import rezpub
+exit()
+import imp
+imp.load_source('foobar', '/path/to/foobar')
+imp.load_source('rezpub', '.')
+load = imp.load_source('rezpub', '.')
+import pydoc
+pydoc(load)
+load.__doc__
+print load.__doc__
+exit()
+import rezpub
+rezpub.__doc__
+pydoc(rezpub)
+import pydoc
+pydoc(rezpub)
+pydoc.help(rezpub)
+exit()
+import pydoc
+pydoc.help(rezpub)
+import rezpub
+exit()
+import rezpub
+exit()
+import rezpub
+import pydoc
+pydoc.help(rezpub)
+exit()
+import pkg_resources
+pkg_resources.__file__
+exit()
+import pkg_resources
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+import rezpub
+exit()
+from rezpub import logger
+exit()
+import rezpub
+exit()
+from rezpub import logger
+exit()
+sys.path
+import sys
+print sys.path
+exit()
+from subprocess import Popen
+p = Popen(['git', 'push'], stdout=PIPE)
+from subprocess import PIPE
+p = Popen(['git', 'push'], stdout=PIPE)
+p = Popen(['git', 'push'])
+p.communicate()
+p = Popen(['git', 'push'])
+p.communicate()
+p = Popen(['git', 'push'], stdout=PIPE)
+p.communicate()
+p = Popen(['git', 'diff', '--name-only', 'package.py'], stdout=PIPE)
+p.communicate()
+p = Popen(['git', 'push'], stderr=PIPE)
+p = Popen(['git', 'push'], ,stdout=PIPE, stderr=PIPE)
+p = Popen(['git', 'push'], stdout=PIPE, stderr=PIPE)
+p.communicate()
+p = Popen(['git', 'diff', '--name-only', '.gitignore'], stdout=PIPE, stderr=PIPE)
+p.communicate()
+p = Popen(['git', 'push'], stdout=PIPE, stderr=PIPE)
+p.communicate()
+exit()
+from os import mkdir
+mkdir('/sw/dev/test')
+mkdir('/sw/dev/test', 755)
+mkdir('/sw/dev/test', 0755)
+from os import makedirs
+maked9rs('/sw/dev/test/src/', 0755)
+makedirs('/sw/dev/test/src/', 0755)
+from os import makedirs
+makedirs('/sw/dev/syuen/scottj/', 0755)
+makedirs('/sw/dev/test/src/', 0755)
+from os import stat
+stat('/sw/dev/test/')
+stat('/sw/dev/test/').st_mode
+stat.S_IRGRP
+exit()
+import stat
+stat.S_IRGRP
+import os
+os.stat('/sw/dev/test/').st_mode
+bool(st.st_mode & stat.S_IRGRP)
+bool(os.stat('/sw/dev/test/').st_mode & stat.S_IRGRP)
+exit()
+copyright
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity()
+entity
+entity.config('jobs').pprint
+jobs = entity.config('jobs').pprint
+jobs
+print jobs
+jobs.pprint
+jobs.pprint()
+jobs
+jobs.jobs
+jobs = entity.config('jobs')
+jobs
+jobs.jobs
+for job in jobs:
+  print job
+for job in jobs.jobs:
+  print job
+jobs
+jobs.jobs
+jobs.jobs.data()
+for job in jobs.jobs.data():
+  print job
+for job in jobs.jobs.data():
+  if job:
+    print job
+jobs.jobs.data()
+for job in jobs.jobs.data():
+  print job
+jobs.jobs.data().get('method_university2')
+for job in jobs.jobs.data():
+  print jobs.jobs.data().get(job)
+for job in jobs.jobs.data():
+   jobs.jobs.data().get(job)
+jobs.jobs.data().values()
+for job in jobs.jobs.data():
+  print jobs.jobs.data().get(job)
+print jobs
+print jobs.jobs
+print jobs.jobs.data()
+print jobs.jobs.data().items()
+print jobs.jobs.data().keys
+print jobs.jobs.data().keys()
+for job in jobs.jobs.data():
+  print job
+for job, status in jobs.jobs.data().iteritems():
+  if status:
+    print job
+for job, status in jobs.jobs.data().iteritems():
+  if not status:
+    print job
+for job in jobs.jobs.data():
+  if jobs.jobs.data()[job]:
+    print job
+for job in jobs.jobs.data():
+  if not jobs.jobs.data()[job]:
+    print job
+exit()
+import shotgun_api_3_0_11
+exit()
+from argparse import ArgumentParser
+import errno
+from os import EX_OK, path
+import shogtun_api_3_0_11 as shotgun
+import sys
+from warnings import warn
+exit()
+import shotgun_api_3_0_11
+import shotgun_api_3_0_11 as shotgun
+sg = shotgun.Shotgun(
+        'http://sg.methodstudios.com/',
+        'mDevApi',
+        'ffe91a9bc0484b42f98498c210538f284d1f7df255483230861ffbf05dc43823'
+    )
+sg
+sg.find('Project')
+sg.find('Project', [], [])
+sg.find('Project', ['sg-status'], [])
+sg.find('Project', ['sg-status', 'starts_with'], [])
+sg.find('Project', ['sg-status', 'starts_with', 'active'], [])
+sg.find('Project', [['sg-status', 'starts_with', 'active']], [])
+sg.find('Project', [['sg-status_list', 'starts_with', 'active']], [])
+sg.find('Project', [['Status', 'starts_with', 'active']], [])
+sg.find('Project', [['id', 'starts_with', 'active']], [])
+sg.find('Project', [['id', 'is', '732']], [])
+sg.find('Project', [['id', 'is', 732]], [])
+sg.find('Project', [['id', 'is', 732]], ['name'])
+sg.find('Project', [['id', 'is', 732]], ['name', 'code'])
+sg.find('Project', [['id', 'is', 732]], ['name', 'code', 'custom_non_project_entity04_sg_project_custom_non_project_entity04s'])
+exit()
+import global
+import glob
+glob.glob('*.rxt')
+glob.glob('*.rxt').sort()
+print glob.glob('*.rxt').sort()
+print glob.glob('*.rxt')
+print sort(glob.glob('*.rxt'))
+print glob.glob('*.rxt').sort()
+print glob.glob('*.rxt')
+print glob.glob('*.rxt').sort()
+contexts = globa.glob('*.rxt')
+contexts = glob.glob('*.rxt')
+contexts
+contexts.sort()
+contexts
+exit()
+import rez
+exit()
+import rez
+exit()
+import rez
+exit()
+import os
+os.getenv('PYTHONPATH')
+import rez
+rez.__file__
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity
+entity
+entity.context
+entity.job
+entity.scope
+entityt.config('signiant')
+entity.config('signiant')
+from mproduction import get_current_entity
+entity = get_current_entity
+entity
+entity.config('signiant')
+entity = get_current_entity()
+entity.config('signiant')
+exit()
+import OpenImageIO as oiio
+exit()
+import mproduction
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity()
+config = entity.package_config('mtransfer')
+config
+config.rsync_hosts
+config.rsync_hosts['la']
+exit()
+import rezpub
+exit
+exit()
+import rezpub
+exit()
+import rezpub
+rezpub.log.info('test')
+rezpub.log.warning('test')
+rezpub.log.error('test')
+rezpub.log.debug('test')
+exit()
+import rezpub
+import logging
+l = logging.getLogger()
+l.info('test')
+l.warning('test')
+rezpub.log.info('test')
+exit()
+import rezpub
+rezpub.log.info('test')
+rezpub.log.error('test')
+exit()
+import glob
+import os
+glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")
+)
+glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt"))
+glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")).sort()
+print glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")).sort()
+print glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")).sort
+sort(print glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")))
+sort(glob.glob(os.path.join("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04", "*.rxt")))
+os.listdir("")
+os.listdir("/sw/resources/suites/global/facility/linux_x86_64_Ubuntu-12.04")
+exit()
+from deluxeEmail import deluxe_email
+to=deluxe_email.uname_to_email(getenv('USER'))
+from os import getenv
+to=deluxe_email.uname_to_email(getenv('USER'))
+to
+subject='SMTP Server Test'
+text='Testing la-smtp01'
+subject
+text
+deluxe_email.Sender(to=[to], subject=subject, text=text).send()
+exit
+exit()
+import mdve
+import mdev
+exit()
+import signiant.__DEPRECATED_list
+import signiant
+signiant.__DEPRECATED_list
+exit()
+import os
+import re
+import os
+from sequence.sequence import create_sequences
+exit()
+import os
+import re
+from sequence.sequence import create_sequences
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join(path, name)
+filepaths = []
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr', name)
+    filepaths.append(filepath)
+filepaths
+create_sequences(filepaths)
+regex = re.compile('\.x(\d+)y(\d+)\.')
+found = [seq for seq in create_sequences(filepaths) if re.search(regex, seqs.prefix)]
+found = [seq for seq in create_sequences(filepaths) if re.search(regex, seq.prefix)]
+found
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr', name)
+    filepaths.append(filepath)
+filepaths
+found = [seq for seq in create_sequences(filepaths) if re.search(regex, seq.prefix)]
+found
+create_sequences(filepaths)
+filepaths2 = []
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepaths.append(filepath)
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr', name)
+    filepaths.append(filepath)
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr', name)
+    filepaths2.append(filepath)
+filepaths
+filepaths2
+filepaths = []
+filepaths2 = []
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr', name)
+    filepaths.append(filepath)
+filepaths
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr', name)
+    filepaths2.append(filepath)
+filepaths2
+filepaths2 = []
+filepaths2
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr', name)
+    filepaths2.append(filepath)
+filepaths2
+filepaths
+create_sequences(filepaths)
+create_sequences(filepaths2)
+filepaths = []
+for name in os.listdir('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr'):
+    if name.startswith('.'):
+        continue
+    filepath = os.path.join('/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-2khc_lnf_exr', name)
+    filepaths.append(filepath)
+filepaths
+create_sequences(filepaths)
+create_sequences(filepaths2)
+exit()
+from sequence.sequence import create_sequences
+filepaths2 = ['/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y2.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y0.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y1.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y1.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y1.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y2.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y0.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y3.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y3.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y3.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y0.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y2.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y1.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y1.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y2.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y2.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y1.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y2.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y3.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y1.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y3.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y0.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y0.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y1.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y2.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y0.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x2y3.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x3y3.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y0.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y2.1001.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x1y0.1002.exr', '/jobs/vfx_hickory/dev/dev1000/PRODUCTS/images/light/dev1000_light_test_v0001/masterLayer-hhd_lnf_exr/dev1000_light_test_v0001-masterLayer-hhd_lnf.x0y3.1002.exr']
+filepaths2
+create_sequences(filepaths2)
+create_sequences(filepaths2, frame_regex='\.x(\d+)y(\d+)\.')
+create_sequences(filepaths2, frame_regex='(\.x(\d+)y(\d+)\.)\.\d\d\d\d\..*')
+create_sequences(filepaths2, frame_regex='(\.x(\d+)y(\d+)\.)')
+create_sequences(filepaths2, frame_regex='(\.x(\d+)\.)')
+create_sequences(filepaths2, frame_regex='(\.x(\d+)y(\d+)\.)')
+create_sequences(filepaths2, frame_regex='(\.y(\d+)\.)')
+create_sequences(filepaths2, frame_regex='(\.x(\d+)y(\d+)\.)')
+create_sequences(filepaths2, frame_regex='\.x(\d+)y(\d+)\.')
+create_sequences(filepaths2)
+create_sequences(filepaths2, frame_regex='')
+create_sequences(filepaths2, frame_regex='\.\d\d\d\d\.')
+exit()
+import envoy
+service = envoy.Service(envoy.profiles.email)
+message = {
+    "from": "prod-tech",
+    "to": ["jason.scott"],
+    "subject": "test",
+    "body": "testing"
+}
+service.publish(message)
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity()
+config = entity.config('council_email')
+config.subject
+config.lighting
+config('lighting')
+config.lighting.day
+config.'lighting'.day
+config.day
+config = entity.config('council_email').data()
+config
+config = entity.config('council_email').lighting.data()
+config
+config = entity.config('council_email').lighting.data()
+config = entity.config('council_email').council
+config
+config = entity.config('council_email').council.data.()
+config = entity.config('council_email').council.data()
+config
+config['Lighting']
+config['Lighting'].day
+config['Lighting']['day']
+exit()
+from glob import glob
+glob('/home/scottj/Documents/bin/python/email-states//fx-reminder*')
+exit()
+import calendar
+calendar.day_name
+print calendar.day_name
+print calendar.day_abbr
+print calendar.day_abbr[0]
+print calendar.day_name[0]
+exit()
+from calendar import day_name
+day_name
+day_name.print
+day_name.tolist()
+' '.join(day_name)
+type(day_name)
+list(day_name)
+exit()
+from datetime import date
+from calendar import day_name
+exit()
+from datetime import date.today
+from datetime import today
+from datetime import date
+from calendar import day_name
+day_name[date.today().weekday()]
+day_name[date.yesterday().weekday()]
+day_name[date.tomorrow().weekday()]
+day_name[date.today(-1).weekday()]
+from datetime import timedelta
+day_name[date.today().weekday() -timedelta(1)]
+day_name[(date.today() - timedelta(1)).weekday()]
+day_name[(date.today() + timedelta(1)).weekday()]
+exit()
+from datetime import time
+time.hour
+fromdatetime import date
+from datetime import date
+date.today()
+date.today().time.hour
+datetime.hour
+exit()
+from datetime import hour
+from datetime import date
+date.today().hour
+now()
+from datetime import now
+exit()
+import datetime
+datetime.now
+datetime.now()
+datetime.today()
+datetime.today
+datetime.date.today()
+datetime.date.today().hour
+datetime.datetime.now()
+datetime.datetime.hour
+datetime.datetime.hour()
+datetime.datetime.hour
+datetime.datetime.hour.time()
+datetime.datetime.now().time()
+datetime.now()
+exit
+exit()
+from datetime import datetime, timedelta
+datetime.now()
+datetime.now() + (datetime.min)
+datetime.min
+datetime.now() + datetime.min
+datetime.min - datetime.now()
+datetime.now() + (datetime.min - datetime.now())
+datetime.min
+datetime.now()
+datetime.now().hour
+exit()
+import HDRLightStudio5Connection
+import os
+os.getenv('PYTHONPATH')
+exit()
+import os
+os.getenv('PYTHONPATH')
+import HDRLightStudio5Connection
+os.getenv('LD_LIBRARY_PATH')
+exit()
+import HDRLightStudio5Connection
+exit()
+import HDRLightStudio5Connection
+import os
+os.getenv('LD_LIBRARY_PATH')
+exit()
+import HDRLightStudio5Connection
+exit()
+import HDRLightStudio5Connection
+exit()
+from glob import glob
+glob('/SERVER/isi1146-nas01/feature/vfx_levelup_*)
+glob('/SERVER/isi1146-nas01/feature/vfx_levelup_*')
+glob('/SERVER/isi1146-nas01/feature/vfx_levelup_*')[0]
+from os import path
+path.exists(glob('/SERVER/isi1146-nas01/feature/vfx_levelup_*')[0])
+path.exists(glob('/SERVER/isi1146-nas01/{}/vfx_levelup_*'.format('feature'))[0])
+path.exists(glob('/SERVER/isi1146-nas01/{}/{}_*'.format('feature', 'vfx_levelup'))[0])
+exit()
+from mproduction import get_current_entity
+ENTITY = get_current_entity()
+CONFIG = ENTITY.config('email_meeting')
+meetings = sorted(CONFIG['meetings'].keys())
+meetings
+name = CONFIG['meetings']['2d']['name']
+name
+exit()
+from mproduction import get_current_entity
+exit
+exit()
+foo = 'helli am here'
+foo
+foo.lstrip('helli')
+exit()
+import envoy
+from envoy.rpc import RPCClient
+envoy.run(block=False)
+rpc = RPCClient('archiver-mover', location=('la', 'ny', 'van'))
+rpc.get_status()
+exit()
+from renderwall.api impot create_cmdline_job
+from renderwall.api improt create_cmdline_job
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("rez-env vue_rendernode -- Vue\ Infinite\ Rendernode\ 2016 -file "/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue"")
+job = create_cmdline_job("rez-env vue_rendernode -- Vue\ Infinite\ Rendernode\ 2016 -file "/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue"')
+job = create_cmdline_job('rez-env vue_rendernode -- Vue\ Infinite\ Rendernode\ 2016 -file "/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue"')
+job = create_cmdline_job("rez-env vue_rendernode -- Vue\ Infinite\ Rendernode\ 2016 -file '/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue'")
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("rez-env vue_rendernode -- Vue\ Infinite\ Rendernode\ 2016 -file '/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue'")
+job.submit()
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("rez-env vue_rendern\ Infinite\ Rendernode\ 2016 -file '/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue'")
+job = create_cmdline_job("Vue\ Infinite\ Rendernode\ 2016 -file '/jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue'")
+job.submit()
+job = create_cmdline_job("Vue\ Infinite\ Rendernode\ 2016 -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+job.submit()
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("Vue\ Infinite\ Rendernode\ 2016 -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+job.submit()
+exit
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("vue -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+job.submit()
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("vue -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+job.submit()
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("/jobs/scratch_opron/TECH/lib/rez/suites/default/current/bin/vue -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+exit()
+from renderwall.api import create_cmdline_job
+job = create_cmdline_job("/jobs/scratch_opron/TECH/lib/rez/suites/default/current/bin/vue -file /jobs/scratch_opron/COMMON/creative/projectfiles/VueFarm/test_02.vue")
+job.submit()
+exit()
+import re
+job_root = re.compile('/jobs/.*/')
+job_root.match('/jobs/vfx_levelup/')
+print job_root.match('/jobs/vfx_levelup/')
+print not job_root.match('/jobs/vfx_levelup/')
+if job_root.match('/jobs/vfx_levelup/') then print 'hi'
+if job_root.match('/jobs/vfx_levelup/') then: print 'hi'
+if job_root.match('/jobs/vfx_levelup/'): print 'hi'
+if job_root.match('/jobs/vfx_levelup'): print 'hi'
+if job_root.match('/jobs/vfx_levelup/test/'): print 'hi'
+job_root = re.compile('/jobs/[^/]')
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else print 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+job_root = re.compile('/jobs/[^/]')
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+job_root = re.compile('/jobs/[^\/]')
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+job_root = re.compile('^/jobs/[^\/]')
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/test') else 'false'
+job_root = re.compile('/jobs/.*/')
+print 'true' if job_root.match('/jobs/vfx_levelup/test') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+job_root = re.compile('/jobs/.*/')
+job_root = re.compile('^/jobs/[^\/]')
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/asdf') else 'false'
+job_root = re.compile('^/jobs/[^/]')
+print 'true' if job_root.match('/jobs/vfx_levelup/asdf') else 'false'
+job_root = re.compile('^/jobs/[^/]+')
+print 'true' if job_root.match('/jobs/vfx_levelup/asdf') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+job_root = re.compile('^/jobs/[^/]+$')
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/test') else 'false'
+job_root = re.compile('^/jobs/[^/]+/$')
+print 'true' if job_root.match('/jobs/vfx_levelup/test') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+products_root = re.compile('.*PRODUCTS[^/]+$')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS/') else 'false'
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+products_root = re.compile('PRODUCTS[^/]+$')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+products_root = re.compile('PRODUCTS[^/]$')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+products_root = re.compile('PRODUCTS')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+products_root = re.compile('.*PRODUCTS')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+products_root = re.compile('.*PRODUCTS$')
+products_root = re.compile('.*PRODUCTS[/]*$')
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS') else 'false'
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS/') else 'false'
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS/f') else 'false'
+print 'true' if products_root.match('/jobs/vfx_levelup/PRODUCTS/f/') else 'false'
+job_root = re.compile('/jobs/[^/][/]*$')
+print 'true' if job_root.match('/jobs/vfx_levelup/test/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/test') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+job_root = re.compile('/jobs/[^/]*[/]*$')
+print 'true' if job_root.match('/jobs/vfx_levelup') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/asdf') else 'false'
+print 'true' if job_root.match('/jobs/vfx_levelup/asdf/') else 'false'
+products_type = re.compile('.*PRODUCTS/[^/]*[/]*$')
+print 'true' if products_type.match('/jobs/vfx_levelup/PRODUCTS/f/') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/PRODUCTS//') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/PRODUCTS/asdfsad/') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/PRODUCTS/asdfsad/asdf') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/PRODUCTS/asdfsad/asdf/') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/asdf/PRODUCTS/asdfsad/asdf/') else 'false'
+print 'true' if products_type.match('/jobs/vfx_levelup/asdf/PRODUCTS/asdfsad/') else 'false'
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+jobs = scheduler.listJobs()
+jobs
+scheduler.getJobInfo(jobs[0])
+job = scheduler.getJobInfo(jobs[0])
+job
+job.get('jobGroup')
+job.get('MediaReplicatorOwner.NotificationAndLogging.EmailTo'')
+job.get('MediaReplicatorOwner.NotificationAndLogging.EmailTo')
+for key in job:
+    print key, job[key]
+for key in job:
+    print key, job[key]
+scheduler.getJobInfo(job)
+job_stats = scheduler.getStats(job)
+job
+job_stats = scheduler.getStats(job)
+job_stats = scheduler.getStats(job, fields)
+job_stats = scheduler.getStats(job, fields=[])
+job_stats = scheduler.getStats(job, fields=['status'])
+job
+job_stats = scheduler.getStats(job, fields=['status'])
+for key in job:
+    print key, job[key]
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+job = scheduler.getJobInfo(jobs[0])
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+job
+print job['jobGroup']
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+job = scheduler.getJobInfo(jobs[0])
+job
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+scheduler = SchedulerService()
+jobs = scheduler.listJobs()
+jobs
+job = scheduler.getJobInfo(jobs[0])
+job
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+job_name = scheduler.getJobInfo(job).get('jobName')
+exit()
+from signiant.service.scheduler import SchedulerService
+from suds import WebFault
+scheduler = SchedulerService()
+jobs = scheduler.listJobs()
+job = scheduler.getJobInfo(jobs[0])
+job_name = scheduler.getJobInfo(job).get('jobName')
+for job in jobs:
+    print scheduler.getJobInfo(job).get('jobName')
+job = jobs[0]
+job_group_name = scheduler.getJobInfo(job).get('jobGroup')
+job_group_name
+job_stats = scheduler.getStats(job)
+job_stats
+job_stats = scheduler.getStats(job, fields=[])
+job_stats
+job_stats = scheduler.getStats(job, fields=['status'])
+scheduler.getStats(job, fields=['status'])
+jobs = scheduler.listJobs()
+jobs.length()
+length(jobs)
+len(jobs)
+jobs[6448]
+jobs[0]
+for job in jobs:
+    print scheduler.getJobInfo(job).get('jobName')
+jobs = scheduler.listJobs()
+len(jobs)
+jobs[6548]
+jobs[654\7]
+jobs[6547]
+jobs[6520]
+jobs[6510]
+jobs = scheduler.listJobs()
+jobs[6510]
+job = jobs[6510]
+scheduler.getStats(job, fields=['status'])
+scheduler.getStats(jobs[6520], fields=['status'])
+scheduler.getStats(jobs[6520], fields=['status', 'name'])
+job = jobs[6520]
+jobs[6520]
+scheduler.getStats(jobs[6520], fields=['status'])
+jobs[6530]
+scheduler.getStats(jobs[6530], fields=['status'])
+scheduler.getActiveStatus(jobs[6530])
+scheduler.getActiveStatus(jobs[6520])
+scheduler.getActiveStatus(jobs[6550])
+scheduler.getActiveStatus(jobs[6570])
+scheduler.getActiveStatus(jobs[6590])
+scheduler.getJobInfo(jobs[6590])
+scheduler.getJobInfo(jobs[6560])
+job_info = scheduler.getJobInfo(jobs[6560])
+for key in job_info:
+    print key, job[key]
+for key in job_info:
+    print key, job_info[key]
+scheduler.getJobStatus(jobs[6560])
+jobs = scheduler.listJobs()
+jobs[6530]
+jobs[6540]
+jobs[6560]
+jobs[6580]
+jobs[6590]
+jobs[6690]
+jobs[6650]
+jobs[6630]
+scheduler.getJobStatus(jobs[6630])
+jobs = scheduler.listJobs()
+jobs[6640]
+jobs[6650]
+jobs[6660]
+jobs[6670]
+jobs[6680]
+jobs[6675]
+jobs = scheduler.listJobs()
+jobs[6690]
+jobs[6695]
+scheduler.getJobStatus(jobs[6695])
+jobs[6695]
+jobs[6699]
+jobs = scheduler.listJobs()
+jobs[6699]
+jobs[6719]
+jobs[6709]
+jobs[6715]
+jobs = scheduler.listJobs()
+jobs[6725]
+jobs[6735]
+jobs[6745]
+jobs[6740]
+scheduler.getJobStatus(jobs[6740])
+jobs = scheduler.listJobs()
+for job in jobs:
+    if scheduler.getJobStatus(job) = 'RUN_QUEUED':
+for job in jobs:
+    if scheduler.getJobStatus(job) == 'RUN_QUEUED':
+        print "GOTCHA!"
+jobs = scheduler.listJobs()
+for job in jobs:
+    if scheduler.getJobStatus(job) == 'RUN_QUEUED':
+        print "GOTCHA!"
+jobs = scheduler.listQueuedJobs()
+jobs
+scheduler.listQueuedJobs()
+len(scheduler.listQueuedJobs())
+scheduler.listQueuedJobs()
+type(scheduler.listQueuedJobs())
+scheduler.listQueuedJobs()
+jobs = scheduler.listQueuedJobs()
+jobs
+type(jobs)
+jobs
+jobs.rsplit(':')
+jobs.rsplit(':')[1]
+jobs.rsplit(':', 1)[1]
+str(jobs.rsplit(':', 1)[1])
+str(scheduler.listQueuedJobs().rsplit(':', 1)[1])
+scheduler.listQueuedJobs()
+str(scheduler.listQueuedJobs().rsplit(':', 1)[1])
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler.listQueuedJobs()
+scheduler = SchedulerService()
+str(scheduler.listQueuedJobs().rsplit(':', 1)[1])
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+import threading
+str(scheduler.listQueuedJobs().rsplit(':', 1)[1]
+)
+str(scheduler.listQueuedJobs().rsplit(':', 1)[1])
+exit()
+import time
+time.time
+time.sleep
+exit()
+import sched
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+exit()
+import os
+os.EX_OK
+os.EX_UNAVAILABLE
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+exit
+exit()
+from signiant.connect import Connection
+self.client = Connection.connect()
+try:
+    Connection.connect()
+except Exception as e:
+    print e, e.errno, e.strerror
+type e
+try:
+    Connection.connect()
+except Exception as e:
+    type(e)
+try:
+    Connection.connect()
+except Exception as e:
+    print e.reason
+import errno
+errno.errorcode.keys()
+os.strerror(-2)
+import os
+os.strerror(-2)
+os.strerror(2)
+os.strerror(1)
+try:
+    Connection.connect()
+except Exception as e:
+    print e.reason, e.foo
+exit()
+from signiant.connect import Connection
+try:
+    Connection.connect()
+except Exception as e:
+    print e
+try:
+    Connection.connect()
+except Exception as e:
+    type(e)
+exit()
+import signiant-queue-size
+exit()
+import signiant-queue-size
+import main
+exit()
+import signiant-queue-size
+exit()
+from rez.vendor.version.version import Version
+eit
+exit()
+from rez.vendor.version.version import Version
+Version('10.0v5') < Version('10.0.5')
+Version('10.0v5') > Version('10.0.5')
+exit()
+import contacts
+u = contacts.find_users()
+a.username for a in u if a.email is None
+[a.username for a in u if a.email is None]
+u = contacts.find_users(status='active')
+[a.username for a in u if a.email is None]
+u = contacts.find_users(status='system')
+[a.username for a in u if a.email is None]
+a
+u
+[a.username for a in u]
+u = contacts.find_users(status='systems')
+[a.username for a in u]
+u = contacts.find_users(status='pipeline')
+[a.username for a in u]
+u
+print a in u
+for a in u:
+    print a
+u = contacts.find_users(status='inactive')
+u
+[a.username for a in u]
+u = contacts.find_users(status='active')
+[a.username for a in u]
+u = contacts.find_users(status='active')
+[a.username for a in u if a.email is None]
+exit()
+import contacts
+u = contacts.find_users(status='false')
+[a.username for a in u]
+u = contacts.find_users(active=False)
+[a.username for a in u]
+u = contacts.find_users(active=False, status='inactive')
+[a.username for a in u]
+u = contacts.find_users(active=False, status='pipeline')
+[a.username for a in u]
+u = contacts.find_users(active=False, status='system')
+[a.username for a in u]
+u = contacts.find_users(active=False, status='systems')
+[a.username for a in u]
+exit()
+import rv_localize_lib
+exit
+exit()
+import rez
+exit()
+import rez
+exit()
+from os import mkdir
+mkdir('test', 0o777)
+mkdir('test2', 0777)
+mkdir('test2', mode=0777)
+mkdir('test3', mode=0777)
+mkdir('test3', '0777')
+mkdir('test3', O777)
+mkdir('test3', 777)
+mkdir('/var/tmp/test4', 0777)
+mkdir('/var/tmp/test5')
+from os import chmod
+chmod('test2', 0777)
+exit()
+exit
+rez-env techpub -- python
+exit()
+from techpub import Client
+from techpub import client
+techPubClient = client.Client()
+techPubClient
+techPubClient.ping
+exit
+exit()
+import shlex
+shlex.split('--rsync-path="mkdir -p /sw/dev/scottj/TMP/this/is/an/mtransfer && rsync" test')
+shlex.split("--rsync-path='mkdir -p /sw/dev/scottj/TMP/this/is/an/mtransfer && rsync' test")
+exit()
+import shlex
+shlex.split('--rsync-path="mkdir -p /sw/dev/scottj/TMP/this/is/an/mtransfer && rsync" test')
+shlex.split('--rsync-path="mkdir -p /sw/dev/scottj/TMP/this/is/an/mtransfer && rsync"')
+shlex.split('rsync --verbose --progress --recursive --links --perms --times --omit-dir-times --group --owner --devices --specials --rsync-path="mkdir -p /sw/dev/scottj/TMP/this/is/an/mtransfer && rsync" test ny-msg01:/sw/dev/scottj/TMP/this/is/an/mtransfer')
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity()
+print entity.config('signiant')
+print entity.config('locations')
+print entity.config('locations').data
+print entity.config('locations')
+config = entity.config('locations')
+config
+config = entity.config('locations').data
+config
+config = entity.config('locations')
+config
+config = entity.config('locations')
+print entity.config('locations')
+print entity.config('locations').keys
+print entity.config('locations').la
+entity.config('locations').keys
+entity.config('locations').keys()
+exit()
+import shlex
+exit()
+from mproduction import get_current_entity
+entity = get_current_entity()
+entity.config('locations').keys()
+entity.config('locations').keys().sort()
+entity.config('locations').keys().sort
+entity.config('locations').keys().sorted()
+sorted(entity.config('locations').keys())
+exit()
+import shlex
+command = ['rsync', '--verbose', '--progress', '--recursive', '--links', '--perms', '--times', '--omit-dir-times', '--group', '--owner', '--devices', '--specials', '--rsync-path="mkdir -p && rsync"', 'test']
+' '.join(command)
+shlex.split(' '.join(command))
+command
+exit()
