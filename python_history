@@ -2264,3 +2264,61 @@ command = ['rsync', '--verbose', '--progress', '--recursive', '--links', '--perm
 shlex.split(' '.join(command))
 command
 exit()
+import os
+import re
+directory= '/jobs/margarita_robot/COMMON/prod/in/vendor/co3/20171222/001_630pm/margarita_graded_122217/LUT'
+print directory
+exit()
+my_file = '/sw/dev/scottj/TMP/margarita/luts-file'
+with open(my_file) as f:
+    contents = f.readlines()
+print my_file
+import os
+os.isfile
+os.isFile()
+os.path.isfile(my_file)
+exit()
+my_file = '/sw/dev/scottj/TMP/margarita/luts-file'
+os.path.isfile(my_file)
+import os
+os.path.isfile(my_file)
+os.path.isdir('/sw/dev')
+os.path.isdir('/sw/dev/scottj/')
+os.path.isdir('/sw/dev/scottj/TMP/margarita/')
+os.path.isfile('/sw/dev/scottj/TMP/margarita/luts-file')
+exit()
+import os
+os.path.isdir('/sw/dev/scottj/TMP/margarita/')
+os.listdir('/sw/dev/scottj/TMP/margarita/')
+os.path.isfile('/sw/dev/scottj/TMP/margarita/luts-test')
+exit()
+import os
+my_file = '/sw/dev/scottj/TMP/margarita/luts-test'
+with open(my_file) as f:
+    contents = f.readlines()
+contents
+exit()
+from signiant.service.scheduler import SchedulerService
+scheduler = SchedulerService()
+scheduler.listQueuedJobs()
+exit()
+from PySide import QtCore, QtGui
+from pyside import QtCore, QtGui
+from pySide import QtCore, QtGui
+from PySide import QtCore, QtGui
+exit
+exit()
+from PySide import QtCore, QtGui
+app = QtGui.QApplication([])
+QtGui.QDesktopServices.openUrl(QCore.QUrl("http://test.com"))
+QtGui.QDesktopServices.openUrl(QtCore.QUrl("http://test.com"))
+exit()
+from PySide import QtCore, QtGui
+app = QtGui.QApplication([])
+QtGui.QDesktopServices.openUrl(QtCore.QUrl("http://test.com"))
+exit()
+from PySide import QtCore, QtGui
+app = QtGui.QApplication([])
+QtGui.QDesktopServices.openUrl(QtCore.QUrl("http://test.com"))
+exkt9)
+exit()
