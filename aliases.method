@@ -7,15 +7,19 @@
 # =============================================================================
 
 # Hosts
-export MY_HOST_LA='la-ws011'
-export MY_HOST_NY='ny-wsx8028'
-export MY_HOST_VAN='van-ws001'
+export USER_HOST_LA='la-ws069'
+export USER_HOST_NY='ny-wsx8028'
+export USER_HOST_VAN='van-ws001'
+export USER_HOST_GUAC='la-guacamole-'
+export USER_HOST_TTPC='ttpc'
+export USER_HOST_MAIN=${USER_HOST_LA}
 
 # Debug
 #export M_DEBUG=1
 #export METHOD_DEBUG_=1
 #export MONIKER_CONFIG_FILE=~/Documents/moniker.xml
 #export M_LOGLEVEL=DEBUG
+#export LD_DEBUG=libs
 export M_MAIN_LOGLEVEL=DEBUG
 export MTHD_RV_DEBUG
 export OPTICAL_FLARES_VERBOSE_CONSOLE=1
