@@ -45,7 +45,7 @@ alias rsync='rsync --verbose --progress --recursive --links --perms --times --om
 #alias ssh="ssh -Y"
 alias ssh='ssh -c arcfour128,arcfour,blowfish-cbc -Y'
 alias sudo='sudo '
-alias tree='tree -afpsuCD -I ".snapshot|.git|build"'
+alias tree='tree -afpsugCD -I ".snapshot|.git|build"'
 #alias type='type -P'
 
 
