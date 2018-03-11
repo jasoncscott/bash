@@ -9,6 +9,7 @@
 # Hosts
 export USER_HOST_LA='la-ws069'
 export USER_HOST_NY='ny-wsx8028'
+export USER_HOST_SYD='z21004.syd.il.com.au'
 export USER_HOST_VAN='van-ws001'
 export USER_HOST_GUAC='la-guacamole-'
 export USER_HOST_TTPC='ttpc'
@@ -17,22 +18,19 @@ export USER_HOST_MAIN=${USER_HOST_LA}
 # Debug
 #export M_DEBUG=1
 #export METHOD_DEBUG_=1
-#export MONIKER_CONFIG_FILE=~/Documents/moniker.xml
+#export MONIKER_CONFIG_FILE=${HOME}/Documents/moniker.xml
 #export M_LOGLEVEL=DEBUG
 #export LD_DEBUG=libs
 export M_MAIN_LOGLEVEL=DEBUG
 export MTHD_RV_DEBUG
 export OPTICAL_FLARES_VERBOSE_CONSOLE=1
-export HOUDINI_OUTLINEFONT_PATH=~/.fonts/
-export NUKE_FONT_PATH=~/.fonts/
+export HOUDINI_OUTLINEFONT_PATH=${HOME}/.fonts/
+export NUKE_FONT_PATH=${HOME}/.fonts/
 
 
 # =============================================================================
 # COMMANDS
 # =============================================================================
-
-alias q='qubeArtistView &'
-alias imgls='imgls -light | sort'
 
 
 # =============================================================================
@@ -46,14 +44,11 @@ alias dev-git="cd ${METHOD_USER_DEV_ROOT}/src/git/"
 alias tmp="cd ${METHOD_USER_DEV_ROOT}/TMP/"
 
 # solsm01
-alias cd-mmake-root='cd /opt/django/src/mmake_uds/django/mmake'
+#alias cd-mmake-root='cd /opt/django/src/mmake_uds/django/mmake'
 
 # Studio/Facility/Global
 alias cd-core-studio='cd /sw/resources/suites/global/core/${METHOD_SYS}/'
 alias cd-core-location='cd /sw/resources/suites/${M_LOCATION}/core/${METHOD_SYS}/'
-#alias cd-core-tools-thereIsNoLocation='cd /tools/share/suites/facility/'
-alias cd-uds-studio='cd /tools/share/suites/global/uds-1.1/default/'
-alias cd-uds-location='cd /tools/share/suites/${M_LOCATION}/uds-1.1/default/'
 
 # Job
 alias assets='cd ${M_JOB_PATH}/assets/'
@@ -66,36 +61,36 @@ alias cd-show-representations='cd ${M_JOB_PATH}/COMMON/lib/representations/'
 alias cd-show-resolutions='cd ${M_JOB_PATH}/TECH/config/mresolution/resolutions/'
 
 # Other
-alias logs='cd /SERVER/frack/qube_logs/qube/job/'
+#alias logs='cd /SERVER/frack/qube_logs/qube/job/'
 
 
 # =============================================================================
 
 job-switch() {
-    cd `~/Documents/bin/aux/job_path.py ${1:-${M_JOB}}`
+    cd `${HOME}/Documents/bin/aux/job_path.py ${1:-${M_JOB}}`
 }
 
 # =============================================================================
 
 job-diff() {
-    diff ${1} $(~/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
+    diff ${1} $(${HOME}/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
 }
 
 # =============================================================================
 
 job-meld() {
-    meld ${1} $(~/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
+    meld ${1} $(${HOME}/Documents/bin/aux/job_path.py ${2:-${M_JOB}})/${1}
 }
 
 # =============================================================================
 
 rdiff() {
     if [ "${2}" = "la" ]; then
-        ssh ${MY_HOST_LA} "cat $(readlink -f ${1})" | diff ${1} -
+        ssh ${USER_HOST_LA} "cat $(readlink -f ${1})" | diff ${1} -
     elif [ "${2}" = "ny" ]; then
-        ssh ${MY_HOST_NY} "cat $(readlink -f ${1})" | diff ${1} -
+        ssh ${USER_HOST_NY} "cat $(readlink -f ${1})" | diff ${1} -
     elif [ "${2}" = "van" ]; then
-        ssh ${MY_HOST_VAN} "cat $(readlink -f ${1})" | diff ${1} -
+        ssh ${USER_HOST_VAN} "cat $(readlink -f ${1})" | diff ${1} -
     else
         echo "Invalid location"
     fi
@@ -105,11 +100,11 @@ rdiff() {
 
 rmeld() {
     if [ "${2}" = "la" ]; then
-        ssh ${MY_HOST_LA} "cat $(readlink -f ${1})" | meld ${1} -
+        ssh ${USER_HOST_LA} "cat $(readlink -f ${1})" | meld ${1} -
     elif [ "${2}" = "ny" ]; then
-        ssh ${MY_HOST_NY} "cat $(readlink -f ${1})" | meld ${1} -
+        ssh ${USER_HOST_NY} "cat $(readlink -f ${1})" | meld ${1} -
     elif [ "${2}" = "van" ]; then
-        ssh ${MY_HOST_VAN} "cat $(readlink -f ${1})" | meld ${1} -
+        ssh ${USER_HOST_VAN} "cat $(readlink -f ${1})" | meld ${1} -
     else
         echo "Invalid location"
     fi
@@ -131,11 +126,11 @@ rez-cd() {
 
 rrez-context-diff() {
     if [ "${2}" = "la" ]; then
-        rez-context ${1} --diff <(ssh ${MY_HOST_LA} "cat ${PWD}/${1}")
+        rez-context ${1} --diff <(ssh ${USER_HOST_LA} "cat ${PWD}/${1}")
     elif [ "${2}" = "ny" ]; then
-        rez-context ${1} --diff <(ssh ${MY_HOST_NY} "cat ${PWD}/${1}")
+        rez-context ${1} --diff <(ssh ${USER_HOST_NY} "cat ${PWD}/${1}")
     elif [ "${2}" = "van" ]; then
-        rez-context ${1} --diff <(ssh ${MY_HOST_VAN} "cat ${PWD}/${1}")
+        rez-context ${1} --diff <(ssh ${USER_HOST_VAN} "cat ${PWD}/${1}")
     else
         echo "Invalid location"
     fi
@@ -145,11 +140,11 @@ rrez-context-diff() {
 
 rrm() {
     if [ "${2}" = "la" ]; then
-        ssh ${MY_HOST_LA} "rm $(readlink -f ${1})"
+        ssh ${USER_HOST_LA} "rm $(readlink -f ${1})"
     elif [ "${2}" = "ny" ]; then
-        ssh ${MY_HOST_NY} "rm $(readlink -f ${1})"
+        ssh ${USER_HOST_NY} "rm $(readlink -f ${1})"
     elif [ "${2}" = "van" ]; then
-        ssh ${MY_HOST_VAN} "rm $(readlink -f ${1})"
+        ssh ${USER_HOST_VAN} "rm $(readlink -f ${1})"
     else
         echo "Invalid location"
     fi
@@ -181,7 +176,7 @@ alias qbjobs='.qbjobs'
 
 unalias qube 2>/dev/null
 .qube() {
-    \cp -rf ~/Documents/bash/qube/ ~/
+    \cp -rf ${HOME}/Documents/bash/qube/ ${HOME}/
     qube
 }
 alias qube='.qube'

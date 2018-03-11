@@ -17,7 +17,6 @@ export HISTTIMEFORMAT='%F %T '
 # =============================================================================
 
 alias path='echo ${PATH} | sed "s|:|\n|g"'
-alias src='source ~/.bashrc'
 alias screensaver-off='xset dpms force on'
 
 
@@ -53,8 +52,8 @@ alias tree='tree -afpsugCD -I ".snapshot|.git|build"'
 # NAVIGATION
 # =============================================================================
 
-alias bin='cd ~/Documents/bin/'
-alias docs='cd ~/Documents/'
+alias bin='cd ${HOME}/Documents/bin/'
+alias docs='cd ${HOME}/Documents/'
 
 
 # =============================================================================
