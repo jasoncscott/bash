@@ -17,7 +17,7 @@ export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
 
 .host() {
     case ${HOSTNAME} in
-        ${USER_HOST_LA})
+        ${USER_HOST_MAIN})
             printf 'MAIN HOST'
             ;;
         ${USER_HOST_GUAC}*)
@@ -176,7 +176,7 @@ __git_ps1_post+=$(.title)
 
     # Determine if under techpub control
     if [ -f ${git_root}/.techpub.yaml ]; then
-        printf " \e[7m(TECHPUB)"
+        printf " \e[7m(TECHPUB)\[${Color_Off}\]"
     fi
 }
 

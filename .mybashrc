@@ -101,25 +101,28 @@ if [[ $- == *i* ]]; then
     echo
     echo
     echo -e ${On_IWhite}${BIBlack}"Users:"${Color_Off}
-    echo -e "$(users | sed 's| |\n|g' | uniq | sed 's|^|   |')"
+    users | sed 's| |\n|g' | uniq | sed 's|^|   |'
     echo
     echo
     echo -e ${On_Red}"OS Information"${Color_Off}
     echo -e "/etc/redhat-release: $(< /etc/redhat-release)"
     echo -e "\${METHOD_SYS}: "${METHOD_SYS}
-    echo -e "Method Systems Build: $(/etc/ansible/facts.d/method.fact)"
+    echo -e "Method Systems Build:"
+    /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'
     echo -e "Method Systems Bootstrap:"
     echo -e "$(rpm -qa | grep method | sed 's|^|    |')"
     echo
     echo
     echo -e ${On_Green}"Shell Information"${Color_Off}
-    echo -e "Current Shell Options (\${SHELLOPTS}): "${SHELLOPTS}
-    echo -e "Special Variables (\$-): " $-
+    echo -e "Current Shell Options (\${SHELLOPTS}):"
+    echo -e "${SHELLOPTS}" | sed 's|:|\n|g' | sed 's|^|    |'
+    echo -e "(Same as Special Variables (\$-): $-)"
     echo
     echo
     echo -e ${On_Blue}"Bash Information"${Color_Off}
     echo -e "\${BASH_VERSION}: "${BASH_VERSION}
-    echo -e "Current Bash Options (\${BASHOPTS}): "${BASHOPTS}
+    echo -e "Current Bash Options (\${BASHOPTS}):"
+    echo -e "${BASHOPTS}" | sed 's|:|\n|g' | sed 's|^|    |'
     echo
     echo
     echo -e ${On_IWhite}${BIBlack}"Method Pipeline Bootstrap"${Color_Off}

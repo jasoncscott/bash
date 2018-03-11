@@ -8,9 +8,13 @@
 
 # Hosts
 export USER_HOST_LA='la-ws069'
+alias la='ssh ${USER_HOST_LA}'
 export USER_HOST_NY='ny-wsx8028'
-export USER_HOST_SYD='z21004.syd.il.com.au'
-export USER_HOST_VAN='van-ws001'
+alias ny='ssh ${USER_HOST_NY}'
+export USER_HOST_SYD='z21003.syd.il.com.au'
+alias syd='ssh ${USER_HOST_SYD}'
+export USER_HOST_VAN='van-ws003'
+alias van='ssh ${USER_HOST_VAN}'
 export USER_HOST_GUAC='la-guacamole-'
 export USER_HOST_TTPC='ttpc'
 export USER_HOST_MAIN=${USER_HOST_LA}
