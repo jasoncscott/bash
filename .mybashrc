@@ -24,13 +24,13 @@ fi
 # =============================================================================
 
 # Source personal aliases
-if [ -f ~/Documents/bash/aliases ]; then
-    source ~/Documents/bash/aliases
+if [ -f  ${HOME}/Documents/bash/aliases ]; then
+    source  ${HOME}/Documents/bash/aliases
 fi
 
 # Source Method aliases
-if [ -f ~/Documents/bash/aliases.method ]; then
-    source ~/Documents/bash/aliases.method
+if [ -f  ${HOME}/Documents/bash/aliases.method ]; then
+    source  ${HOME}/Documents/bash/aliases.method
 fi
 
 
@@ -48,12 +48,12 @@ fi
 # COLORS
 # =============================================================================
 
-if [ -f ~/Documents/bash/bash_colors ]; then
-    source ~/Documents/bash/bash_colors
+if [ -f  ${HOME}/Documents/bash/bash_colors ]; then
+    source  ${HOME}/Documents/bash/bash_colors
 fi
 
-if [ -f ~/Documents/bash/tput_colors ]; then
-    source ~/Documents/bash/tput_colors
+if [ -f  ${HOME}/Documents/bash/tput_colors ]; then
+    source  ${HOME}/Documents/bash/tput_colors
 fi
 
 
@@ -78,8 +78,8 @@ fi
 
 # Due to desire to use external commands in LESS environment variables (e.g.,
 # `tput`), source own file
-if [ -f ~/Documents/bash/lessrc ]; then
-    source ~/Documents/bash/lessrc  # Custom-naming following other 'rc' files
+if [ -f  ${HOME}/Documents/bash/lessrc ]; then
+    source  ${HOME}/Documents/bash/lessrc  # Custom name following 'rc' files
 fi
 
 
@@ -87,8 +87,8 @@ fi
 # PROMPT
 # =============================================================================
 
-if [ -f ~/Documents/bash/prompt ]; then
-    source ~/Documents/bash/prompt
+if [ -f  ${HOME}/Documents/bash/prompt ]; then
+    source  ${HOME}/Documents/bash/prompt
 fi
 
 
