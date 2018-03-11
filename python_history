@@ -2322,3 +2322,28 @@ app = QtGui.QApplication([])
 QtGui.QDesktopServices.openUrl(QtCore.QUrl("http://test.com"))
 exkt9)
 exit()
+from deluxeEmail.deluxe_email import uname_to_email
+getpass.getuser()
+import getpass
+getpass.getuser()
+uname_to_email('pipe')
+uname_to_email('scottj')
+uname_to_email('pipe')
+to_addresses = ['' + 'signiant-logs@methodstudios.com']
+';'.join(to_addresses)
+to_addresses = ['' + ['signiant-logs@methodstudios.com']]
+';'.join(to_addresses)
+to_addresses = [''] + ['signiant-logs@methodstudios.com']
+to_addreses
+to_addresses
+';'.join(to_addresses)
+';'.join([i for i in to_addresses if i != '']))
+';'.join([i for i in to_addresses if i != ''])
+';'.join([i for i in to_addresses if i])
+to_addresses
+';'.join([i for i in to_addresses if i])
+to_addresses = None + ['signiant-logs@methodstudios.com']
+to_addresses = [None] + ['signiant-logs@methodstudios.com']
+to_addresses
+';'.join([i for i in to_addresses if i])
+exit()
