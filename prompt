@@ -2,42 +2,76 @@
 # PROMPT
 # =============================================================================
 
-.git_info() {
-    # Print current git branch (with text)
-    if [[ $(__git_ps1) ]]; then
-        printf "\ngit Repo$(__git_ps1)"
+# =============================================================================
+# LOCATION
+# =============================================================================
 
-        git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+# New variable since "${M_LOCATION^^}" for uppercase is only in bash v4+
+if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
+export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
 
-        # Test only for tools_legacy_core package--once gone, can remove test
-        if [ ${git_root} != "/sw/dev/skao/src/MPIPE/toolstd_legacy_core" ]; then
-            # Get git short status (for the current branch)
-            git_status=$(git status -sb 2>/dev/null)
 
-            # Print number of commits ahead/behind
-            if [ $? -eq 0 ]; then
-                if [ "$(echo \"${git_status}\" | grep -w ahead)" != "" ]; then
-                    num=$(echo "${git_status}" | grep -w ahead | tr ']' ' ' | awk '{print $NF}')
-                    printf " (+${num} Commits)"
-                elif [ "$(echo \"${git_status}\" | grep -w behind)" != "" ]; then
-                    num=$(echo "${git_status}" | grep -w behind | tr ']' ' ' | awk '{print $NF}')
-                    printf " (-${num} Commits)"
-                fi
-            fi
-        fi
+# =============================================================================
+# HOSTNAME
+# =============================================================================
 
-        # Determine if under techpub control
-        if [ -f ${git_root}/.techpub.yaml ]; then
-            printf " \e[7m(TECHPUB)"
-        fi
+.host() {
+    case ${HOSTNAME} in
+        ${USER_HOST_LA})
+            printf 'MAIN HOST'
+            ;;
+        ${USER_HOST_GUAC}*)
+            printf 'GUACAMOLE'
+            ;;
+        [[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]*)
+            printf 'DOCKER'
+            ;;
+        *)
+            printf ${HOSTNAME}
+            ;;
+    esac
+}
+
+
+# =============================================================================
+# SHLVL
+# =============================================================================
+
+if [ -z ${SHLVL_INIT} ]; then
+    export SHLVL_INIT=${SHLVL}
+fi
+
+.subshell() {
+    if [ ${SHLVL} -gt ${SHLVL_INIT} ]; then
+        printf " \e[7;3;4m(Subshell)"
     fi
 }
 
-# Set default values for variables that don't exist yet
-if [[ $- == *i* ]]; then
-    if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
-fi
+# =============================================================================
+# LOCAL / REMOTE / DOCKER
+# =============================================================================
 
+.remote() {
+    ssh_process=$(ps -no-headers -o comm ${PPID} | grep "sshd")
+
+    if [ "${ssh_process}" != "sshd" ]; then
+        if [ "$(grep docker /proc/1/cgroup)" ]; then
+            printf "\e[7;3;4mDocker"
+            echo -ne "\033]0;Docker\007"
+        else
+            printf "Local"
+        fi
+    else
+        printf "\e[7mRemote"
+    fi
+}
+
+
+# =============================================================================
+# PIPELINE
+# =============================================================================
+
+# Set default values for variables that don't exist yet
 .m_variables() {
     if [ -z "${M_JOB}" ]; then printf "[none]"; else printf "${M_JOB}"; fi
     if [ -z "${M_SEQUENCE}" ]; then printf "/[none]"; else printf "/${M_SEQUENCE}"; fi
@@ -45,84 +79,119 @@ fi
     if [ -z "${M_TASK}" ]; then printf ":[none]"; else printf ":${M_TASK}"; fi
 }
 
-# New variable since "${M_LOCATION^^}" for uppercase is only in bash v4+
-if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
-export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
 
-.ssh_level() {
-    ssh_process=$(ps -no-headers -o comm ${PPID} | grep "sshd")
+# =============================================================================
+# TITLE
+# =============================================================================
 
-    if [ "${ssh_process}" != "sshd" ]; then
-        printf "Local"
-    else
-        printf "\e[7mRemote"
+.title() {
+    title=$(xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | awk -F\" '{print $2}')
+    #echo -ne "\033]0;${title}\007";
+
+    # Change Konsole Tab Title
+    #if [ -n "${KONSOLE_DBUS_SESSION}" ]; then
+    #    qdbus org.kde.konsole ${KONSOLE_DBUS_SESSION} org.kde.konsole.Session.setTitle 1 ${M_LEVEL}:${M_TASK};
+    #fi
+}
+
+
+# =============================================================================
+# __git_ps1 PRE
+# =============================================================================
+
+# Single quotes to preserve functions for __git_ps1; double quotes for colors
+# Separate each command with a blank newline
+__git_ps1_pre="\n\n"
+
+__git_ps1_pre+="\[${BIRed}\]"
+# Location
+__git_ps1_pre+='$(printf '%4s' ${M_LOCATION_UPPER})'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${BIGreen}\]"
+# Prompt Timestamp
+__git_ps1_pre+='\t'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${BIBlue}\]"
+# Host and OS
+__git_ps1_pre+='$(.host) (${METHOD_OS})'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${IWhite}\]"
+# User
+__git_ps1_pre+='\u'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${BIYellow}\]"
+# Shell Level
+__git_ps1_pre+='SHLVL: ${SHLVL}$(.subshell)'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${BIPurple}\]"
+# Local / Remote / Docker
+__git_ps1_pre+='$(.remote)'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+__git_ps1_pre+=' | '
+
+__git_ps1_pre+="\[${ICyan}\]"
+# Method Pipeline
+__git_ps1_pre+='$(.m_variables) (View: ${MPRODUCTION_VIEW})'
+__git_ps1_pre+="\[${Color_Off}\]"
+
+
+# =============================================================================
+# __git_ps1 POST
+# =============================================================================
+
+__git_ps1_post="\[${BWhite}\]"
+# Present Working Directory on newline
+__git_ps1_post+='\n'
+__git_ps1_post+='\w'
+__git_ps1_post+="\[${Color_Off}\]"
+
+# Put prompt on newline
+__git_ps1_post+='\n> '
+__git_ps1_post+=$(.title)
+
+
+# =============================================================================
+# git
+# =============================================================================
+
+.git_info() {
+    # Print current git branch (with text)
+    git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+
+    # Determine if under techpub control
+    if [ -f ${git_root}/.techpub.yaml ]; then
+        printf " \e[7m(TECHPUB)"
     fi
 }
 
-# Prompt Command (and PS1)
-export PROMPT_COMMAND='\
-    PS1="\n\n";\
 
-    PS1="${PS1}\[${BIRed}\]";\
-    PS1="${PS1}$(printf '%4s' ${M_LOCATION_UPPER})";\
-    PS1="${PS1}\[${Color_Off}\]";\
+# =============================================================================
+# PROMPT_COMMAND (using __git_ps1)
+# =============================================================================
 
-    PS1="${PS1} | ";\
+# __git_ps1 3 arguments: pre, post, ormat (split into 2 parts)
+export PROMPT_COMMAND='__git_ps1 "${__git_ps1_pre}" "${__git_ps1_post}"'
+export PROMPT_COMMAND+=' "\ngit Repo (branch: %s) $(.git_info)"'
 
-    PS1="${PS1}\[${BIGreen}\]";\
-    PS1="${PS1}\t";\
-    PS1="${PS1}\[${Color_Off}\]";\
 
-    PS1="${PS1} | ";\
-
-    PS1="${PS1}\[${BIBlue}\]";\
-    PS1="${PS1}\h (${METHOD_OS})";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1} | ";\
-
-    PS1="${PS1}\[${IWhite}\]";\
-    PS1="${PS1}\u";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1} | ";\
-
-    PS1="${PS1}\[${BIYellow}\]";\
-    PS1="${PS1}SHLVL: ${SHLVL}";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1} | ";\
-
-    PS1="${PS1}\[${BIPurple}\]";\
-    PS1="${PS1}$(.ssh_level)";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1} | ";\
-
-    PS1="${PS1}\[${ICyan}\]";\
-    PS1="${PS1}$(.m_variables)";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1}\[${White}\]";\
-    PS1="${PS1}$(.git_info)";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1}\n";\
-
-    PS1="${PS1}\[${BWhite}\]";\
-    PS1="${PS1}\w";\
-    PS1="${PS1}\[${Color_Off}\]";\
-
-    PS1="${PS1}\n> ";
-# Add this for title control
-#    echo -ne "\033]0;${TAB_TITLE}\007";
-'
+# =============================================================================
 
 # Discuss with Sam Kao how best to use this
 #export MSS_PROMPT='\n\n${promptLocation} | ${promptTime} | ${promptHost} | ${promptEntity}\n${promptCwd}\n${promptSHLVL} > ';
-
-# Change Konsole Tab Title
-if [ -n "${KONSOLE_DBUS_SESSION}" ]; then
-    qdbus org.kde.konsole ${KONSOLE_DBUS_SESSION} org.kde.konsole.Session.setTitle 1 ${M_LEVEL}:${M_TASK};
-fi
 
