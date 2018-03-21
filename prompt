@@ -3,22 +3,14 @@
 # =============================================================================
 
 # =============================================================================
-# LOCATION
-# =============================================================================
-
-# New variable since "${M_LOCATION^^}" for uppercase is only in bash v4+
-if [ -z "${M_LOCATION}" ]; then export M_LOCATION='none'; fi
-export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
-
-
-# =============================================================================
 # HOSTNAME
 # =============================================================================
 
 .host() {
+    USER_HOST_LOC=USER_HOST_${M_LOCATION^^}
     case ${HOSTNAME} in
-        ${USER_HOST_MAIN})
-            printf 'MAIN HOST'
+        ${!USER_HOST_LOC})
+            printf "MAIN ${M_LOCATION^^} HOST - ${USER_HOST_MAIN}"
             ;;
         ${USER_HOST_GUAC}*)
             printf 'GUACAMOLE'
@@ -37,7 +29,7 @@ export M_LOCATION_UPPER=$(echo ${M_LOCATION} | tr '[:lower:]' '[:upper:]')
 # SHLVL
 # =============================================================================
 
-if [ -z ${SHLVL_INIT} ]; then
+if [ -z ${SHLVL_INIT} ] && [[ $- == *i* ]]; then
     export SHLVL_INIT=${SHLVL}
 fi
 
@@ -105,7 +97,7 @@ __git_ps1_pre="\n\n"
 
 __git_ps1_pre+="\[${BIRed}\]"
 # Location
-__git_ps1_pre+='$(printf '%4s' ${M_LOCATION_UPPER})'
+__git_ps1_pre+='$(printf '%4s' ${M_LOCATION^^})'
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
@@ -194,4 +186,3 @@ export PROMPT_COMMAND+=' "\ngit Repo (branch: %s) $(.git_info)"'
 
 # Discuss with Sam Kao how best to use this
 #export MSS_PROMPT='\n\n${promptLocation} | ${promptTime} | ${promptHost} | ${promptEntity}\n${promptCwd}\n${promptSHLVL} > ';
-
