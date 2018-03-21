@@ -98,33 +98,38 @@ fi
 
 # For Interactive Shells
 if [[ $- == *i* ]]; then
-    echo
-    echo
-    echo -e ${On_IWhite}${BIBlack}"Users:"${Color_Off}
-    users | sed 's| |\n|g' | uniq | sed 's|^|   |'
-    echo
-    echo
-    echo -e ${On_Red}"OS Information"${Color_Off}
-    echo -e "/etc/redhat-release: $(< /etc/redhat-release)"
-    echo -e "\${METHOD_SYS}: "${METHOD_SYS}
-    echo -e "Method Systems Build:"
-    /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'
-    echo -e "Method Systems Bootstrap:"
-    echo -e "$(rpm -qa | grep method | sed 's|^|    |')"
-    echo
-    echo
-    echo -e ${On_Green}"Shell Information"${Color_Off}
-    echo -e "Current Shell Options (\${SHELLOPTS}):"
-    echo -e "${SHELLOPTS}" | sed 's|:|\n|g' | sed 's|^|    |'
-    echo -e "(Same as Special Variables (\$-): $-)"
-    echo
-    echo
-    echo -e ${On_Blue}"Bash Information"${Color_Off}
-    echo -e "\${BASH_VERSION}: "${BASH_VERSION}
-    echo -e "Current Bash Options (\${BASHOPTS}):"
-    echo -e "${BASHOPTS}" | sed 's|:|\n|g' | sed 's|^|    |'
-    echo
-    echo
-    echo -e ${On_IWhite}${BIBlack}"Method Pipeline Bootstrap"${Color_Off}
+    printf '\n'
+    printf ${On_Red}'OS Information\n'${Color_Off}
+    printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
+    printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
+    printf 'Method Systems Build:'
+    m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
+    # Choose one of the next two lines
+#    m-systems-build
+    printf " (Run 'm-systems-build')\n"
+    printf 'Method Systems Bootstrap:'
+    m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
+    # Choose one of the next two lines
+#    m-systems-bootstrap
+    printf " (Run 'm-systems-bootstrap')\n"
+    printf '\n\n'
+    printf ${On_Green}'Shell Information\n'${Color_Off}
+    printf 'Current Shell Options (${SHELLOPTS}):'
+    # Choose one of the next two lines
+    printf ' '${SHELLOPTS}
+    #printf '\n'${SHELLOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
+    printf '\n(Same as Special Variables ($-): '$-')'
+    printf '\n\n\n'
+    printf ${On_Blue}'Bash Information\n'${Color_Off}
+    printf '${BASH_VERSION}: '${BASH_VERSION}'\n'
+    printf 'Current Bash Options (${BASHOPTS}):'
+    # Choose one of the next two lines
+    printf ' '${BASHOPTS}
+    #printf '\n'${BASHOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
+    printf '\n\n\n'
+    printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap\n'${Color_Off}
     view_bootstrap
+    printf '\n'
+    printf ${On_IWhite}${BIBlack}'Users:\n'${Color_Off}
+    users | sed 's| |\n|g' | uniq | sed 's|^|   |'
 fi
