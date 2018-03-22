@@ -10,7 +10,7 @@
     USER_HOST_LOC=USER_HOST_${M_LOCATION^^}
     case ${HOSTNAME} in
         ${!USER_HOST_LOC})
-            printf "MAIN ${M_LOCATION^^} HOST - ${USER_HOST_MAIN}"
+            printf "MAIN ${M_LOCATION^^} HOST - ${HOSTNAME}"
             ;;
         ${USER_HOST_GUAC}*)
             printf 'GUACAMOLE'

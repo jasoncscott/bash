@@ -7,7 +7,8 @@
 # =============================================================================
 
 # Hosts
-export USER_HOST_LA='la-ws069'
+#export USER_HOST_LA='la-ws069'
+export USER_HOST_LA='gr2430-05'
 alias la='ssh ${USER_HOST_LA}'
 export USER_HOST_NY='ny-wsx8028'
 alias ny='ssh ${USER_HOST_NY}'
