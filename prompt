@@ -37,6 +37,10 @@ fi
     if [ ${SHLVL} -gt ${SHLVL_INIT} ]; then
         printf " \e[7;3;4m(Subshell)"
     fi
+
+    if ! [ -z ${REZ_VERSION} ]; then
+        printf " \e[7;3;4m(REZ)"
+    fi
 }
 
 # =============================================================================
@@ -164,7 +168,7 @@ __git_ps1_post+=$(.title)
 
 .git_info() {
     # Print current git branch (with text)
-    git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+    git_root=$(PATH=/usr/bin git rev-parse --show-toplevel 2>/dev/null)
 
     # Determine if under techpub control
     if [ -f ${git_root}/.techpub.yaml ]; then
@@ -178,7 +182,7 @@ __git_ps1_post+=$(.title)
 # =============================================================================
 
 # __git_ps1 3 arguments: pre, post, ormat (split into 2 parts)
-export PROMPT_COMMAND='__git_ps1 "${__git_ps1_pre}" "${__git_ps1_post}"'
+export PROMPT_COMMAND='PATH=/usr/bin __git_ps1 "${__git_ps1_pre}" "${__git_ps1_post}"'
 export PROMPT_COMMAND+=' "\ngit Repo (branch: %s) $(.git_info)"'
 
 

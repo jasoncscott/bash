@@ -30,6 +30,11 @@ export M_MAIN_LOGLEVEL=DEBUG
 export MTHD_RV_DEBUG
 export OPTICAL_FLARES_VERBOSE_CONSOLE=1
 
+# AUTODESK, INC.
+# Maya
+export MAYA_DISABLE_CER=true  # Disable customer error reporting
+export MAYA_DISABLE_CLIC_IPM=true  # Disable cloud login utilities
+export MAYA_DISABLE_CIP=true  # Avoid fatal crash on startup
 # SIDE EFFECTS SOFTWARE, INC.
 # Houdini
 export HOUDINI_VERBOSE_ERROR=true
@@ -37,7 +42,7 @@ export HOUDINI_ANONYMOUS_STATISTICS=false
 export HOUDINI_OUTLINEFONT_PATH=@:${HOME}/.fonts/
 # FOUNDRY
 # Nuke
-export NUKE_FONT_PATH=${HOME}/.fonts/
+#export NUKE_FONT_PATH=${HOME}/.fonts/
 
 
 # =============================================================================
@@ -53,6 +58,7 @@ export NUKE_FONT_PATH=${HOME}/.fonts/
 alias dev="cd ${METHOD_USER_DEV_ROOT}/"
 alias dev-src="cd ${METHOD_USER_DEV_ROOT}/src/"
 alias dev-git="cd ${METHOD_USER_DEV_ROOT}/src/git/"
+alias data="cd ${METHOD_USER_DEV_ROOT}/data/"
 alias tmp="cd ${METHOD_USER_DEV_ROOT}/TMP/"
 
 # solsm01

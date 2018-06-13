@@ -60,7 +60,7 @@ alias docs='cd ${HOME}/Documents/'
 # REMAPPING
 # =============================================================================
 
-alias acroread='okular'
+alias acroread='evince'
 alias tkdiff='xxdiff'
 #alias which='type'
 
