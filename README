@@ -1,12 +1,12 @@
 # =============================================================================
 # Symlinks
 # =============================================================================
-Documents/bash/
+Documents/shell/
 #~/.bashrc
 ~/.bash_logout
 #~/.bash_profile
 ~/.gitconfig
-~/.mybashrc
+~/.rc
 ~/.plan
 ~/.rezconfig.py
 ~/.rez-version
