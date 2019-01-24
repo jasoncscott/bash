@@ -21,7 +21,7 @@ import readline
 # =============================================================================
 
 # History Location
-python_history = path.expanduser("~/Documents/bash/python_history")
+python_history = path.expanduser("~/Documents/shell/python_history")
 
 
 # =============================================================================
