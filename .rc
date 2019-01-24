@@ -6,16 +6,16 @@
 # VARIABLES
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/inputrc ]; then
-    export INPUTRC=${HOME}/Documents/bash/inputrc
+if [ -f ${HOME}/Documents/shell/inputrc ]; then
+    export INPUTRC=${HOME}/Documents/shell/inputrc
 fi
 
-if [ -f ${HOME}/Documents/bash/vimrc ]; then
-    export MYVIMRC=${HOME}/Documents/bash/vimrc
+if [ -f ${HOME}/Documents/shell/vimrc ]; then
+    export MYVIMRC=${HOME}/Documents/shell/vimrc
 fi
 
-if [ -f ${HOME}/Documents/bash/pythonstartup ]; then
-    export PYTHONSTARTUP=${HOME}/Documents/bash/pythonstartup
+if [ -f ${HOME}/Documents/shell/pythonstartup ]; then
+    export PYTHONSTARTUP=${HOME}/Documents/shell/pythonstartup
 fi
 
 
@@ -24,13 +24,8 @@ fi
 # =============================================================================
 
 # Source personal aliases
-if [ -f ${HOME}/Documents/bash/aliases ]; then
-    source ${HOME}/Documents/bash/aliases
-fi
-
-# Source Method aliases
-if [ -f ${HOME}/Documents/bash/aliases.method ]; then
-    source ${HOME}/Documents/bash/aliases.method
+if [ -f ${HOME}/Documents/shell/aliases ]; then
+    source ${HOME}/Documents/shell/aliases
 fi
 
 
@@ -48,12 +43,12 @@ fi
 # COLORS
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/bash_colors ]; then
-    source ${HOME}/Documents/bash/bash_colors
+if [ -f ${HOME}/Documents/shell/shell_colors ]; then
+    source ${HOME}/Documents/shell/shell_colors
 fi
 
-if [ -f ${HOME}/Documents/bash/tput_colors ]; then
-    source ${HOME}/Documents/bash/tput_colors
+if [ -f ${HOME}/Documents/shell/tput_colors ]; then
+    source ${HOME}/Documents/shell/tput_colors
 fi
 
 
@@ -78,8 +73,8 @@ fi
 
 # Due to desire to use external commands in LESS environment variables (e.g.,
 # `tput`), source own file
-if [ -f ${HOME}/Documents/bash/lessrc ]; then
-    source ${HOME}/Documents/bash/lessrc  # Custom name following 'rc' files
+if [ -f ${HOME}/Documents/shell/lessrc ]; then
+    source ${HOME}/Documents/shell/lessrc  # Custom name following 'rc' files
 fi
 
 
@@ -87,13 +82,13 @@ fi
 # PROMPT
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/prompt ]; then
-    source ${HOME}/Documents/bash/prompt
+if [ -f ${HOME}/Documents/shell/prompt ]; then
+    source ${HOME}/Documents/shell/prompt
 fi
 
 
 # =============================================================================
-# METHOD STARTUP
+# STARTUP
 # =============================================================================
 
 # For Interactive Shells
