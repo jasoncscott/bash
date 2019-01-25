@@ -1,22 +1,28 @@
 # =============================================================================
-# .bashrc
+# .rc
 # =============================================================================
 
 # =============================================================================
 # VARIABLES
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/inputrc ]; then
-    export INPUTRC=${HOME}/Documents/bash/inputrc
+# Path to Readline run commands (init) file
+if [ -f ${HOME}/Documents/shell/inputrc ]; then
+    export INPUTRC=${HOME}/Documents/shell/inputrc
 fi
 
-if [ -f ${HOME}/Documents/bash/vimrc ]; then
-    export MYVIMRC=${HOME}/Documents/bash/vimrc
+# Path to VI run commands file
+if [ -f ${HOME}/Documents/shell/vimrc ]; then
+    export MYVIMRC=${HOME}/Documents/shell/vimrc
 fi
 
-if [ -f ${HOME}/Documents/bash/pythonstartup ]; then
-    export PYTHONSTARTUP=${HOME}/Documents/bash/pythonstartup
+# Path to Python startup file
+if [ -f ${HOME}/Documents/shell/pythonstartup ]; then
+    export PYTHONSTARTUP=${HOME}/Documents/shell/pythonstartup
 fi
+
+# Enabling symlinks in Git Bash for Windows
+export MSYS=winsymlinks:nativestrict
 
 
 # =============================================================================
@@ -24,18 +30,13 @@ fi
 # =============================================================================
 
 # Source personal aliases
-if [ -f ${HOME}/Documents/bash/aliases ]; then
-    source ${HOME}/Documents/bash/aliases
-fi
-
-# Source Method aliases
-if [ -f ${HOME}/Documents/bash/aliases.method ]; then
-    source ${HOME}/Documents/bash/aliases.method
+if [ -f ${HOME}/Documents/shell/aliases ]; then
+    source ${HOME}/Documents/shell/aliases
 fi
 
 
 # =============================================================================
-# INPUTRC
+# INPUTRC (Readline init file)
 # =============================================================================
 
 # Source only if interactive shell (test special parameter for "i" option)
@@ -48,12 +49,12 @@ fi
 # COLORS
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/bash_colors ]; then
-    source ${HOME}/Documents/bash/bash_colors
+if [ -f ${HOME}/Documents/shell/shell_colors ]; then
+    source ${HOME}/Documents/shell/shell_colors
 fi
 
-if [ -f ${HOME}/Documents/bash/tput_colors ]; then
-    source ${HOME}/Documents/bash/tput_colors
+if [ -f ${HOME}/Documents/shell/tput_colors ]; then
+    source ${HOME}/Documents/shell/tput_colors
 fi
 
 
@@ -61,14 +62,16 @@ fi
 # GIT
 # =============================================================================
 
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+# Windows:  /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
+# bash:  /usr/share/git-core/contrib/completion/git-prompt.sh
+if [ -f /c/Program\ Files/Git/etc/profile.d/git-prompt.sh ]; then
     export GIT_PS1_DESCRIBE_STYLE='describe'
     export GIT_PS1_SHOWUPSTREAM='verbose'
     export GIT_PS1_SHOWDIRTYSTATE=true
     export GIT_PS1_SHOWSTASHSTATE=true
     export GIT_PS1_SHOWUNTRACKEDFILES=
     export GIT_PS1_SHOWCOLORHINTS=true
-    source /usr/share/git-core/contrib/completion/git-prompt.sh
+    source /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
 fi
 
 
@@ -78,8 +81,8 @@ fi
 
 # Due to desire to use external commands in LESS environment variables (e.g.,
 # `tput`), source own file
-if [ -f ${HOME}/Documents/bash/lessrc ]; then
-    source ${HOME}/Documents/bash/lessrc  # Custom name following 'rc' files
+if [ -f ${HOME}/Documents/shell/lessrc ]; then
+    source ${HOME}/Documents/shell/lessrc  # Custom name following 'rc' files
 fi
 
 
@@ -87,13 +90,13 @@ fi
 # PROMPT
 # =============================================================================
 
-if [ -f ${HOME}/Documents/bash/prompt ]; then
-    source ${HOME}/Documents/bash/prompt
+if [ -f ${HOME}/Documents/shell/prompt ]; then
+    source ${HOME}/Documents/shell/prompt
 fi
 
 
 # =============================================================================
-# METHOD STARTUP
+# STARTUP
 # =============================================================================
 
 # For Interactive Shells
@@ -101,18 +104,23 @@ if [[ $- == *i* ]]; then
     printf '\n'
     printf ${On_Red}'OS Information'${Color_Off}
     printf '\n'
-    printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
-    printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
-    printf 'Method Systems Build:'
-    m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
-    # Choose one of the next two lines
-#    m-systems-build
-    printf " (Run 'm-systems-build')\n"
-    printf 'Method Systems Bootstrap:'
-    m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
-    # Choose one of the next two lines
-#    m-systems-bootstrap
-    printf " (Run 'm-systems-bootstrap')\n"
+    if ! [ -z ${METHOD_SYS} ]; then
+        printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
+        printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
+        printf 'Method Systems Build:'
+        m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
+        # Choose one of the next two lines
+        #m-systems-build
+        printf " (Run 'm-systems-build')\n"
+        printf 'Method Systems Bootstrap:'
+        m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
+        # Choose one of the next two lines
+        #m-systems-bootstrap
+        printf " (Run 'm-systems-bootstrap')\n"
+    else
+        printf '${OS}: '${OS}'\n'
+        printf '${MSYSTEM_CARCH}: '${MSYSTEM_CARCH}'\n'
+    fi
     printf '\n\n'
     printf ${On_Green}'Shell Information'${Color_Off}
     printf '\n'
@@ -130,10 +138,12 @@ if [[ $- == *i* ]]; then
     printf ' '${BASHOPTS}
     #printf '\n'${BASHOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
     printf '\n\n\n'
-    printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap'${Color_Off}
-    printf '\n'
-    view_bootstrap
-    printf '\n'
+    if ! [ -z ${METHOD_BOOTSTRAP} ]; then
+        printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap'${Color_Off}
+        printf '\n'
+        view_bootstrap
+        printf '\n'
+    fi
     printf ${On_IWhite}${BIBlack}'Users:'${Color_Off}
     printf '\n'
     users | sed 's| |\n|g' | uniq | sed 's|^|   |'
