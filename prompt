@@ -101,7 +101,7 @@ __git_ps1_pre="\n\n"
 
 __git_ps1_pre+="\[${BIRed}\]"
 # Location
-__git_ps1_pre+='$(printf '%4s' ${M_LOCATION^^})'
+#__git_ps1_pre+='$(printf '%4s' ${M_LOCATION^^})'
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
@@ -115,7 +115,12 @@ __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${BIBlue}\]"
 # Host and OS
-__git_ps1_pre+='$(.host) (${METHOD_OS})'
+__git_ps1_pre+="$(.host)"
+if ! [ -z ${METHOD_OS} ]; then
+    __git_ps1_pre+=' (${METHOD_OS})'
+else
+    __git_ps1_pre+=' (${OS})'
+fi
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
@@ -129,21 +134,21 @@ __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${BIYellow}\]"
 # Shell Level
-__git_ps1_pre+='SHLVL: ${SHLVL}$(.subshell)'
+__git_ps1_pre+="SHLVL: ${SHLVL}$(.subshell)"
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${BIPurple}\]"
 # Local / Remote / Docker
-__git_ps1_pre+='$(.remote)'
+__git_ps1_pre+="$(.remote)"
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${ICyan}\]"
 # Method Pipeline
-__git_ps1_pre+='$(.m_variables) (View: ${MPRODUCTION_VIEW})'
+#__git_ps1_pre+='$(.m_variables) (View: ${MPRODUCTION_VIEW})'
 __git_ps1_pre+="\[${Color_Off}\]"
 
 
@@ -159,7 +164,7 @@ __git_ps1_post+="\[${Color_Off}\]"
 
 # Put prompt on newline
 __git_ps1_post+='\n> '
-__git_ps1_post+=$(.title)
+#__git_ps1_post+=$(.title)
 
 
 # =============================================================================

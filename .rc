@@ -1,22 +1,28 @@
 # =============================================================================
-# .bashrc
+# .rc
 # =============================================================================
 
 # =============================================================================
 # VARIABLES
 # =============================================================================
 
+# Path to Readline run commands (init) file
 if [ -f ${HOME}/Documents/shell/inputrc ]; then
     export INPUTRC=${HOME}/Documents/shell/inputrc
 fi
 
+# Path to VI run commands file
 if [ -f ${HOME}/Documents/shell/vimrc ]; then
     export MYVIMRC=${HOME}/Documents/shell/vimrc
 fi
 
+# Path to Python startup file
 if [ -f ${HOME}/Documents/shell/pythonstartup ]; then
     export PYTHONSTARTUP=${HOME}/Documents/shell/pythonstartup
 fi
+
+# Enabling symlinks in Git Bash for Windows
+export MSYS=winsymlinks:nativestrict
 
 
 # =============================================================================
@@ -30,7 +36,7 @@ fi
 
 
 # =============================================================================
-# INPUTRC
+# INPUTRC (Readline init file)
 # =============================================================================
 
 # Source only if interactive shell (test special parameter for "i" option)
@@ -56,14 +62,16 @@ fi
 # GIT
 # =============================================================================
 
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+# Windows:  /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
+# bash:  /usr/share/git-core/contrib/completion/git-prompt.sh
+if [ -f /c/Program\ Files/Git/etc/profile.d/git-prompt.sh ]; then
     export GIT_PS1_DESCRIBE_STYLE='describe'
     export GIT_PS1_SHOWUPSTREAM='verbose'
     export GIT_PS1_SHOWDIRTYSTATE=true
     export GIT_PS1_SHOWSTASHSTATE=true
     export GIT_PS1_SHOWUNTRACKEDFILES=
     export GIT_PS1_SHOWCOLORHINTS=true
-    source /usr/share/git-core/contrib/completion/git-prompt.sh
+    source /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
 fi
 
 
@@ -96,18 +104,23 @@ if [[ $- == *i* ]]; then
     printf '\n'
     printf ${On_Red}'OS Information'${Color_Off}
     printf '\n'
-    printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
-    printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
-    printf 'Method Systems Build:'
-    m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
-    # Choose one of the next two lines
-#    m-systems-build
-    printf " (Run 'm-systems-build')\n"
-    printf 'Method Systems Bootstrap:'
-    m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
-    # Choose one of the next two lines
-#    m-systems-bootstrap
-    printf " (Run 'm-systems-bootstrap')\n"
+    if ! [ -z ${METHOD_SYS} ]; then
+        printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
+        printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
+        printf 'Method Systems Build:'
+        m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
+        # Choose one of the next two lines
+        #m-systems-build
+        printf " (Run 'm-systems-build')\n"
+        printf 'Method Systems Bootstrap:'
+        m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
+        # Choose one of the next two lines
+        #m-systems-bootstrap
+        printf " (Run 'm-systems-bootstrap')\n"
+    else
+        printf '${OS}: '${OS}'\n'
+        printf '${MSYSTEM_CARCH}: '${MSYSTEM_CARCH}'\n'
+    fi
     printf '\n\n'
     printf ${On_Green}'Shell Information'${Color_Off}
     printf '\n'
@@ -125,10 +138,12 @@ if [[ $- == *i* ]]; then
     printf ' '${BASHOPTS}
     #printf '\n'${BASHOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
     printf '\n\n\n'
-    printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap'${Color_Off}
-    printf '\n'
-    view_bootstrap
-    printf '\n'
+    if ! [ -z ${METHOD_BOOTSTRAP} ]; then
+        printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap'${Color_Off}
+        printf '\n'
+        view_bootstrap
+        printf '\n'
+    fi
     printf ${On_IWhite}${BIBlack}'Users:'${Color_Off}
     printf '\n'
     users | sed 's| |\n|g' | uniq | sed 's|^|   |'

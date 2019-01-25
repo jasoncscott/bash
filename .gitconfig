@@ -1,8 +1,9 @@
 [user]
 	name = Jason Scott
-	email = jason.scott@methodstudios.com
+	email = jason@thescottclan.org
 [core]
 	editor = vi
+	autocrlf = true
 [push]
 	default = current
 [merge]

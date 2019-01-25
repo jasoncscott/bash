@@ -11,6 +11,24 @@ export HISTCONTROL=erasedups
 export HISTIGNORE='&:ls:[bf]g;exit'
 export HISTTIMEFORMAT='%F %T '
 
+# Debug
+#export LD_DEBUG=libs
+export OPTICAL_FLARES_VERBOSE_CONSOLE=1
+
+# AUTODESK, INC.
+# Maya
+export MAYA_DISABLE_CER=true  # Disable customer error reporting
+export MAYA_DISABLE_CLIC_IPM=true  # Disable cloud login utilities
+export MAYA_DISABLE_CIP=true  # Avoid fatal crash on startup
+# SIDE EFFECTS SOFTWARE, INC.
+# Houdini
+export HOUDINI_VERBOSE_ERROR=true
+export HOUDINI_ANONYMOUS_STATISTICS=false
+export HOUDINI_OUTLINEFONT_PATH=@:${HOME}/.fonts/
+# FOUNDRY
+# Nuke
+#export NUKE_FONT_PATH=${HOME}/.fonts/
+
 
 # =============================================================================
 # COMMANDS
@@ -53,6 +71,7 @@ alias tree='tree -afpsugCD -I ".snapshot|.git|build"'
 # =============================================================================
 
 alias bin='cd ${HOME}/Documents/bin/'
+alias dev='cd /z/Development/'
 alias docs='cd ${HOME}/Documents/'
 
 
@@ -97,12 +116,24 @@ alias ll='.ll'
 
 # =============================================================================
 
+calc() {
+    echo "${@}" | bc
+}
+
+# =============================================================================
+
 mate-terminal-tab-name () {
     echo -n -e "\033]0;★${1}\007"
 }
 
 # =============================================================================
 
-calc() {
-    echo "${@}" | bc
+rez-cd() {
+  cd $(rez-search --format='{base}' -s -l "$1")
+}
+
+# =============================================================================
+
+rez-list() {
+  join -a 1 <(rez-search --format='{qualified_name}: {base}' -s "$1") <(rez-search --format='{qualified_name}: {base}' -s --nl "$1") | sed 's|\( .*\)\1|\1|g'
 }
