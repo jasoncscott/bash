@@ -23,16 +23,41 @@ fi
 
 # Enabling symlinks in Git Bash for Windows
 export MSYS=winsymlinks:nativestrict
+export LOCATION='home'  # adl, cave, hyd, kao, kl, la, lon, mtl, mum, ny, syd, tor, van
+export EDITOR='vi'
+
+# History
+export HISTCONTROL=erasedups
+export HISTIGNORE='&:ls:[bf]g;exit'
+export HISTTIMEFORMAT='%F %T '
+
+# Debug
+#export LD_DEBUG=libs
 
 
 # =============================================================================
-# ALIASES
+# SOFTWARE-SPECIFIC VARIABLES
 # =============================================================================
 
-# Source personal aliases
-if [ -f ${HOME}/Documents/shell/aliases ]; then
-    source ${HOME}/Documents/shell/aliases
-fi
+# AUTODESK, INC.
+# Maya
+export MAYA_DISABLE_CER=true  # Disable customer error reporting
+export MAYA_DISABLE_CLIC_IPM=true  # Disable cloud login utilities
+export MAYA_DISABLE_CIP=true  # Avoid fatal crash on startup
+
+# FOUNDRY
+# Nuke
+#export NUKE_FONT_PATH=${HOME}/.fonts/
+
+# SIDE EFFECTS SOFTWARE, INC.
+# Houdini
+export HOUDINI_VERBOSE_ERROR=true
+export HOUDINI_ANONYMOUS_STATISTICS=false
+#export HOUDINI_OUTLINEFONT_PATH=@:${HOME}/.fonts/
+
+# VIDEO COPILOT
+# Optical Flares
+export OPTICAL_FLARES_VERBOSE_CONSOLE=1
 
 
 # =============================================================================
@@ -96,54 +121,70 @@ fi
 
 
 # =============================================================================
+# ALIASES
+# =============================================================================
+
+# Source personal aliases
+if [ -f ${HOME}/Documents/shell/aliases ]; then
+    source ${HOME}/Documents/shell/aliases
+fi
+
+
+# =============================================================================
 # STARTUP
 # =============================================================================
 
 # For Interactive Shells
 if [[ $- == *i* ]]; then
     printf '\n'
-    printf ${On_Red}'OS Information'${Color_Off}
+
+    # System Information
+    printf ${On_Red}${BIBlack}'System Information'${Color_Off}
     printf '\n'
-    if ! [ -z ${METHOD_SYS} ]; then
-        printf "/etc/redhat-release: $(< /etc/redhat-release)\n"
-        printf '${METHOD_SYS}: '${METHOD_SYS}'\n'
-        printf 'Method Systems Build:'
-        m-systems-build() { printf '\n'; /etc/ansible/facts.d/method.fact | sed 's|[{}]||g' | sed 's|, |\n|g' | sed 's|^|    |'; }
-        # Choose one of the next two lines
-        #m-systems-build
-        printf " (Run 'm-systems-build')\n"
-        printf 'Method Systems Bootstrap:'
-        m-systems-bootstrap() { printf '\n'; rpm -qa | grep method | sed 's|^|    |'; }
-        # Choose one of the next two lines
-        #m-systems-bootstrap
-        printf " (Run 'm-systems-bootstrap')\n"
-    else
-        printf '${OS}: '${OS}'\n'
-        printf '${MSYSTEM_CARCH}: '${MSYSTEM_CARCH}'\n'
-    fi
+    pprintvar 'MSYSTEM'
+    pprintvar 'MSYSTEM_CARCH'
+    pprintvar 'MSYSTEM_CHOST'
+    pprintvar 'MACHTYPE'
+    pprintvar 'PROCESSOR_ARCHITECTURE'
+    pprintvar 'PROCESSOR_IDENTIFIER'
+    pprintvar 'PROCESSOR_REVISION'
+    pprintvar 'PROCESSOR_LEVEL'
+    pprintvar 'NUMBER_OF_PROCESSORS'
+
+    # OS Information
+    printf '\n'
+    printf ${On_Yellow}${BIBlack}'OS Information'${Color_Off}
+    printf '\n'
+    pprintvar 'OS'
+    pprintvar 'OSTYPE'
+
+    printf 'Current OS Options (${MSYS}):'
+    # Choose one of the next two lines
+    printf ' '${MSYS}
+    #printf '\n'${MSYS} | sed 's|:|\n|g' | sed 's|^|    |'
     printf '\n\n'
-    printf ${On_Green}'Shell Information'${Color_Off}
+
+    # Shell Information
+    printf ${On_Green}${BIBlack}'Shell Information'${Color_Off}
     printf '\n'
     printf 'Current Shell Options (${SHELLOPTS}):'
     # Choose one of the next two lines
     printf ' '${SHELLOPTS}
     #printf '\n'${SHELLOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
     printf '\n(Same as Special Variables ($-): '$-')'
-    printf '\n\n\n'
-    printf ${On_Blue}'Bash Information'${Color_Off}
+    printf '\n\n'
+
+    # Bash Information
+    printf ${On_Blue}${BIBlack}'Bash Information'${Color_Off}
     printf '\n'
-    printf '${BASH_VERSION}: '${BASH_VERSION}'\n'
+    pprintvar 'BASH_VERSION'
     printf 'Current Bash Options (${BASHOPTS}):'
     # Choose one of the next two lines
     printf ' '${BASHOPTS}
     #printf '\n'${BASHOPTS} | sed 's|:|\n|g' | sed 's|^|    |'
-    printf '\n\n\n'
-    if ! [ -z ${METHOD_BOOTSTRAP} ]; then
-        printf ${On_IWhite}${BIBlack}'Method Pipeline Bootstrap'${Color_Off}
-        printf '\n'
-        view_bootstrap
-        printf '\n'
-    fi
+    printf '\n\n'
+
+    # Users
     printf ${On_IWhite}${BIBlack}'Users:'${Color_Off}
     printf '\n'
     users | sed 's| |\n|g' | uniq | sed 's|^|   |'
