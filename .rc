@@ -90,12 +90,14 @@ fi
 # Windows:  /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
 # bash:  /usr/share/git-core/contrib/completion/git-prompt.sh
 if [ -f /c/Program\ Files/Git/etc/profile.d/git-prompt.sh ]; then
-    export GIT_PS1_DESCRIBE_STYLE='describe'
-    export GIT_PS1_SHOWUPSTREAM='verbose'
+    export GIT_PS1_DESCRIBE_STYLE='branch'
+    export GIT_PS1_SHOWUPSTREAM='verbose name'
     export GIT_PS1_SHOWDIRTYSTATE=true
     export GIT_PS1_SHOWSTASHSTATE=true
     export GIT_PS1_SHOWUNTRACKEDFILES=true
     export GIT_PS1_SHOWCOLORHINTS=true
+    export GIT_PS1_STATESEPARATOR='|'
+    export GIT_PS1_HIDE_IF_PWD_IGNORED=
     source /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
 fi
 
