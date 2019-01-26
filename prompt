@@ -3,6 +3,15 @@
 # =============================================================================
 
 # =============================================================================
+# LOCATION
+# =============================================================================
+
+.location() {
+    printf '%4s' ${LOCATION^^}
+}
+
+
+# =============================================================================
 # HOSTNAME
 # =============================================================================
 
@@ -48,17 +57,18 @@ fi
 # =============================================================================
 
 .remote() {
-    ssh_process=$(ps -no-headers -o comm ${PPID} | grep "sshd")
+    #ssh_process=$(ps -no-headers -o comm ${PPID} | grep "sshd")
+    ssh_process=$(ps -p ${PPID} | grep "sshd")
 
-    if [ "${ssh_process}" != "sshd" ]; then
-        if [ "$(grep docker /proc/1/cgroup)" ]; then
-            printf "\e[7;3;4mDocker"
-            echo -ne "\033]0;Docker\007"
-        else
-            printf "Local"
-        fi
-    else
+    if [ "${ssh_process}" == "sshd" ]; then
         printf "\e[7mRemote"
+    else
+        #if [ -f "/proc/*/cgroup" && "$(grep docker /proc/*/cgroup)" ]; then
+        #    printf "\e[7;3;4mDocker"
+        #    echo -ne "\033]0;Docker\007"
+        #else
+            printf "Local"
+        #fi
     fi
 }
 
@@ -68,11 +78,17 @@ fi
 # =============================================================================
 
 # Set default values for variables that don't exist yet
-.m_variables() {
-    if [ -z "${M_JOB}" ]; then printf "[none]"; else printf "${M_JOB}"; fi
-    if [ -z "${M_SEQUENCE}" ]; then printf "/[none]"; else printf "/${M_SEQUENCE}"; fi
-    if [ -z "${M_SHOT}" ]; then printf "/[none]"; else printf "/${M_SHOT}"; fi
-    if [ -z "${M_TASK}" ]; then printf ":[none]"; else printf ":${M_TASK}"; fi
+.show_variables() {
+    #if [ -z "${SHOW}" ]; then printf "[none]"; else printf "${SHOW}"; fi
+    if [ -z "${SHOW}" ]; then printf "show"; else printf "${SHOW}"; fi
+    #if [ -z "${SEQUENCE}" ]; then printf "/[none]"; else printf "/${SEQUENCE}"; fi
+    if [ -z "${SEQUENCE}" ]; then printf "/sequence"; else printf "/${SEQUENCE}"; fi
+    #if [ -z "${SHOT}" ]; then printf "/[none]"; else printf "/${SHOT}"; fi
+    if [ -z "${SHOT}" ]; then printf "/shot"; else printf "/${SHOT}"; fi
+    #if [ -z "${TASK}" ]; then printf ":[none]"; else printf ":${TASK}"; fi
+    if [ -z "${TASK}" ]; then printf ":task"; else printf ":${TASK}"; fi
+    #if [ -z "${VIEW}" ]; then printf ":[none]"; else printf ":${VIEW}"; fi
+    if [ -z "${VIEW}" ]; then printf " View: [view]"; else printf ":${VIEW}"; fi
 }
 
 
@@ -101,7 +117,7 @@ __git_ps1_pre="\n\n"
 
 __git_ps1_pre+="\[${BIRed}\]"
 # Location
-#__git_ps1_pre+='$(printf '%4s' ${M_LOCATION^^})'
+__git_ps1_pre+="$(.location)"
 __git_ps1_pre+="\[${Color_Off}\]"
 
 __git_ps1_pre+=' | '
@@ -115,7 +131,8 @@ __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${BIBlue}\]"
 # Host and OS
-__git_ps1_pre+="$(.host)"
+#__git_ps1_pre+="$(.host)"
+__git_ps1_pre+='\h'
 if ! [ -z ${METHOD_OS} ]; then
     __git_ps1_pre+=' (${METHOD_OS})'
 else
@@ -148,7 +165,7 @@ __git_ps1_pre+=' | '
 
 __git_ps1_pre+="\[${ICyan}\]"
 # Method Pipeline
-#__git_ps1_pre+='$(.m_variables) (View: ${MPRODUCTION_VIEW})'
+__git_ps1_pre+="$(.show_variables)"
 __git_ps1_pre+="\[${Color_Off}\]"
 
 
@@ -173,12 +190,13 @@ __git_ps1_post+='\n> '
 
 .git_info() {
     # Print current git branch (with text)
-    git_root=$(PATH=/usr/bin git rev-parse --show-toplevel 2>/dev/null)
+    git_root=$(git rev-parse --show-toplevel 2>/dev/null)
 
     # Determine if under techpub control
-    if [ -f ${git_root}/.techpub.yaml ]; then
-        printf " \e[7m(TECHPUB)\[${Color_Off}\]"
-    fi
+    #if [ -f ${git_root}/.techpub.yaml ]; then
+    #    printf " \e[7m(TECHPUB)\[${Color_Off}\]"
+    #fi
+    printf ''
 }
 
 
@@ -186,12 +204,6 @@ __git_ps1_post+='\n> '
 # PROMPT_COMMAND (using __git_ps1)
 # =============================================================================
 
-# __git_ps1 3 arguments: pre, post, ormat (split into 2 parts)
-export PROMPT_COMMAND='PATH=/usr/bin __git_ps1 "${__git_ps1_pre}" "${__git_ps1_post}"'
+# __git_ps1 3 arguments: pre, post, format (split into 2 parts)
+export PROMPT_COMMAND='__git_ps1 "${__git_ps1_pre}" "${__git_ps1_post}"'
 export PROMPT_COMMAND+=' "\ngit Repo (branch: %s) $(.git_info)"'
-
-
-# =============================================================================
-
-# Discuss with Sam Kao how best to use this
-#export MSS_PROMPT='\n\n${promptLocation} | ${promptTime} | ${promptHost} | ${promptEntity}\n${promptCwd}\n${promptSHLVL} > ';
