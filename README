@@ -2,11 +2,10 @@
 # Symlinks
 # =============================================================================
 Documents/shell/
-#~/.bashrc
 ~/.bash_logout
-#~/.bash_profile
+~/.bash_profile
 ~/.gitconfig
-~/.rc
+~/.rc (pointed to from shell's respective run commands file)
 ~/.plan
 ~/.rezconfig.py
 ~/.rez-version
