@@ -3,13 +3,25 @@
 	email = jason@thescottclan.org
 [core]
 	editor = vi
-	autocrlf = true
+	autocrlf = input  # Linux/Mac
+	#autocrlf = true  # Windows
+	pager = delta
 [push]
 	default = current
 [merge]
 	defaultToUpstream = True
+	conflictstyle = diff3
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	theme = OneHalfDark
+	navigate = true  # use n and N to move between diff sections
+	light = false  # set to true if you're in a terminal w/ a light background color (e.g., the default macOS terminal)
+	line-numbers = true
+	side-by-side = true
 [diff]
 	tool = meld
+	colorMoved = default
 [difftool]
 	prompt = false
 [color]
@@ -20,15 +32,17 @@
 	ui = true
 	default = --all
 [status]
-	# Not available in current git version
-	# branch = true
-	# short = true
+	branch = true
+	short = true
 	relativePaths = true
 [color "status"]
 	branch = green
 	added = cyan
 	changed = red
 	untracked = magenta
-[http]
-	sslverify = false
-
+[http "https://github.com"]
+	sslVerify = false
+[winUpdater]
+	recentlySeenVersion = 2.26.2.windows.1
+[pull]
+	rebase = true

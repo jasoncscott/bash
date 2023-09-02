@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        ".bash_profile": "shellscript"
+        ".forward": "shellscript"
+        ".pgpkey": "shellscript"
+        ".plan": "shellscript"
+        ".project": "shellscript"
+        ".rc": "shellscript"
+        "aliases": "shellscript"
+        "inputrc": "shellscript"
+        "lessrc": "shellscript"
+        "prompt": "shellscript"
+        "shell_colors": "shellscript"
+        "tput_colors": "shellscript"
+      }
+}

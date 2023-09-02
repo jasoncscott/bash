@@ -2,63 +2,118 @@
 # .rc
 # =============================================================================
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+
+# =============================================================================
+# SETTINGS
+# =============================================================================
+
+complete -d cd  # Complete only to directories
+
+
 # =============================================================================
 # VARIABLES
 # =============================================================================
 
 # Path to Readline run commands (init) file
-if [ -f ${HOME}/Documents/shell/inputrc ]; then
-    export INPUTRC=${HOME}/Documents/shell/inputrc
+inputrc_file=${HOME}/Documents/shell/inputrc
+if [ -f ${inputrc_file} ]; then
+    export INPUTRC=${inputrc_file}
 fi
 
 # Path to VI run commands file
-if [ -f ${HOME}/Documents/shell/vimrc ]; then
-    export MYVIMRC=${HOME}/Documents/shell/vimrc
+vimrc_file=${HOME}/Documents/shell/vimrc
+if [ -f ${vimrc_file} ]; then
+    export VIMINIT="source ${vimrc_file}"
 fi
 
 # Path to Python startup file
-if [ -f ${HOME}/Documents/shell/pythonstartup ]; then
-    export PYTHONSTARTUP=${HOME}/Documents/shell/pythonstartup
+pythonstartup_file=${HOME}/Documents/shell/pythonstartup
+if [ -f ${pythonstartup_file} ]; then
+    export PYTHONSTARTUP=${pythonstartup_file}
 fi
 
 # Enabling symlinks in Git Bash for Windows
 export MSYS=winsymlinks:nativestrict
-export LOCATION='home'  # adl, cave, hyd, kao, kl, la, lon, mtl, mum, ny, syd, tor, van
-export EDITOR='vi'
+
 
 # History
 export HISTCONTROL=erasedups
+export HISTFILESIZE=5000
 export HISTIGNORE='&:ls:[bf]g;exit'
 export HISTTIMEFORMAT='%F %T '
 
+# Colors
+#export LS_COLORS=
+#export GREP_COLORS=
+
 # Debug
 #export LD_DEBUG=libs
+
+# Other variables
+export EDITOR='vi'
+
+export LOCATION='home'  # Prompt is set to 4-character padding for location name
+
+if [[ ${OSTYPE} = linux* ]]; then
+	export MANPAGER='sh -c "col --no-backspaces --spaces | bat --language man"'  # No `bat` themes have `man` support as of 0.22.1
+	export PAGER='less --quit-if-one-screen --RAW-CONTROL-CHARS'
+fi
 
 
 # =============================================================================
 # SOFTWARE-SPECIFIC VARIABLES
 # =============================================================================
 
+# ADOBE
+# Substance Painter
+export ALG_PAINTER_DEBUG_FPS=true
+
 # AUTODESK, INC.
+export ADCLMHUB_LOG_LEVEL=D  # Cloud licensing debug logs
+# Arnold
+export ARNOLD_ADP_OPTIN=0
 # Maya
 export MAYA_DISABLE_CER=true  # Disable customer error reporting
 export MAYA_DISABLE_CLIC_IPM=true  # Disable cloud login utilities
 export MAYA_DISABLE_CIP=true  # Avoid fatal crash on startup
 
+# Thinkbox
+#export DEADLINE_CUSTOM_PATH=${HOME}/Documents/Development/git/deadline/custom/
+
 # FOUNDRY
 # Nuke
+export FOUNDRY_LICENSE_DEBUG=true
 #export NUKE_FONT_PATH=${HOME}/.fonts/
 
-# SIDE EFFECTS SOFTWARE, INC.
-# Houdini
+# SIDEFX
+# Houdini (http://www.sidefx.com/docs/houdini/ref/env.html)
 export HOUDINI_VERBOSE_ERROR=true
+export HOUDINI_IMAGE_DEBUG=true
+export HOUDINI_SCRIPT_DEBUG=true
+export HOUDINI_DSO_ERROR=3
+export HOUDINI_ENABLE_UNDO_BUG_NOTIFY=true
+export HOUDINI_PACKAGE_VERBOSE=true
+export HOUDINI_VIEWER_STATE_VERBOSE=true
 export HOUDINI_ANONYMOUS_STATISTICS=false
+export HOUDINI_OGL_DEBUG=4
+export HOUDINI_OGL_DUMP_SHADER_ERRORS=true
 #export HOUDINI_OUTLINEFONT_PATH=@:${HOME}/.fonts/
 
 # VIDEO COPILOT
 # Optical Flares
 export OPTICAL_FLARES_VERBOSE_CONSOLE=1
 
+# =============================================================================
+source-safe() {
+    if [ -f "${1}" ]; then
+        source "${1}"
+    fi
+}
 
 # =============================================================================
 # INPUTRC (Readline init file)
@@ -71,35 +126,61 @@ fi
 
 
 # =============================================================================
+# BAT
+# =============================================================================
+
+# On systems with `bash-completion` installed
+bat_completion_file="${HOME}/Documents/bin/releases/bat/production/linux/x86_64/autocomplete/bat.bash"
+#source-safe ${bat_completion_file}
+
+
+# =============================================================================
 # COLORS
 # =============================================================================
 
-if [ -f ${HOME}/Documents/shell/shell_colors ]; then
-    source ${HOME}/Documents/shell/shell_colors
-fi
+shell_colors_file=${HOME}/Documents/shell/shell_colors.sh
+source-safe ${shell_colors_file}
 
-if [ -f ${HOME}/Documents/shell/tput_colors ]; then
-    source ${HOME}/Documents/shell/tput_colors
-fi
+tput_colors_file=${HOME}/Documents/shell/tput_colors.sh
+source-safe ${tput_colors_file}
+
+
+# =============================================================================
+# EXA
+# =============================================================================
+
+# On systems with `bash-completion` installed
+exa_completion_file="${HOME}/Documents/bin/releases/exa/production/linux/x86_64/completions/exa.bash"
+
+#if [ -f "${exa_completion_file}" ]; then
+#    export BASH_COMPLETION_USER_DIR="${HOME}/Documents/bin/bash-completion"
+#fi
 
 
 # =============================================================================
 # GIT
 # =============================================================================
 
-# Windows:  /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
-# bash:  /usr/share/git-core/contrib/completion/git-prompt.sh
-if [ -f /c/Program\ Files/Git/etc/profile.d/git-prompt.sh ]; then
-    export GIT_PS1_DESCRIBE_STYLE='branch'
-    export GIT_PS1_SHOWUPSTREAM='verbose name'
-    export GIT_PS1_SHOWDIRTYSTATE=true
-    export GIT_PS1_SHOWSTASHSTATE=true
-    export GIT_PS1_SHOWUNTRACKEDFILES=true
-    export GIT_PS1_SHOWCOLORHINTS=true
-    export GIT_PS1_STATESEPARATOR='|'
-    export GIT_PS1_HIDE_IF_PWD_IGNORED=
-    source /c/Program\ Files/Git/etc/profile.d/git-prompt.sh
+# git prompt completion
+if [[ "${OS}" == 'Windows_NT' ]]; then
+    git_prompt_file="/c/Program\ Files/Git/etc/profile.d/git-prompt.sh"
+elif [[ ${OSTYPE} = darwin* ]]; then
+    git_prompt_file="${HOME}/Documents/shell/git-prompt.sh"
+else
+    git_prompt_file=/usr/share/git-core/contrib/completion/git-prompt.sh
 fi
+
+source-safe ${git_prompt_file}
+
+# git autocomplete
+# On systems with `bash-completion` installed
+if [[ ${OSTYPE} = darwin* ]]; then
+    git_completion_file="${HOME}/Documents/shell/git-completion.bash"
+else
+    git_completion_file=/usr/share/bash-completion/completions/git
+fi
+
+source-safe ${git_completion_file}
 
 
 # =============================================================================
@@ -108,66 +189,93 @@ fi
 
 # Due to desire to use external commands in LESS environment variables (e.g.,
 # `tput`), source own file
-if [ -f ${HOME}/Documents/shell/lessrc ]; then
-    source ${HOME}/Documents/shell/lessrc  # Custom name following 'rc' files
+lessrc_file=${HOME}/Documents/shell/lessrc.sh
+if [ -f ${lessrc_file} ]; then
+    # Can cause slowdown
+    printf '\n'
+    echo "Not going to" source ${lessrc_file}  # Custom name following 'rc' files
 fi
+
+
+# =============================================================================
+# REZ
+# =============================================================================
+
+#unalias wch  # Unalias Folks-specific alias
+# `rez` tab-complete
+if [[ "${OS}" == 'Windows_NT' ]]; then
+    rez_complete_file=/c/rez/2.97.0/windows-10/completion/complete.sh
+else
+    PATH=${PATH}:/opt/rez/bin/rez  # Add `rez` to ${PATH}
+    rez_complete_file=/opt/rez/completion/complete.sh
+fi
+
+source-safe ${rez_complete_file}
 
 
 # =============================================================================
 # PROMPT
 # =============================================================================
 
-if [ -f ${HOME}/Documents/shell/prompt ]; then
-    source ${HOME}/Documents/shell/prompt
-fi
+prompt_file=${HOME}/Documents/shell/prompt.sh
+source-safe ${prompt_file}
+#eval "$(starship init bash)"
+export STARSHIP_CONFIG=${HOME}/Documents/shell/starship.toml
 
 
 # =============================================================================
 # ALIASES
 # =============================================================================
 
+aliases_file=${HOME}/Documents/shell/aliases.sh
 # Source personal aliases
-if [ -f ${HOME}/Documents/shell/aliases ]; then
-    source ${HOME}/Documents/shell/aliases
-fi
+source-safe ${aliases_file}
+
+aliases_work_file=${HOME}/Documents/shell/aliases_work.sh
+source-safe ${aliases_work_file}
 
 
 # =============================================================================
-# STARTUP
+# STARTUP INFO
 # =============================================================================
 
-# For Interactive Shells
-if [[ $- == *i* ]]; then
+.startup_info() {
     printf '\n'
 
-    # System Information
-    printf ${On_Red}${BIBlack}'System Information'${Color_Off}
+    # System Information (could use `lscpu` or `uname`, but doesn't run on Windows)
+    printf "${Black}${On_Red}"
+    printf ${Black}${On_Red}' System Information '${Red}''${Color_Off}
     printf '\n'
-    pprintvar 'MSYSTEM'
-    pprintvar 'MSYSTEM_CARCH'
-    pprintvar 'MSYSTEM_CHOST'
-    pprintvar 'MACHTYPE'
-    pprintvar 'PROCESSOR_ARCHITECTURE'
-    pprintvar 'PROCESSOR_IDENTIFIER'
-    pprintvar 'PROCESSOR_REVISION'
-    pprintvar 'PROCESSOR_LEVEL'
-    pprintvar 'NUMBER_OF_PROCESSORS'
+    printf "Processor Model: $(grep 'model name' /proc/cpuinfo -m 1 | sed 's|.*:\s*||')\n" 
+    printf "Cores: $(grep 'core id' /proc/cpuinfo | sort | uniq | wc -l)\n"
+    printf "Threads: $(grep 'processor' /proc/cpuinfo | wc -l)\n"
+    printf "Memory: $(grep 'MemTotal' /proc/meminfo | sed 's|.*:\s*||' | awk '{print $1/1024000}' | sed 's|\..*||')GB\n"
+    printf "GPU: $(lspci | grep VGA)\n"
+    printf '\n'
 
     # OS Information
-    printf '\n'
-    printf ${On_Yellow}${BIBlack}'OS Information'${Color_Off}
+    printf "${Black}${On_Yellow}"
+    printf ${Black}${On_Yellow}' OS Information '${Yellow}${On_Black}''${Color_Off}
     printf '\n'
     pprintvar 'OS'
     pprintvar 'OSTYPE'
+    if [[ ${OSTYPE} = darwin* ]]; then
+        printf "$(sw_vers -productVersion).$(sw_vers -buildVersion) ($(awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'))\n"
+    else
+        printf "$(cat /proc/version)\n"
+    #printf "$(cat /etc/os-release)\n"
+    fi
 
     printf 'Current OS Options (${MSYS}):'
     # Choose one of the next two lines
     printf ' '${MSYS}
     #printf '\n'${MSYS} | sed 's|:|\n|g' | sed 's|^|    |'
+    printf '\nFor more information, try `dmidecode`'
     printf '\n\n'
 
     # Shell Information
-    printf ${On_Green}${BIBlack}'Shell Information'${Color_Off}
+    printf "${Black}${On_Green}"
+    printf ${On_Green}${Black}' Shell Information '${Green}${On_Black}''${Color_Off}
     printf '\n'
     printf 'Current Shell Options (${SHELLOPTS}):'
     # Choose one of the next two lines
@@ -177,7 +285,8 @@ if [[ $- == *i* ]]; then
     printf '\n\n'
 
     # Bash Information
-    printf ${On_Blue}${BIBlack}'Bash Information'${Color_Off}
+    printf "${Black}${On_Blue}"
+    printf ${On_Blue}${Black}' Bash Information '${Blue}${On_Black}''${Color_Off}
     printf '\n'
     pprintvar 'BASH_VERSION'
     printf 'Current Bash Options (${BASHOPTS}):'
@@ -187,7 +296,22 @@ if [[ $- == *i* ]]; then
     printf '\n\n'
 
     # Users
-    printf ${On_IWhite}${BIBlack}'Users:'${Color_Off}
+    printf "${Black}${On_White}"
+    printf ${On_IWhite}${Black}' Users '${White}${On_Black}''${Color_Off}
     printf '\n'
     users | sed 's| |\n|g' | uniq | sed 's|^|   |'
+
+    if [ -x "$(command -v fortune)" ]; then
+        fortune
+    fi
+
+    if [ -x "$(command -v uptime)" ]; then
+        uptime
+    fi
+}
+
+# For Interactive Shells
+if [[ $- == *i* ]]; then
+    .startup_info
 fi
+

@@ -1,0 +1,86 @@
+format = """
+[](fg:black bg:red)\
+[ HOME ](fg:bright-white bold bg:red)\
+[](fg:red bg:green)\
+${time}\
+${hostname}${custom.linux}${custom.arch}\
+${username}\
+${shell}${shlvl}\
+${custom.remote}\
+${custom.show_variables}
+Git
+${directory}
+${character}
+"""
+#format = "${all}"  # Default
+
+[time]
+disabled = false
+style = "fg:bright-white bold bg:green"
+format = "[ 🕙 ${time} ](${style})[](fg:green bg:blue)"
+
+[hostname]
+disabled = false
+ssh_only = false
+style = "fg:bright-white bold bg:blue"
+format = "[ ${hostname} ](${style})"
+
+[custom.linux]
+disabled = false
+description = "The Linux operating system"
+os = "linux"
+when = true
+style = "fg:bright-white bold bg:blue"
+format = "[\\(🐧Linux-](${style})"
+
+[custom.arch]
+disabled = false
+description = "The Linux architecture"
+os = "linux"
+when = "arch"
+command = "arch"
+style = "fg:bright-white bold bg:blue"
+format = "[${output}\\) ](${style})[](fg:blue bg:black)"
+
+[username]
+disabled = false
+show_always = true
+style_user = "fg:bright-white bold bg:black"
+style_root = "black bold"
+format = "[ ${user} ](${style})[](fg:black bg:bright-cyan)"
+
+[shell]
+disabled = false
+bash_indicator = "Bash"
+powershell_indicator = "_"
+style = "fg:black bg:bright-cyan"
+format = "[ Shell: ${indicator} ](${style})"
+
+[shlvl]
+disabled = false
+style = "fg:black bg:bright-cyan"
+format = "[\\(SHLVL: ${shlvl}\\) ](${style})[](fg:bright-cyan bg:bright-purple)"
+
+[custom.remote]
+disabled = false
+description = "The local machine or a remote session"
+os = "linux"
+when = true
+command = "echo 'Local'"
+style = "fg:black bg:bright-purple"
+format = "[ ${output} ](${style})[](fg:bright-purple bg:bright-yellow)"
+
+[custom.show_variables]
+disabled = false
+description = "The show variables"
+os = "linux"
+when = true
+command = "echo 'show/sequence/shot:task View: [view]'"
+style = "fg:black bg:bright-yellow"
+format = "[ ${output} ](${style})[](fg:bright-yellow bg:black)"
+
+[directory]
+disabled = false
+truncation_length = 100
+style = "white bold"
+format = "[${path}](${style})[${read_only}](${read_only_style})"

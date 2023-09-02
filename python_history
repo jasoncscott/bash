@@ -2347,3 +2347,31 @@ to_addresses = [None] + ['signiant-logs@methodstudios.com']
 to_addresses
 ';'.join([i for i in to_addresses if i])
 exit()
+import sys
+print sys.platform
+exit()
+from tarfile import TarFile
+with TarFile('code-stable-x64-1634657157.tar.gz', 'r') as archive_object
+with TarFile('code-stable-x64-1634657157.tar.gz', 'r') as archive_object:
+    archive_object.extractall()
+ls
+exit()
+from tarfile import TarFile
+with TarFile('src/code-stable-x64-1634657157.tar.gz', 'r') as archive_object:
+    archive_object.extractall()
+exit()
+from tarfile import TarFile
+with TarFile('src/code-stable-x64-1634657157.tar.gz') as archive_object:
+    archive_object.extractall()
+exit()
+from tarfile import TarFile
+with TarFile('src/code-stable-x64-1634657157.tar.gz') as archive_object:
+    archive_object.extractall()
+with TarFile('src/code-stable-x64-1634657157.tar.gz, 'r:gz') as archive_object:
+with TarFile('src/code-stable-x64-1634657157.tar.gz', 'r:gz') as archive_object:
+    archive_object.extractall()
+exit()
+import os.
+import os
+os.name
+exit()
