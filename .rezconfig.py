@@ -22,20 +22,20 @@ precedence):
 
 1) The setting is first read from the rez installation config file;
 2) The setting is then overridden if it is present in another settings file(s)
-    pointed at by the $REZ_CONFIG_FILE environment variable. Note that multiple
-    files are supported, separated by os.pathsep;
+   pointed at by the $REZ_CONFIG_FILE environment variable. Note that multiple
+   files are supported, separated by os.pathsep;
 3) The setting is further overriden if it is present in $HOME/.rezconfig,
-    UNLESS $REZ_DISABLE_HOME_CONFIG is 1;
+  UNLESS $REZ_DISABLE_HOME_CONFIG is 1;
 4) The setting is overridden again if the environment variable $REZ_XXX is
-    present, where XXX is the uppercase version of the setting key. For example,
-    "image_viewer" will be overriden by $REZ_IMAGE_VIEWER. List values can be
-    separated either with "," or blank space. Dict values are in the form
-    "k1:v1,k2:v2,kn:vn";
+   present, where XXX is the uppercase version of the setting key. For example,
+   "image_viewer" will be overriden by $REZ_IMAGE_VIEWER. List values can be
+   separated either with "," or blank space. Dict values are in the form
+   "k1:v1,k2:v2,kn:vn";
 5) The setting can also be overriden by the environment variable $REZ_XXX_JSON,
-    and in this case the string is expected to be a JSON-encoded value;
+   and in this case the string is expected to be a JSON-encoded value;
 6) This is a special case applied only during a package build or release. In
-    this case, if the package definition file contains a "config" section,
-    settings in this section will override all others.
+   this case, if the package definition file contains a "config" section,
+   settings in this section will override all others.
 
 Note that in the case of plugin settings (anything under the "plugins" section
 of the config), (4) and (5) do not apply.
@@ -254,10 +254,19 @@ debug_none = True
 ###############################################################################
 # Package Build/Release
 ###############################################################################
+# The release hooks to run when a release occurs. Release hooks are plugins - if
+# a plugin listed here is not present, a warning message is printed. Note that a
+# release hook plugin being loaded does not mean it will run - it needs to be
+# listed here as well. Several built-in release hooks are available, see
+# rezplugins/release_hook.
+release_hooks = [
+    "emailer",
+]
 
 # Prompt for release message using an editor. If set to False, there will be
 # no editor prompt.
-prompt_release_message = True
+if not os.getenv("CI"):  # No prompt during GitLab CI as to not accidentally prevent release
+    prompt_release_message = True
 
 
 ###############################################################################
@@ -303,7 +312,7 @@ difftool = "meld"
 #             ...
 #
 optionvars = {
-    "locations": ["bc",],
+    "locations": ["home",],
     "departments": ["pipeline", "supervision",],
 }
 
@@ -311,6 +320,9 @@ optionvars = {
 ###############################################################################
 # Rez-1 Compatibility
 ###############################################################################
+
+# Warn or disallow when a package is found to contain old rez-1-style commands.
+warn_old_commands = False
 
 # If True, Rez will continue to generate the given environment variables in
 # resolved environments, even though their use has been deprecated in Rez-2.
@@ -345,3 +357,30 @@ rez_1_cmake_variables = False
 # You should aim to do this - it will mean your packages are more strictly
 # validated, and you can more easily use future versions of Rez.
 disable_rez_1_compatibility = True
+
+
+###############################################################################
+# Plugin Settings
+###############################################################################
+
+# Settings specific to certain plugin implementations can be found in the
+# "rezconfig" file accompanying that plugin. The settings listed here are
+# common to all plugins of that type.
+
+plugins = dict(
+    release_hook=dict(
+        emailer=dict(
+            smtp_host="smtp",
+            sender="pipeline@.com",
+            recipients="pipeline@.com",
+        ),
+    ),
+    build_system=dict(
+        cmake=dict(
+            install_pyc=False
+        )
+    ),
+    release_vcs=dict(
+        check_tag=True
+    )
+)
