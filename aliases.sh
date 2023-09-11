@@ -20,6 +20,7 @@ alias pidgin='pidgin &> /dev/null &'
 alias bat='bat --theme="OneHalfDark"'
 alias bat-help='bat --plain --language=help --paging=never'
 alias bottom='btm --config ${HOME}/Documents/bottom/bottom.toml'
+alias bpython="rez-env bpython -- bpython"
 alias cal='cal -3'
 alias chgrp='chgrp --changes'
 alias chmod='chmod --changes'
