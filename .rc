@@ -2,9 +2,17 @@
 # .rc
 # =============================================================================
 
+export SOURCED_BASHRC=true
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
+fi
+
+bash_profile_file="${HOME}/.bash_profile"
+if [ -f "${bash_profile_file}" ] && [ -z "${SOURCED_BASH_PROFILE}" ]; then
+    echo "Sourcing ${bash_profile_file}"
+    . ${HOME}/.bash_profile
 fi
 
 
@@ -133,8 +141,12 @@ fi
 # =============================================================================
 
 # On systems with `bash-completion` installed
-bat_completion_file="${HOME}/Documents/bin/releases/bat/production/linux/x86_64/autocomplete/bat.bash"
-#source-safe ${bat_completion_file}
+if [[ "${OS}" == "Windows*" ]]; then
+    bat_completion_file="${HOME}/Documents/bin/releases/bat/windows/x86_64/production/autocomplete/bat.bash"
+else
+    bat_completion_file="${HOME}/Documents/bin/releases/bat/production/linux/x86_64/autocomplete/bat.bash"
+fi
+source-safe ${bat_completion_file}
 
 
 # =============================================================================
@@ -149,7 +161,7 @@ source-safe ${tput_colors_file}
 
 
 # =============================================================================
-# EXA
+# EZA (FORMERLY EXA)
 # =============================================================================
 
 # On systems with `bash-completion` installed

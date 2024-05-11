@@ -31,9 +31,15 @@ Microsoft-Terminal--settings.json -> C:\Users\jason\AppData\Local\Packages\Micro
 # BIN RELEASES
 # =============================================================================
 bat: https://github.com/sharkdp/bat
+bottom: https://github.com/ClementTsang/bottom 
+btop: https://github.com/aristocratos/btop / https://github.com/aristocratos/btop4win
 delta: https://github.com/dandavison/delta
 diskus: https://github.com/sharkdp/diskus
 duf: https://github.com/muesli/duf
-exa: https://github.com/ogham/exa
+eza (formerly exa): https://github.com/eza-community/eza
 fd: https://github.com/sharkdp/fd
+github_cli: https://cli.github.com/
+lolcat: https://github.com/tehmaze/lolcat
+shellcheck: https://github.com/koalaman/shellcheck
+starship: https://github.com/starship/starship
 vivid: https://github.com/sharkdp/vivid

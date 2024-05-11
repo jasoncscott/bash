@@ -19,9 +19,11 @@ alias pidgin='pidgin &> /dev/null &'
 
 alias bat='bat --theme="OneHalfDark"'
 alias bat-help='bat --plain --language=help --paging=never'
-alias bottom='btm --config ${HOME}/Documents/bottom/bottom.toml'
+alias batdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
+alias bottom='btm --config ${HOME}/Documents/shell/bottom/bottom.toml'
 alias bpython="rez-env bpython -- bpython"
 alias cal='cal -3'
+alias cat='bat'
 alias chgrp='chgrp --changes'
 alias chmod='chmod --changes'
 alias chown='chown --changes'
@@ -32,10 +34,11 @@ alias df='duf'
 alias diff='delta'
 #alias du='du -b'
 #alias du='diskus -b'
-alias exa='exa --header --icons --group --time-style iso --created --modified --accessed --group-directories-first --sort Name --colour=auto --classify --all'
+alias eza='eza --header --icons --group --time-style iso --created --modified --accessed --group-directories-first --sort Name --colour=auto --classify --all'
 alias grep='grep --ignore-case --color=auto'
 alias htop='XDG_CONFIG_HOME=${HOME}/Documents/shell btop'
 #alias ls='ls --almost-all --classify --group-directories-first -Cv --color=auto'
+alias ls='eza'
 alias pylint='pylint --reports=n'
 alias rsp='ssh -L 1715:houdini.lic.rsp.com.au:1715 -L 5053:nuke.lic.rsp.com.au:5053 -L 50386:nuke.lic.rsp.com.au:50386 jscott@xfer.rsp.com.au'
 alias rsync='rsync --verbose --progress --recursive --links --perms --times --omit-dir-times --owner --devices --specials'
@@ -48,15 +51,12 @@ alias ssh="ssh -Y"
 alias sudo='sudo '
 alias top='htop'
 #alias tree='tree -afpsugCD -I ".snapshot|.git|build"'
+alias tree='eza --tree --long --ignore-glob=".git"'
 #alias type='type -P'
 
 # Linux Only
-if [[ ${OSTYPE} = linux* ]]; then
-    alias batdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
-    alias cat='bat'
-    alias ls='exa'
-    alias tree='exa --tree --long --ignore-glob=".git"'
-fi
+#if [[ ${OSTYPE} = linux* ]]; then
+#fi
 
 
 # =============================================================================
@@ -163,7 +163,7 @@ unalias ll 2>/dev/null
             snacl-formatted.py ${@}
         fi
 
-        exa --long ${@}
+        eza --long ${@}
     else
         ls -lAh --color=always "${@}"
         #ls -lAh --color=always "${@}"" | more  # Only if `more` is installed
