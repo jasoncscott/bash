@@ -1,25 +1,25 @@
 # =============================================================================
 # Symlinks
 # =============================================================================
-Documents/shell/
-~/.bash_logout
-~/.bash_profile
-~/.gitconfig
+Documents/shell/ -> Wherever repo is checked out (single computer can be this location without symlink, but multiple computers on a network should point to a shared network location)
+~/.bash_logout -> Documents/shell
+~/.bash_profile -> Documents/shell
+~/.gitconfig -> Documents/shell
 ~/.rc (pointed to from shell's respective run commands file)
-~/.plan
-~/.rezconfig.py
-~/.rez-version
-~/.vim/
+~/.plan -> Documents/shell
+~/.rezconfig.py -> Documents/shell
+~/.vim/ -> Documents/shell
 
-# =====
+# =============================================================================
 Windows
+# =============================================================================
 Microsoft-Terminal--settings.json -> C:\Users\jason\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
 
 
 # =============================================================================
 # Copies
 # =============================================================================
-
+(although none of these are really used on Windows)
 ~/.forward
 ~/.pgpkey
 ~/.plan
@@ -37,4 +37,3 @@ duf: https://github.com/muesli/duf
 exa: https://github.com/ogham/exa
 fd: https://github.com/sharkdp/fd
 vivid: https://github.com/sharkdp/vivid
-
