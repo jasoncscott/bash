@@ -11,6 +11,10 @@ Documents/shell/
 ~/.rez-version
 ~/.vim/
 
+# =====
+Windows
+Microsoft-Terminal--settings.json -> C:\Users\jason\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState
+
 
 # =============================================================================
 # Copies

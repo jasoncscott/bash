@@ -64,7 +64,7 @@ fi
 # =============================================================================
 
 alias bin='cd ${HOME}/Documents/bin/'
-alias dev='cd ${HOME}/Documents/Development/'
+alias dev='cd /z/Development/'
 alias docs='cd ${HOME}/Documents/'
 alias downloads='cd ${HOME}/Downloads/'
 alias fonts='cd ${HOME}/.fonts/'
