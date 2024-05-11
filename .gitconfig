@@ -46,3 +46,5 @@
 	recentlySeenVersion = 2.26.2.windows.1
 [pull]
 	rebase = true
+[safe]
+	directory = *
