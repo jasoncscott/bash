@@ -109,9 +109,6 @@ categories = sorted(os.listdir(library_root))
 categories
 for category in categories:
     sorted(os.listdir(library_root + '/' + category)
-    
-    
-    
 )
 import os
 library_root = '/data/warehouse/2Delement/library_v002'
@@ -122,7 +119,7 @@ import os
 library_root = '/data/warehouse/2Delement/library_v002'
 categories = sorted(os.listdir(library_root))
 categories
-for category in categories:                  
+for category in categories:
     elements = sorted(os.listdir(library_root + '/' + category))
 elements
 foo
@@ -240,9 +237,6 @@ categories = sorted(os.listdir(library_root))
 categories
 for category in categories:
     sorted(os.listdir(library_root + '/' + category)
-    
-    
-    
 )
 import os
 library_root = '/data/warehouse/2Delement/library_v002'
@@ -253,11 +247,10 @@ import os
 library_root = '/data/warehouse/2Delement/library_v002'
 categories = sorted(os.listdir(library_root))
 categories
-for category in categories:                  
+for category in categories:
     elements = sorted(os.listdir(library_root + '/' + category))
 elements
 foo
-import os
 import os
 exit()
 import os.
@@ -514,7 +507,7 @@ config
 'Houdini' in config
 'default' in config
 'maxCpusCap' in config
-config 
+config
 from collections import Mapping
 isinstance(config,Mapping)
 config = config['Houdini']
@@ -689,10 +682,9 @@ for job in jobs:
         print ss.getJobStatus(job)
 exit
 exit()
-from signiant.service.scheduler import SchedulerService                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                               
-ss = SchedulerService()                                                                                                                                                                                                                                                        
-jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()
+jobs = ss.listJobs()
 jobs
 for job in jobs:
     if ss.getJobInfo(job).get('jobName') == 'VAN_2_LA__fba0630_comp_mp_newGrade_v0001__20160122_100712_666139':
@@ -754,9 +746,8 @@ print ss.getStats(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_91
 print ss.getStats(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
 print ss.getJobInfo(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
 exit()
-from signiant.service.scheduler import SchedulerService                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                               
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+from signiant.service.scheduler import SchedulerService
+ss = SchedulerService()
 print ss.getJobInfo(u'VAN_2_LA__trb0110_comp_main_v0016_delive__20160122_125039_918756')
 print ss.getJobInfo(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
 print ss.getStats(u'VAN_2_LA__trb0100_comp_main_v0016_delive__20160122_125039_918756')
@@ -791,7 +782,7 @@ ss.getStats(u'LA_2_VAN__scottj__20160122_175437_392108', fields=['failed_files',
 ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status'])
 ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status']).get('status')
 ss.getStats(u'LA_2_LA__lareview01__20160122_142651_017162', fields=['status']).get('status') == 'COMPLETE'
-jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+jobs = ss.listJobs()
 for job in jobs:
     try:
         ss.getStats(job, fields=['status'])
@@ -811,7 +802,7 @@ for job in jobs:
             ss.removeJob(job)
     except:
         pass
-jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+jobs = ss.listJobs()
 for job in jobs:
 ...     try:
 ...         if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
@@ -826,7 +817,7 @@ for job in jobs:
             ss.removeJob(job)
     except:
         pass
-jobs = ss.listJobs()                                                                                                                                                                                                                                                           
+jobs = ss.listJobs()
 for job in jobs:
     try:
         if ss.getStats(job, fields=['status']).get('status') == 'COMPLETE':
@@ -837,11 +828,11 @@ for job in jobs:
 exit()
 from signiant.service.scheduler import SchedulerService
 exit()
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss = SchedulerService()
 from signiant.service.scheduler import SchedulerService
 exit()
 from signiant.service.scheduler import SchedulerService
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss = SchedulerService()
 ss.listGroups()
 jobs = ss.listJobs()
 ss.listJobs()
@@ -851,10 +842,10 @@ ss.listJobs(jobGroupName='Method_VFX')
 ss.getJobInfo(u'VAN_2_LA__yakimchc_peek_001_of_001__20160123_105422_642268')
 exit()
 from signiant.service.scheduler import SchedulerService
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss = SchedulerService()
 exit()
 from signiant.service.scheduler import SchedulerService
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss = SchedulerService()
 jobs = ss.listJobs()
 jobs
 ss.getStats(u'VAN_2_VAN__vanreview01__20160125_204617_887445')
@@ -914,7 +905,7 @@ exit()
 import signiant
 exit()
 from signiant.service.scheduler import SchedulerService
-ss = SchedulerService()                                                                                                                                                                                                                                                        
+ss = SchedulerService()
 jobs = ss.listJobs()
 for job in jobs:
     jobName = ss.getJobInfo(job).get('jobName')
@@ -2374,4 +2365,10 @@ exit()
 import os.
 import os
 os.name
+exit()
+import rich
+exit()
+import rich
+exit()
+exit
 exit()

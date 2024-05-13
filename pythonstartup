@@ -10,7 +10,11 @@
 # IMPORTS
 # =============================================================================
 
-# Non-Method Imports
+# Append path
+import sys
+sys.path.append("//corp.blizzard.net/Teams/Team2/public/jasscott/python/site-packages")
+
+# Standard Modules
 from atexit import register
 from os import path
 import readline

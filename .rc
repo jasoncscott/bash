@@ -218,7 +218,8 @@ fi
 # PYTHON
 # =============================================================================
 
-#PYTHONPATH=
+PYTHONPATH=\\\\corp.blizzard.net\\Teams\\Team2\\public\\jasscott\\python\\site-packages
+#PYTHONPATH=//corp.blizzard.net/Teams/Team2/public/jasscott/python/site-packages
 
 
 # =============================================================================
@@ -332,6 +333,14 @@ source-safe ${aliases_work_file}
     if [ -x "$(command -v uptime)" ]; then
         uptime
     fi
+
+    # Blizzard
+    printf "${Black}${On_Cyan}"
+    printf ${On_Cyan}${Black}' Blizzard '${Cyan}${On_Black}''${Color_Off}
+    printf '\n'
+    pprintvar 'PACKAGE_CACHE_PATH'
+    pprintvar 'BL_TEAM'
+    pprintvar 'T2_PKG_ROOT'
 }
 
 # For Interactive Shells

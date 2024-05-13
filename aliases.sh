@@ -35,6 +35,7 @@ alias diff='delta'
 #alias du='du -b'
 #alias du='diskus -b'
 alias eza='eza --header --icons --group --time-style iso --created --modified --accessed --group-directories-first --sort Name --colour=auto --classify --all'
+alias gitlog='git log --graph --oneline'
 alias grep='grep --ignore-case --color=auto'
 alias htop='XDG_CONFIG_HOME=${HOME}/Documents/shell btop'
 #alias ls='ls --almost-all --classify --group-directories-first -Cv --color=auto'
@@ -48,6 +49,7 @@ alias scottCiscoLinksysE2000='ssh root@192.168.1.1'  # 2wsdR5tg
 alias scottMyCloud01='ssh sshd@192.168.1.11'  # 2wsdR5tg
 alias ssh="ssh -Y"
 #alias ssh='ssh -c arcfour128,arcfour,blowfish-cbc -Y'
+alias strings="//live.sysinternals.com/tools/strings"
 alias sudo='sudo '
 alias top='htop'
 #alias tree='tree -afpsugCD -I ".snapshot|.git|build"'
@@ -176,6 +178,10 @@ alias ll='.ll'
 #    snacl-formatted.py "${@}""
 #}
 #alias snacl='.snacl'
+# =============================================================================
+if [[ "${OS}" == 'Windows_NT' ]]; then
+    alias uptime="//live.sysinternals.com/tools/psinfo Uptime | grep Uptime"
+ fi
 # =============================================================================
 .which() {
     printf 'whatis: '; whatis ${1}

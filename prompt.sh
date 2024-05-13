@@ -198,7 +198,7 @@ fi
     printf "\[${Red}\] \[${Color_Off}\]"
     #printf " "
     printf ' ╰ '
-    .title
+    #.title
 }
 
 
@@ -235,7 +235,7 @@ fi
         else
             GIT_PS1_SHOWUNTRACKEDFILES=false
             GIT_PS1_SHOWUPSTREAM=
-            #DIRECTORY_INFO+=' (Repository is too large to show untracked files and verbose display)'
+            DIRECTORY_INFO+=' (Repository is too large to show untracked files and verbose display)'
             __git_ps1 "$(.__git_ps1_pre)\n${DIRECTORY_INFO}" "$(.__git_ps1_post)" " %s)"
         fi
     else
