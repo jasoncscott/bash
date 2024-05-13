@@ -2,6 +2,18 @@
 
 export SOURCED_BASH_PROFILE=true
 
+# User specific environment and startup programs
+
+PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin:${HOME}/Documents/bin
+if [[ ${OSTYPE} = darwin* ]]; then
+    PATH=${PATH}:${HOME}/Documents/bin/production/osx/$(arch)
+elif [[ ${OSTYPE} = linux* ]]; then
+    PATH=${PATH}:${HOME}/Documents/bin/production/linux/$(arch)
+elif [[ ${OS} = Windows* ]]; then
+    PATH=${PATH}:${HOME}/Documents/bin/production/windows/$(arch)
+fi
+export PATH
+
 profile_file="${HOME}/.profile"
 if [ -f "${profile_file}" ]; then
     . "${profile_file}"
@@ -12,18 +24,4 @@ if [ -f "${bashrc_file}" ] && [ -z "${SOURCED_BASHRC}" ]; then
     echo "Sourcing ${bashrc_file}"
     . "${bashrc_file}"
 fi
-
-# User specific environment and startup programs
-
-PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin:${HOME}/Documents/bin
-
-if [[ ${OSTYPE} = darwin* ]]; then
-    PATH=${PATH}:${HOME}/Documents/bin/production/osx/$(arch)
-elif [[ ${OSTYPE} = linux* ]]; then
-    PATH=${PATH}:${HOME}/Documents/bin/production/linux/$(arch)
-elif [[ ${OS} = Windows* ]]; then
-    PATH=${PATH}:${HOME}/Documents/bin/production/windows/$(arch)
-fi
-
-export PATH
 
