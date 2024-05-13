@@ -6,6 +6,7 @@
 	autocrlf = input  # Linux/Mac
 	#autocrlf = true  # Windows
 	pager = delta
+	symlinks = true
 [push]
 	default = current
 [merge]

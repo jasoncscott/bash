@@ -15,12 +15,12 @@
 # =============================================================================
 
 alias deadline="rez-env deadline_client -- deadlinemonitor -new"
-alias deadline-custom="${HOME}/Documents/Development/git/deadline/custom/ deadline"
-alias lolcat="rez-env lolcat -- lolcat"
-alias nvtop="rez-env nvtop -- nvtop"
-alias teams="google-chrome --profile-directory='Profile 1' --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo"
-alias vscode="rez-env visual_studio_code python-3 -- code"  # pylint black -- code
-alias vscode-cli="rez-env visual_studio_code -- code-cli"
+#alias deadline-custom="${HOME}/Documents/Development/git/deadline/custom/ deadline"
+#alias lolcat="rez-env lolcat -- lolcat"
+#alias nvtop="rez-env nvtop -- nvtop"
+#alias teams="google-chrome --profile-directory='Profile 1' --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo"
+#alias vscode="rez-env visual_studio_code python-3 -- code"  # pylint black -- code
+#alias vscode-cli="rez-env visual_studio_code -- code-cli"
 
 
 # =============================================================================

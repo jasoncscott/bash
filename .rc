@@ -47,6 +47,8 @@ pythonstartup_file=${HOME}/Documents/shell/pythonstartup
 if [ -f ${pythonstartup_file} ]; then
     export PYTHONSTARTUP=${pythonstartup_file}
 fi
+export PYTHONDONTWRITEBYTECODE=true
+export PYTHONPROFILEIMPORTTIME=true
 
 # Enabling symlinks in Git Bash for Windows
 export MSYS=winsymlinks:nativestrict
@@ -59,7 +61,7 @@ export HISTIGNORE='&:ls:[bf]g;exit'
 export HISTTIMEFORMAT='%F %T '
 
 # Colors
-#export LS_COLORS=$(${HOME}/Documents/bin/vivid generate snazzy)
+export LS_COLORS=$(vivid generate snazzy)
 #export GREP_COLORS=
 
 # Debug
@@ -210,6 +212,13 @@ if [ -f ${lessrc_file} ]; then
     printf '\n'
     echo "Not going to" source ${lessrc_file}  # Custom name following 'rc' files
 fi
+
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+#PYTHONPATH=
 
 
 # =============================================================================
