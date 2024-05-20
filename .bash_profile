@@ -5,11 +5,11 @@ export SOURCED_BASH_PROFILE=true
 # User specific environment and startup programs
 
 PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin:${HOME}/Documents/bin
-if [[ ${OSTYPE} = darwin* ]]; then
+if [[ ${OSTYPE} == darwin* ]]; then
     PATH=${PATH}:${HOME}/Documents/bin/production/osx/$(arch)
-elif [[ ${OSTYPE} = linux* ]]; then
+elif [[ ${OSTYPE} == linux* ]]; then
     PATH=${PATH}:${HOME}/Documents/bin/production/linux/$(arch)
-elif [[ ${OS} = Windows* ]]; then
+elif [[ ${OS} == Windows* ]]; then
     PATH=${PATH}:${HOME}/Documents/bin/production/windows/$(arch)
 fi
 export PATH
