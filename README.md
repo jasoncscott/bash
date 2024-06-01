@@ -1,4 +1,4 @@
-# shell
+# DOTFILES
 
 <p align="center">
   <kbd>
@@ -30,9 +30,9 @@ on a network if in a setup where multiple computers might use it.
 1. Change the `${DOTFILES_LOC}` variable in `.bashrc` to the location of the
 cloned repo.
 1. Because many files are required to be in the user `${HOME}` directory (`~`), I then create symlinks to point to the repo:
-  * `~/.bash_logout`
-  * `~/.bash_profile`
-  * `~/.bashrc`
+    * `~/.bash_logout`
+    * `~/.bash_profile`
+    * `~/.bashrc`
 
 
 On Windows, using Microsoft Terminal, it's also good to create a symlink to its settings file:
