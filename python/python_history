@@ -1,0 +1,9 @@
+import this
+import rich
+exit()
+import warnings
+warnings.warn("boo")
+print(warnings.warn("boo"))
+exit()
+import rich
+exit()

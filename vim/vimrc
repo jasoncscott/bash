@@ -1,4 +1,6 @@
 " This is a comment
+:set runtimepath+=$DOTFILES_LOC/vim/
+
 set ruler
 set background=dark
 colorscheme onedark

@@ -11,13 +11,13 @@
 # =============================================================================
 
 # Append path
-import sys
-sys.path.append("//corp.blizzard.net/Teams/Team2/public/jasscott/python/site-packages")
+#sys.path.append("Z:/Development/python/")
 
 # Standard Modules
 from atexit import register
 from os import path
-import readline
+from pyreadline3 import Readline
+readline = Readline()
 
 
 # =============================================================================
@@ -25,7 +25,7 @@ import readline
 # =============================================================================
 
 # History Location
-python_history = path.expanduser("~/Documents/shell/python_history")
+python_history = path.expanduser(path.join("~", "Documents", "shell", "python_history"))
 
 
 # =============================================================================

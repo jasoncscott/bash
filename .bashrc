@@ -1,6 +1,8 @@
 # =============================================================================
-# .rc
+# .bashrc
 # =============================================================================
+
+export DOTFILES_LOC="${HOME}/Development/git/Bitbucket+GitHub/jasoncscott/dotfiles/"
 
 export SOURCED_BASHRC=true
 
@@ -31,19 +33,19 @@ complete -d cd  # Complete only to directories
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Path to Readline run commands (init) file
-inputrc_file=${HOME}/Documents/shell/inputrc
+inputrc_file="${DOTFILES_LOC}/_shell/inputrc"
 if [ -f ${inputrc_file} ]; then
     export INPUTRC=${inputrc_file}
 fi
 
 # Path to VI run commands file
-vimrc_file=${HOME}/Documents/shell/vimrc
+vimrc_file="${DOTFILES_LOC}/vim/vimrc"
 if [ -f ${vimrc_file} ]; then
     export VIMINIT="source ${vimrc_file}"
 fi
 
 # Path to Python startup file
-pythonstartup_file=${HOME}/Documents/shell/pythonstartup
+pythonstartup_file="${DOTFILES_LOC}/python/pythonstartup"
 if [ -f ${pythonstartup_file} ]; then
     export PYTHONSTARTUP=${pythonstartup_file}
 fi
@@ -87,7 +89,7 @@ export ALG_PAINTER_DEBUG_FPS=true
 
 # AMAZON
 # Thinkbox
-#export DEADLINE_CUSTOM_PATH=${HOME}/Documents/Development/git/deadline/custom/
+#export DEADLINE_CUSTOM_PATH="${HOME}/Development/git/deadline/custom/"
 
 # AUTODESK, INC.
 export ADCLMHUB_LOG_LEVEL=D  # Cloud licensing debug logs
@@ -155,10 +157,10 @@ source-safe ${bat_completion_file}
 # COLORS
 # =============================================================================
 
-shell_colors_file="${HOME}/Documents/shell/shell_colors.sh"
+shell_colors_file="${DOTFILES_LOC}/_shell/shell_colors.sh"
 source-safe ${shell_colors_file}
 
-tput_colors_file="${HOME}/Documents/shell/tput_colors.sh"
+tput_colors_file="${DOTFILES_LOC}/_shell/tput_colors.sh"
 source-safe ${tput_colors_file}
 
 
@@ -178,11 +180,13 @@ exa_completion_file="${HOME}/Documents/bin/releases/exa/production/linux/x86_64/
 # GIT
 # =============================================================================
 
+export GIT_CONFIG_GLOBAL="${DOTFILES_LOC}/git/gitconfig"
+
 # git prompt completion
 if [[ "${OS}" == "Windows*" ]]; then
     git_prompt_file="/c/Program\ Files/Git/etc/profile.d/git-prompt.sh"
 elif [[ ${OSTYPE} = darwin* ]]; then
-    git_prompt_file="${HOME}/Documents/shell/git-prompt.sh"
+    git_prompt_file="${DOTFILES_LOC}/git/git-prompt.sh"
 else
     git_prompt_file=/usr/share/git-core/contrib/completion/git-prompt.sh
 fi
@@ -192,7 +196,7 @@ source-safe ${git_prompt_file}
 # git autocomplete
 # On systems with `bash-completion` installed
 if [[ ${OSTYPE} = darwin* ]]; then
-    git_completion_file="${HOME}/Documents/shell/git-completion.bash"
+    git_completion_file="${DOTFILES_LOC}/git/git-completion.bash"
 else
     git_completion_file=/usr/share/bash-completion/completions/git
 fi
@@ -206,7 +210,7 @@ source-safe ${git_completion_file}
 
 # Due to desire to use external commands in LESS environment variables (e.g.,
 # `tput`), source own file
-lessrc_file="${HOME}/Documents/shell/lessrc.sh"
+lessrc_file="${DOTFILES_LOC}/_shell/lessrc.sh"
 if [ -f ${lessrc_file} ]; then
     # Can cause slowdown
     printf "\n"
@@ -220,7 +224,7 @@ fi
 
 # Windows does not use these from the shell
 
-#PIP_CONFIG_FILE="${HOME}/Documents/shell/pip.ini"
+#PIP_CONFIG_FILE="${DOTFILES_LOC}/python/pip.ini"
 #PIP_TARGET="Z:\Applications_and_Programs\Python_Software_Foundation-python\site-packages"
 #PYTHONPATH=${PIP_TARGET}
 
@@ -228,6 +232,8 @@ fi
 # =============================================================================
 # REZ
 # =============================================================================
+
+export REZ_CONFIG_FILE=${REZ_CONFIG_FILE}:"${DOTFILES_LOC}/rez/rezconfig.py"
 
 #unalias wch  # Unalias Folks-specific alias
 # `rez` tab-complete
@@ -245,21 +251,21 @@ source-safe ${rez_complete_file}
 # PROMPT
 # =============================================================================
 
-prompt_file=${HOME}/Documents/shell/prompt.sh
+prompt_file="${DOTFILES_LOC}/_shell/prompt.sh"
 source-safe ${prompt_file}
 #eval "$(starship init bash)"
-export STARSHIP_CONFIG=${HOME}/Documents/shell/starship.toml
+export STARSHIP_CONFIG="${DOTFILES_LOC}/starship/starship.toml"
 
 
 # =============================================================================
 # ALIASES
 # =============================================================================
 
-aliases_file=${HOME}/Documents/shell/aliases.sh
+aliases_file="${DOTFILES_LOC}/_shell/aliases.sh"
 # Source personal aliases
 source-safe ${aliases_file}
 
-aliases_work_file=${HOME}/Documents/shell/aliases_work.sh
+aliases_work_file="${DOTFILES_LOC}/_shell/aliases_work.sh"
 source-safe ${aliases_work_file}
 
 
