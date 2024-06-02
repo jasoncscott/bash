@@ -15,7 +15,7 @@
 
 # Standard Modules
 from atexit import register
-from os import path
+from os import environ, path
 from pyreadline3 import Readline
 readline = Readline()
 
@@ -25,7 +25,7 @@ readline = Readline()
 # =============================================================================
 
 # History Location
-python_history = path.expanduser(path.join("~", "Documents", "shell", "python_history"))
+python_history = path.join(environ["DOTFILES_LOC"], "python", "python_history")
 
 
 # =============================================================================

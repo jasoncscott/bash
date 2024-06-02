@@ -146,9 +146,9 @@ fi
 
 # On systems with `bash-completion` installed
 if [[ "${OS}" == "Windows*" ]]; then
-    bat_completion_file="${HOME}/Documents/bin/releases/bat/windows/x86_64/production/autocomplete/bat.bash"
+    bat_completion_file="${HOME}/bin/releases/bat/windows/x86_64/production/autocomplete/bat.bash"
 else
-    bat_completion_file="${HOME}/Documents/bin/releases/bat/production/linux/x86_64/autocomplete/bat.bash"
+    bat_completion_file="${HOME}/bin/releases/bat/production/linux/x86_64/autocomplete/bat.bash"
 fi
 source-safe ${bat_completion_file}
 
@@ -169,10 +169,10 @@ source-safe ${tput_colors_file}
 # =============================================================================
 
 # On systems with `bash-completion` installed
-exa_completion_file="${HOME}/Documents/bin/releases/exa/production/linux/x86_64/completions/exa.bash"
+exa_completion_file="${HOME}/bin/releases/exa/production/linux/x86_64/completions/exa.bash"
 
 #if [ -f "${exa_completion_file}" ]; then
-#    export BASH_COMPLETION_USER_DIR="${HOME}/Documents/bin/bash-completion"
+#    export BASH_COMPLETION_USER_DIR="${HOME}/bin/bash-completion"
 #fi
 
 

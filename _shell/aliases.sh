@@ -20,14 +20,15 @@ alias pidgin='pidgin &> /dev/null &'
 alias bat='bat --theme="OneHalfDark"'
 alias bat-help='bat --plain --language=help --paging=never'
 alias batdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
-alias bottom='btm --config ${HOME}/Documents/shell/bottom/bottom.toml'
+alias bottom='btm --config ${DOTFILES_LOC}/bottom/bottom.toml'
 alias bpython="rez-env bpython -- bpython"
 alias cal='cal -3'
 alias cat='bat'
 alias chgrp='chgrp --changes'
 alias chmod='chmod --changes'
 alias chown='chown --changes'
-alias date='date +%Y-%m-%d'
+#alias date="date +%Y-%m-%d"
+alias date="date +%F"  # Same as above
 #alias df='df -hT'
 alias df='duf'
 #alias diff='diff --color=auto'
@@ -37,7 +38,8 @@ alias diff='delta'
 alias eza='eza --header --icons --group --time-style iso --created --modified --accessed --group-directories-first --sort Name --colour=auto --classify --all'
 alias gitlog='git log --graph --oneline'
 alias grep='grep --ignore-case --color=auto'
-alias htop='XDG_CONFIG_HOME=${HOME}/Documents/shell btop'
+# TODO: btop.conf on Windows is being put next to bin symlink
+alias htop="XDG_CONFIG_HOME=${DOTFILES_LOC} btop"
 #alias ls='ls --almost-all --classify --group-directories-first -Cv --color=auto'
 alias ls='eza'
 alias pylint='pylint --reports=n'
@@ -65,13 +67,13 @@ alias tree='eza --tree --long --ignore-glob=".git"'
 # NAVIGATION
 # =============================================================================
 
-alias bin='cd ${HOME}/Documents/bin/'
+alias bin='cd ${HOME}/bin/'
 alias dev='cd /z/Development/'
 alias docs='cd ${HOME}/Documents/'
 alias downloads='cd ${HOME}/Downloads/'
 alias fonts='cd ${HOME}/.fonts/'
 alias personal='cd /Volumes/Projects/Production/Personal/${USER}/'
-alias repos='cd ${HOME}/Documents/Development/git/rez/repos/'
+alias repos='cd /z/Development/git/rez/repos/'
 alias tmp='cd ${HOME}/TMP/'
 
 
