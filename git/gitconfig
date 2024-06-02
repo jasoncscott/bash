@@ -5,7 +5,7 @@
 	editor = vi
 	autocrlf = input  # Linux/Mac
 	#autocrlf = true  # Windows
-	pager = delta
+	pager = delta --syntax-theme OneHalfDark --navigate --line-numbers --side-by-side
 	symlinks = true
 [push]
 	default = current
@@ -14,8 +14,8 @@
 	conflictstyle = diff3
 [interactive]
 	diffFilter = delta --color-only
-[delta]
-	theme = OneHalfDark
+[delta]  # Section not currently respected when using ${GIT_CONFIG_GLOBAL}
+	syntax-theme = OneHalfDark
 	navigate = true  # use n and N to move between diff sections
 	light = false  # set to true if you're in a terminal w/ a light background color (e.g., the default macOS terminal)
 	line-numbers = true
