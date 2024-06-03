@@ -14,25 +14,24 @@
     {
         "defaults": 
         {
-            "colorScheme": "Campbell",
+            "colorScheme": "Tango Dark",
             "font": 
             {
                 "face": "Cascadia Code NF",
-                "size": 10.0
-            }
+                "size": 9.0
+            },
+            "intenseTextStyle": "all",
+            "startingDirectory": "%USERPROFILE%",
+            "useAcrylic": true
         },
         "list": 
         [
             {
-                "backgroundImage": "Z:/Pictures/Picasa/Images/Icons/Scott/1200px-Clan_member_crest_badge_-_Clan_Scott.svg.png",
-                "backgroundImageOpacity": 0.1,
-                "backgroundImageStretchMode": "uniform",
                 "commandline": "C:/Program Files/Git/bin/bash.exe",
                 "guid": "{297a6820-e57b-489f-8dcc-5592f2031a04}",
                 "hidden": false,
                 "icon": "C:/Program Files/Git/mingw64/share/git/git-for-windows.ico",
-                "name": "Git Bash",
-                "startingDirectory": "%USERPROFILE%"
+                "name": "Git Bash"
             },
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -308,5 +307,6 @@
             "yellow": "#808000"
         }
     ],
+    "theme": "system",
     "themes": []
 }
