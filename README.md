@@ -36,7 +36,8 @@ cloned repo.
 
 
 On Windows, using Microsoft Terminal, it's also good to create a symlink to its settings file:
-* `C:\Users\jason\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState/settings.json -> microsoft-terminal/settings.json`
+* `C:\Users\jason\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -> microsoft-terminal/settings.json`
+* `C:\Users\jason\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json -> microsoft-winget-appinstaller/settings.json`
 
 
 Some files cannot be symlink'd for them to work properly: (although none of these are really used on Windows)
