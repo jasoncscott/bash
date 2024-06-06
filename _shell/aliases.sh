@@ -68,7 +68,7 @@ alias tree='eza --tree --long --ignore-glob=".git"'
 # =============================================================================
 
 alias bin='cd ${HOME}/bin/'
-alias dev='cd /z/Development/'
+alias dev='cd ${HOME}/Development/'
 alias docs='cd ${HOME}/Documents/'
 alias downloads='cd ${HOME}/Downloads/'
 alias fonts='cd ${HOME}/.fonts/'
