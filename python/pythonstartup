@@ -11,13 +11,25 @@
 # =============================================================================
 
 # Append path
-#sys.path.append("Z:/Development/python/")
+import os
+import sys
+sys.path.append(os.path.join("Z:", os.sep, "Development", "python", "site-packages"))
 
 # Standard Modules
 from atexit import register
 from os import environ, path
-from pyreadline3 import Readline
-readline = Readline()
+import platform
+#import readline2
+
+# Third-Party Modules
+if platform.system() == "Windows":
+    try:
+        from pyreadline3 import Readline  # `readline` not available on Windows
+        readline = Readline()
+    except ModuleNotFoundError as e:
+        print(f"\nWARNING: History cannot be read or saved. {e}\n")
+else:
+    import readline
 
 
 # =============================================================================
@@ -33,9 +45,18 @@ python_history = path.join(environ["DOTFILES_LOC"], "python", "python_history")
 # =============================================================================
 
 def save_history(python_history=python_history):
-    """Hander for saving history."""
-    import readline
-    readline.write_history_file(python_history)
+    """Handler for saving history."""
+    if platform.system() == "Windows":
+        try:
+            from pyreadline3 import Readline  # `readline` not available on Windows
+            readline = Readline()
+        except ModuleNotFoundError as e:
+            print(f"\nWARNING: History cannot be saved. {e}\n")
+    else:
+        import readline
+
+    if "readline" in sys.modules:
+        readline.write_history_file(python_history)
 
 
 # =============================================================================
@@ -44,14 +65,22 @@ def save_history(python_history=python_history):
 
 # Reading History
 if path.exists(python_history):
-    readline.set_history_length(10000)
-    readline.read_history_file(python_history)
-
-# Register Saving History Handler
-register(save_history)
+    if "readline" in sys.modules:
+        readline.set_history_length(10000)
+        readline.read_history_file(python_history)
 
 # Enable Completion
-readline.parse_and_bind('tab: complete')
+if "readline" in sys.modules:
+    readline.parse_and_bind("tab: complete")
+
+
+# Register Saving History Handler
+if "readline" in sys.modules:
+    register(save_history)
 
 # Cleanup
-del readline, register, path, save_history, python_history
+for module in ["environ", "platform", "path", "readline", "register", "python_history", "save_history"]:
+    try:
+        del module
+    except NameError:
+        pass
