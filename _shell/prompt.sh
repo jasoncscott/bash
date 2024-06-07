@@ -194,10 +194,8 @@ fi
     printf ${Color_Off}
 
     # Put prompt on newline
-    printf '\n'
-    printf "\[${Red}\] \[${Color_Off}\]"
-    #printf " "
-    printf ' ╰ '
+    printf "\n"
+    printf "\[${Red} ${Color_Off}\]\[ \]╰\[ \]"
     #.title
 }
 
