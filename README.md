@@ -27,18 +27,8 @@ I continue to refine both its structure and the files inside, sometimes imperfec
 ## Setup
 1. Clone the repo in a place that's easily managed (maybe with other repos, or
 on a network if in a setup where multiple computers might use it.
-1. Change the `${DOTFILES_LOC}` variable in `.bashrc` to the location of the
-cloned repo.
-1. Because many files are required to be in the user `${HOME}` directory (`~`), I then create symlinks to point to the repo:
-    * `~/.bash_logout`
-    * `~/.bash_profile`
-    * `~/.bashrc`
+1. Run `setup.sh`, which will:
+    1. Set the `${DOTFILES_LOC}` variable to the repo location
+    1. Symlink the necessary bash files in `${HOME}`
+    1. Symlink Microsoft App Installer (`winget`) and Microsoft Terminal settings to the repo (if they exist)
 
-
-On Windows, using Microsoft Terminal, it's also good to create a symlink to its settings file:
-* `C:\Users\jason\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json -> microsoft-terminal/settings.json`
-* `C:\Users\jason\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json -> microsoft-winget-appinstaller/settings.json`
-
-
-Some files cannot be symlink'd for them to work properly: (although none of these are really used on Windows)
-* `~/.viminfo` (Not currently used)
