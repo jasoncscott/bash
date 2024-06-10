@@ -195,7 +195,7 @@ fi
 
     # Put prompt on newline
     printf "\n"
-    printf "\[${Red} ${Color_Off}\]\[ \]╰\[ \]"
+    printf "\[${Red} ${Color_Off}\]\[ \]╰\[ \]g   "
     #.title
 }
 
