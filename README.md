@@ -15,13 +15,18 @@
   </kbd>
 </p>
 
+## History
 I started collecting the configuration of my Linux home directory in 2005,
 before `dotfiles` became a common term and collected as a repo, so I named mine
 `shell/` and used that for years, and finally decided to follow convention and
 renamed it in June 2024.
 
 I continue to refine both its structure and the files inside, sometimes imperfectly.
+
+## Requirements
 * Files are setup for `bash` primarily, whether run on Linux, Mac, or Windows.
+* On Windows, `pyreadline3` is suggested for full Python-shell setup.
+* Look at corresponding `bin` repository that the `${PATH}` setup looks for.
 
 
 ## Setup

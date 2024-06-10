@@ -4,7 +4,13 @@ export SOURCED_BASH_PROFILE=true
 
 # User specific environment and startup programs
 
+# TODO: Need to compare next line against default `.bash_profile` files from
+#       different OS installs
 #PATH=${PATH}:${HOME}/.local/bin:${HOME}/bin
+
+# These paths utilise the `bin` repository
+# TODO: Need to better determine OS-specific path based on environment
+#       variable
 if [[ ${OSTYPE} == darwin* ]]; then
     PATH=${PATH}:${HOME}/bin/production/osx/$(arch)
 elif [[ ${OSTYPE} == linux* ]]; then
