@@ -59,7 +59,7 @@ alias tree='eza --tree --long --ignore-glob=".git"'
 #alias type='type -P'
 
 # Linux Only
-#if [[ ${OSTYPE} = linux* ]]; then
+#if [[ "${OSTYPE}" == "linux"* ]]; then
 #fi
 
 
@@ -143,7 +143,7 @@ alias ids='.id'
 # =============================================================================
 unalias ll 2>/dev/null
 .ll() {
-    if [[ ${OSTYPE} = linux* ]]; then
+    if [[ "${OSTYPE}" = "linux"* ]]; then
         local OPTIND A SNACL
         while getopts "A" options; do
             printf "${OPTARG}"
@@ -170,19 +170,19 @@ unalias ll 2>/dev/null
         eza --long ${@}
     else
         ls -lAh --color=always "${@}"
-        #ls -lAh --color=always "${@}"" | more  # Only if `more` is installed
+        #ls -lAh --color=always "${@}" | more  # Only if `more` is installed
     fi
 }
 alias ll='.ll'
 # =============================================================================
 #unalias snacl 2>/dev/null
 #.snacl() {
-#    snacl-formatted.py "${@}""
+#    snacl-formatted.py "${@}"
 #}
 #alias snacl='.snacl'
 # =============================================================================
-if [[ "${OS}" == 'Windows_NT' ]]; then
-    alias uptime="//live.sysinternals.com/tools/psinfo Uptime | grep Uptime"
+if [[ "${OS}" == "Windows"* ]]; then
+    alias uptime="psinfo Uptime | grep Uptime"
  fi
 # =============================================================================
 .which() {

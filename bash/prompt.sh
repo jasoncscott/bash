@@ -31,9 +31,9 @@
     # Host and OS
     printf "${White}${On_Blue}"
     printf ' 󰍹  \\h'
-    if [[ "${OS}" == 'Windows_NT' ]]; then
+    if [[ "${OS}" == "Windows"* ]]; then
         printf " (${OS}) "
-    elif [[ ${OSTYPE} = darwin* ]]; then
+    elif [[ "${OSTYPE}" = "darwin"* ]]; then
         printf ' (Mac OS-'
     else
         printf '   '
@@ -204,7 +204,7 @@ fi
 # Git
 # =============================================================================
 
-#if [[ ${OSTYPE} = darwin* ]]; then
+#if [[ "${OSTYPE}" = "darwin"* ]]; then
 #    __git_ps1() { : ; }
 #fi
 

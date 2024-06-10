@@ -11,11 +11,11 @@ export SOURCED_BASH_PROFILE=true
 # These paths utilise the `bin` repository
 # TODO: Need to better determine OS-specific path based on environment
 #       variable
-if [[ ${OSTYPE} == darwin* ]]; then
+if [[ "${OSTYPE}" == "darwin"* ]]; then
     PATH=${PATH}:${HOME}/bin/production/osx/$(arch)
-elif [[ ${OSTYPE} == linux* ]]; then
+elif [[ "${OSTYPE}" == "linux"* ]]; then
     PATH=${PATH}:${HOME}/bin/production/linux/$(arch)
-elif [[ ${OS} == Windows* ]]; then
+elif [[ "${OS}" == "Windows"* ]]; then
     PATH=${PATH}:${HOME}/bin/production/windows/$(arch)
 fi
 export PATH
