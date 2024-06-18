@@ -219,19 +219,20 @@ fi
         GIT_PS1_DESCRIBE_STYLE='branch'
         GIT_PS1_HIDE_IF_PWD_IGNORED=
         GIT_PS1_SHOWCOLORHINTS=true
-        GIT_PS1_SHOWDIRTYSTATE=true
         GIT_PS1_SHOWSTASHSTATE=true
         GIT_PS1_STATESEPARATOR='|'
 
         # Git repos with <500 files
         if [ $(git ls-files | wc -l) -lt 500 ]; then
+            GIT_PS1_SHOWDIRTYSTATE=true
             GIT_PS1_SHOWUNTRACKEDFILES=true
             GIT_PS1_SHOWUPSTREAM='verbose name'
             #PS1=${__git_ps1_pre}${__git_ps1_post}
             __git_ps1 "$(.__git_ps1_pre)\n${DIRECTORY_INFO}" "$(.__git_ps1_post)" " %s)"
         # Git repos with >=500 files
         else
-            GIT_PS1_SHOWUNTRACKEDFILES=false
+            GIT_PS1_SHOWDIRTYSTATE=
+            GIT_PS1_SHOWUNTRACKEDFILES=
             GIT_PS1_SHOWUPSTREAM=
             DIRECTORY_INFO+=' (Repository is too large to show untracked files and verbose display)'
             __git_ps1 "$(.__git_ps1_pre)\n${DIRECTORY_INFO}" "$(.__git_ps1_post)" " %s)"
