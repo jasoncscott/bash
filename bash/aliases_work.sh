@@ -29,7 +29,7 @@ alias deadline="rez-env deadline_client -- deadlinemonitor -new"
 
 # Datacenters
 #alias <LOC>="ssh ${USER_HOST_<LOC>}"
-alias bl_wc="cd /c/bl/pkgs/blizzard/bl/pkg/t2/dept/engine/wowcreator/"
+
 
 # =============================================================================
 # FUNCTIONS

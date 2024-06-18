@@ -61,7 +61,6 @@ if [ -f "${vimrc_file}" ]; then
 fi
 
 
-
 # =============================================================================
 
 # Function to check for file existence before attempting to source
@@ -98,7 +97,7 @@ tput_colors_file="${bash_dir}/tput_colors.sh"
 source-safe ${tput_colors_file}
 
 # Colors
-export LS_COLORS=$(vivid generate snazzy)
+export LS_COLORS=$(vivid generate snazzy)  # Requires `vivid` package
 #export GREP_COLORS=
 
 
@@ -170,7 +169,7 @@ export REZ_CONFIG_FILE=${REZ_CONFIG_FILE}:"${DOTFILES_LOC}/rez/rezconfig.py"
 
 # `rez` tab-complete
 if [[ "${OS}" == "Windows"* ]]; then
-    rez_complete_file=/c/rez/production/windows-10/completion/complete.sh
+    rez_complete_file=/c/rez/production/windows-11/completion/complete.sh
 else
     PATH="${PATH}":/opt/rez/bin/rez  # Add `rez` to ${PATH}
     rez_complete_file=/opt/rez/completion/complete.sh
@@ -193,8 +192,8 @@ export STARSHIP_CONFIG="${DOTFILES_LOC}/starship/starship.toml"
 # ADDITIONAL FILES
 # =============================================================================
 
-aliases_file="${bash_dir}/aliases.sh"
 # Source personal aliases
+aliases_file="${bash_dir}/aliases.sh"
 source-safe "${aliases_file}"
 
 aliases_work_file="${bash_dir}/aliases_work.sh"

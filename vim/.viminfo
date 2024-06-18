@@ -93,12 +93,9 @@ $0001
 ?/nuke.lic
 ?/model
 ? ']
-?/Signiant
-?/signiant
 ?/jason
 ?/shm
 ? \<install\>
-?/tomethod
 ?/plugin
 ?/sup
 ?/10
@@ -135,7 +132,8 @@ $0001
 "9	LINE	0
 
 "q	CHAR	0
-	:1cd;
+	:1
+cd;
 "-	CHAR	0
 	S
 
