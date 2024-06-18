@@ -45,27 +45,27 @@
     # User
     printf "${White}${On_Black}"
     printf '  \\u '
-    printf "${Black}${On_Cyan}"
+    # printf "${Black}${On_Cyan}"
 
-    # Shell Level
-    printf "${Black}${On_Cyan}"
-    shell_type=$(echo ${SHELL} | sed 's|.*/||')
-    if [[ ${BASH_VERSION} = 3* ]]; then
-        printf " Shell: ${shell_type} (SHLVL: ${SHLVL}$(.subshell)) "
-    else
-        printf " SHLVL: ${SHLVL}$(.subshell) "
-    fi
-    printf "${Cyan}${On_Purple}"
+    # # Shell Level
+    # printf "${Black}${On_Cyan}"
+    # shell_type=$(echo ${SHELL} | sed 's|.*/||')
+    # if [[ ${BASH_VERSION} = 3* ]]; then
+    #     printf " Shell: ${shell_type} (SHLVL: ${SHLVL}$(.subshell)) "
+    # else
+    #     printf " SHLVL: ${SHLVL}$(.subshell) "
+    # fi
+    # printf "${Cyan}${On_Purple}"
 
-    # Local / Remote / Docker
-    printf "${Black}${On_Purple}"
-    printf " $(.remote) "
-    printf "${Purple}${On_Yellow}"
+    # # Local / Remote / Docker
+    # printf "${Black}${On_Purple}"
+    # printf " $(.remote) "
+    # printf "${Purple}${On_Yellow}"
 
-    # Pipeline
-    printf "${Black}${On_Yellow}"
-    printf " $(.show_variables) "
-    printf "${Color_Off}${Yellow}"
+    # # Pipeline
+    # printf "${Black}${On_Yellow}"
+    # printf " $(.show_variables) "
+    # printf "${Color_Off}${Yellow}"
 
     printf "${Color_Off}"
 }
