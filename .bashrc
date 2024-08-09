@@ -2,7 +2,7 @@
 # .bashrc
 # =============================================================================
 
-export DOTFILES_LOC="${HOME}/Development/git/Bitbucket+GitHub/jasoncscott/dotfiles/"
+export DOTFILES_LOC="${HOME}/Development/git/Bitbucket+GitHub+GitLab/jasoncscott/dotfiles/"
 bash_dir="${DOTFILES_LOC}/bash"
 
 export SOURCED_BASHRC=true
@@ -169,13 +169,20 @@ export REZ_CONFIG_FILE=${REZ_CONFIG_FILE}:"${DOTFILES_LOC}/rez/rezconfig.py"
 
 # `rez` tab-complete
 if [[ "${OS}" == "Windows"* ]]; then
-    rez_complete_file=/c/rez/production/windows-11/completion/complete.sh
+    rez_complete_file=/c/rez/production/windows/production/completion/complete.sh
 else
-    PATH="${PATH}":/opt/rez/bin/rez  # Add `rez` to ${PATH}
-    rez_complete_file=/opt/rez/completion/complete.sh
+    PATH="${PATH}":/mnt/c/rez/production/linux/production/bin/rez  # Add `rez` to ${PATH}
+    rez_complete_file=/mnt/c/rez/production/linux/production/completion/complete.sh
 fi
 
 source-safe ${rez_complete_file}
+
+
+# =============================================================================
+# REZ
+# =============================================================================
+
+export VCPKG_DISABLE_METRICS=true
 
 
 # =============================================================================
