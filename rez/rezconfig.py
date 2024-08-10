@@ -1,17 +1,5 @@
-# rez-2.103.4
-# Copyright Contributors to the Rez project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+# Copyright Contributors to the Rez Project
 
 
 """
@@ -57,35 +45,30 @@ Windows \ (unescaped) should be used.
 # flake8: noqa
 
 import os
-import sys
+import platform
 
 
 ###############################################################################
 # Variables
 ###############################################################################
 
-_tmp_path_map = {
-    "darwin": "/var/tmp/rez/",
-    "linux": "/var/tmp/rez/",
-    "linux2": "/var/tmp/rez/",
-    #"win32": "C:/rez/",
+# Maps for different paths per platform
+_path_map = {
+    "darwin": "/Volumes/z/Applications_and_Programs/Academy_Software_Foundation-rez",
+    "Linux": "/mnt/z/Applications_and_Programs/Academy_Software_Foundation-rez",
+    "Windows": "Z:/Applications_and_Programs/Academy_Software_Foundation-rez",
+}
+
+_path_map_local = {
+    "darwin": "/mnt/c/rez",
+    "Linux": "/mnt/c/rez",
+    "Windows": "C:/rez",
 }
 
 
 ###############################################################################
 # Paths
 ###############################################################################
-
-# Map for different paths per platform
-_path_map = {
-    # MacOS
-    "darwin": "/Volumes/z/Applications_and_Programs/rez/",
-    # Linux
-    "linux": "/mnt/z/rez/",
-    "linux2": "/mnt/z/rez/",
-    # Windows
-    "win32": "Z:/Applications_and_Programs/rez/",
-}
 
 # The path that Rez will locally install packages to when rez-build is used
 local_packages_path = "~/packages"
@@ -94,25 +77,25 @@ local_packages_path = "~/packages"
 # same name and version in an earlier path takes precedence.
 packages_path = [
     local_packages_path,
-    "{}/packages/core".format(_path_map[sys.platform]),
-    "{}/packages/pip".format(_path_map[sys.platform]),
-    "{}/packages/third-party".format(_path_map[sys.platform]),
+    f"{_path_map[platform.system()]}/packages/core",
+    f"{_path_map[platform.system()]}/packages/pip",
+    f"{_path_map[platform.system()]}/packages/third-party",
 ]
 
-# The path that Rez will deploy packages to when rez-release is used. For
+# The path that Rez will deploy packages to when :ref:`rez-release` is used. For
 # production use, you will probably want to change this to a site-wide location.
-release_packages_path = "{}/packages/core".format(_path_map[sys.platform])
+release_packages_path = f"{_path_map[platform.system()]}/packages/core"
 
 # Where temporary files go. Defaults to appropriate path depending on your
-# system - for example, *nix distributions will probably set this to "/tmp". It
-# is highly recommended that this be set to local storage, such as /tmp.
-tmpdir = "{}".format(_tmp_path_map[sys.platform])
+# system. For example, \*nix distributions will probably set this to :file:`/tmp`. It
+# is highly recommended that this be set to local storage, such as :file:`/tmp`.
+tmpdir = f"{_path_map_local[platform.system()]}/tmp"
 
 
 ###############################################################################
 # Package Caching
 #
-# Note: "package caching" refers to copying variant payloads to a path on local
+# Package caching refers to copying variant payloads to a path on local
 # disk, and using those payloads instead. It is a way to avoid fetching files
 # over shared storage, and is unrelated to memcached-based caching of resolves
 # and package definitions as seen in the "Caching" config section.
@@ -120,13 +103,13 @@ tmpdir = "{}".format(_tmp_path_map[sys.platform])
 ###############################################################################
 
 # Whether a package is cachable or not, if it does not explicitly state with
-# the 'cachable' attribute in its package definition file. If None, defaults
-# to packages' relocatability (ie cachable will == relocatable).
+# the :attr:`cachable` attribute in its package definition file. If None, defaults
+# to packages' relocatability (ie cachable == relocatable).
 default_cachable = None
 
 # The path where rez locally caches variants. If this is None, then package
 # caching is disabled.
-cache_packages_path = "{}/packages_cache".format(_tmp_path_map[sys.platform])
+cache_packages_path = f"{_path_map_local[platform.system()]}/packages_cache"
 
 
 ###############################################################################
@@ -135,77 +118,90 @@ cache_packages_path = "{}/packages_cache".format(_tmp_path_map[sys.platform])
 
 # Override platform values from Platform.os and arch.
 # This is useful as Platform.os might show different
-# values depending on the availability of lsb-release on the system.
-# The map supports regular expression e.g. to keep versions.
-# Please note that following examples are not necessarily recommendations.
+# values depending on the availability of ``lsb-release`` on the system.
+# The map supports regular expression, e.g. to keep versions.
+# 
+# .. note::
+#    The following examples are not necessarily recommendations.
 #
-#     platform_map = {
-#         "os": {
-#             r"Scientific Linux-(.*)": r"Scientific-\1",                 # Scientific Linux-x.x -> Scientific-x.x
-#             r"Ubuntu-14.\d": r"Ubuntu-14",                              # Any Ubuntu-14.x      -> Ubuntu-14
-#             r'CentOS Linux-(\d+)\.(\d+)(\.(\d+))?': r'CentOS-\1.\2', '  # Centos Linux-X.Y.Z -> CentOS-X.Y
-#         },
-#         "arch": {
-#             "x86_64": "64bit",                                          # Maps both x86_64 and amd64 -> 64bit
-#             "amd64": "64bit",
-#         },
-#     }
+# .. code-block:: python
+#
+#    platform_map = {
+#        "os": {
+#            r"Scientific Linux-(.*)": r"Scientific-\1",                 # Scientific Linux-x.x -> Scientific-x.x
+#            r"Ubuntu-14.\d": r"Ubuntu-14",                              # Any Ubuntu-14.x      -> Ubuntu-14
+#            r'CentOS Linux-(\d+)\.(\d+)(\.(\d+))?': r'CentOS-\1.\2', '  # Centos Linux-X.Y.Z -> CentOS-X.Y
+#        },
+#        "arch": {
+#            "x86_64": "64bit",                                          # Maps both x86_64 and amd64 -> 64bit
+#            "amd64": "64bit",
+#        },
+#    }
 platform_map = {
     "x86_64": "64bit",  # Linux
     "AMD64": "64bit",  # Windows
 }
 
-# Package filter. One or more filters can be listed, each with a list of
+# One or more filters can be listed, each with a list of
 # exclusion and inclusion rules. These filters are applied to each package
 # during a resolve, and if any filter excludes a package, that package is not
 # included in the resolve. Here is a simple example:
 #
-#     package_filter:
-#         excludes:
-#         - glob(*.beta)
-#         includes:
-#         - glob(foo-*)
+# .. code-block:: python
+#
+#    package_filter = {
+#        'excludes': 'glob(*.beta)',
+#        'includes': 'glob(foo-*)',
+#    }
 #
 # This is an example of a single filter with one exclusion rule and one inclusion
-# rule. The filter will ignore all packages with versions ending in '.beta',
-# except for package 'foo' (which it will accept all versions of). A filter will
-# only exclude a package iff that package matches at least one exclusion rule,
+# rule. The filter will ignore all packages with versions ending in ``.beta``,
+# except for package ``foo`` (which it will accept all versions of). A filter will
+# only exclude a package if that package matches at least one exclusion rule,
 # and does not match any inclusion rule.
 #
-# Here is another example, which excludes all beta packages, and all packages
-# except 'foo' that are released after a certain date. Note that in order to
-# use multiple filters, you need to supply a list of dicts, rather than just a
-# dict:
+# Here is another example, which excludes all beta and dev packages, and all
+# packages except ``foo`` that are released after a certain date. Note that in
+# order to use multiple filters, you need to supply a list of dicts, rather
+# than just a dict:
 #
-#     package_filter:
-#     - excludes:
-#       - glob(*.beta)
-#     - excludes:
-#       - after(1429830188)
-#       includes:
-#       - foo  # same as range(foo), same as glob(foo-*)
+# .. code-block:: python
 #
-# This example shows why multiple filters are supported - with only one filter,
-# it would not be possible to exclude all beta packages (including foo), but also
-# exclude all packages after a certain date, except for foo.
+#    package_filter = [
+#        {
+#            'excludes': ['glob(*.beta)', 'glob(*.dev)']
+#        },
+#        {
+#            'excludes': ['after(1429830188)'],
+#            'includes': ['foo'],  # same as range(foo), same as glob(foo-*)
+#        }
+#    ]
+#
+# This example shows why multiple filters are supported. With only one filter,
+# it would not be possible to exclude all beta and dev packages (including foo),
+# but also exclude all packages after a certain date, except for foo.
 #
 # Following are examples of all the possible rules:
 #
-# example             | description
-# --------------------|----------------------------------------------------
-# glob(*.beta)        | Matches packages matching the glob pattern.
-# regex(.*-\\.beta)   | Matches packages matching re-style regex.
-# requirement(foo-5+) | Matches packages within the given requirement.
-# before(1429830188)  | Matches packages released before the given date.
-# after(1429830188)   | Matches packages released after the given date.
-# *.beta              | Same as glob(*.beta)
-# foo-5+              | Same as range(foo-5+)
-package_filter = dict(
-    excludes = [
-        "*.dev",
-        "*.dev.*"
-    ]
-)
+# ======================== ====================================================
+# Example                  Description
+# ======================== ====================================================
+# ``glob(*.beta)``         Matches packages matching the glob pattern.
+# ``regex(.*-\\.beta)``    Matches packages matching re-style regex.
+# ``range(foo-5+)``        Matches packages within the given requirement.
+# ``before(1429830188)``   Matches packages released before the given date.
+# ``after(1429830188)``    Matches packages released after the given date.
+# ``*.beta``               Same as glob(\*.beta).
+# ``foo-5+``               Same as range(foo-5+).
+# ======================== ====================================================
+package_filter = [
+    {
+        "excludes": [
+            "glob(*.dev)",
+            "glob(*.dev.*)",
+        ]
+    }
+]
 
 # If True, unversioned packages are allowed. Solve times are slightly better if
 # this value is False.
@@ -222,20 +218,28 @@ allow_unversioned_packages = False
 # python modules from the parent environment would be (incorrectly) accessible
 # within the Rez environment.
 #
-# "Parent variables" override this behaviour - they are appended/prepended to,
-# rather than being overwritten. If you set "all_parent_variables" to true, then
-# all variables are considered parent variables, and the value of "parent_variables"
-# is ignored. Be aware that if you make variables such as PATH, PYTHONPATH or
+# "Parent variables" override this behaviour. They are appended/prepended to,
+# rather than being overwritten. If you set :data:`all_parent_variables` to :data:`True`, then
+# all variables are considered parent variables, and the value of :data:`parent_variables`
+# is ignored. Be aware that if you make variables such as ``PATH``, :envvar:`PYTHONPATH` or
 # app plugin paths parent variables, you are exposing yourself to potentially
 # incorrect behaviour within a resolved environment.
 #parent_variables = [
 #    "PATH",
 #]
 
-# Defines paths to initially set $PATH to, if a resolve appends/prepends $PATH.
+# The default shell type to use when creating resolved environments (eg when using
+# :ref:`rez-env`, or calling :meth:`.ResolvedContext.execute_shell`). If empty or None, the
+# current shell is used (for eg, "bash").
+#
+# .. versionchanged:: 3.0.0
+#    The default value on Windows was changed to "powershell".
+#default_shell = ""
+
+# Defines paths to initially set ``$PATH`` to, if a resolve appends/prepends ``$PATH``.
 # If this is an empty list, then this initial value is determined automatically
-# depending on the shell (for example, *nix shells create a temp clean shell and
-# get $PATH from there; Windows inspects its registry).
+# depending on the shell (for example, \*nix shells create a temp clean shell and
+# get ``$PATH`` from there; Windows inspects its registry).
 #standard_system_paths = []
 
 
@@ -243,22 +247,22 @@ allow_unversioned_packages = False
 # Debugging
 ###############################################################################
 
-# Turn on all warnings
-warn_all = False
-
 # Turn on all debugging messages
 #debug_all = True
+
+# Turn off all debugging messages. This overrides :data:`debug_all`.
 debug_none = True
 
 
 ###############################################################################
 # Package Build/Release
 ###############################################################################
-# The release hooks to run when a release occurs. Release hooks are plugins - if
+
+# The release hooks to run when a release occurs. Release hooks are plugins. If
 # a plugin listed here is not present, a warning message is printed. Note that a
-# release hook plugin being loaded does not mean it will run - it needs to be
+# release hook plugin being loaded does not mean it will run. It needs to be
 # listed here as well. Several built-in release hooks are available, see
-# rezplugins/release_hook.
+# :gh-rez:`src/rezplugins/release_hook`.
 release_hooks = [
     "emailer",
 ]
@@ -273,90 +277,52 @@ if not os.getenv("CI"):  # No prompt during GitLab CI as to not accidentally pre
 # Appearance
 ###############################################################################
 
-# The viewer used to view file diffs. On osx, set this to "open -a <your-app>"
+# The viewer used to view file diffs. On macOS, set this to ``open -a <your-app>``
 # if you want to use a specific app.
-difftool = "meld"
+difftool = "delta"
 
 
 ###############################################################################
 # Misc
 ###############################################################################
 
-# Optional variables. A dict type config for storing arbitrary data that can be
-# accessed by the [optionvars](Package-Commands#optionvars) function in packages
-# *commands*.
+# A dict type config for storing arbitrary data that can be
+# accessed by the :func:`optionvars` function in packages
+# :func:`commands`.
 #
 # This is like user preferences for packages, which may not easy to define in
-# package's definition file directly due to the differences between machines/
-# users/pipeline-roles.
+# package's definition file directly due to the differences between machines/users/pipeline-roles.
 #
 # Example:
 #
-#     # in your rezconfig.py
-#     optionvars = {
-#         "userRoles": ["artist"]
-#     }
+# .. code-block:: python
+#
+#    # in your rezconfig.py
+#    optionvars = {
+#        "userRoles": ["artist"]
+#    }
 #
 # And to access:
 #
-#     # in package.py
-#     def commands():
-#         roles = optionvars("userRoles", default=None) or []
-#         if "artist" in roles:
-#             env.SOMETHING_FRIENDLY = "Yes"
+# .. code-block:: python
+#
+#    # in package.py
+#    def commands():
+#        roles = optionvars("userRoles", default=None) or []
+#        if "artist" in roles:
+#            env.SOMETHING_FRIENDLY = "Yes"
 #
 # Note that you can refer to values in nested dicts using dot notation:
 #
-#     def commands():
-#         if optionvars("nuke.lighting_tools_enabled"):
-#             ...
+# .. code-block:: python
 #
+#    def commands():
+#        if optionvars("nuke.lighting_tools_enabled"):
+#            ...
 optionvars = {
     "locations": ["home",],
     "departments": ["pipeline", "supervision",],
 }
-
-
-###############################################################################
-# Rez-1 Compatibility
-###############################################################################
-
-# Warn or disallow when a package is found to contain old rez-1-style commands.
-warn_old_commands = False
-
-# If True, Rez will continue to generate the given environment variables in
-# resolved environments, even though their use has been deprecated in Rez-2.
-# The variables in question, and their Rez-2 equivalent (if any) are:
-#
-# REZ-1              | REZ-2
-# -------------------|-----------------
-# REZ_REQUEST        | REZ_USED_REQUEST
-# REZ_RESOLVE        | REZ_USED_RESOLVE
-# REZ_VERSION        | REZ_USED_VERSION
-# REZ_PATH           | REZ_USED
-# REZ_RESOLVE_MODE   | not set
-# REZ_RAW_REQUEST    | not set
-# REZ_IN_REZ_RELEASE | not set
-rez_1_environment_variables = False
-
-# If True, Rez will continue to generate the given CMake variables at build and
-# release time, even though their use has been deprecated in Rez-2.  The
-# variables in question, and their Rez-2 equivalent (if any) are:
-#
-# REZ-1   | REZ-2
-# --------|---------------
-# CENTRAL | REZ_BUILD_TYPE
-rez_1_cmake_variables = False
-
-# If True, override all compatibility-related settings so that Rez-1 support is
-# deprecated. This means that:
-# * All warn/error settings in this section of the config will be set to
-#   warn=False, error=True;
-# * rez_1_environment_variables will be set to False.
-# * rez_1_cmake_variables will be set to False.
-# You should aim to do this - it will mean your packages are more strictly
-# validated, and you can more easily use future versions of Rez.
-disable_rez_1_compatibility = True
 
 
 ###############################################################################
@@ -367,20 +333,20 @@ disable_rez_1_compatibility = True
 # "rezconfig" file accompanying that plugin. The settings listed here are
 # common to all plugins of that type.
 
-plugins = dict(
-    release_hook=dict(
-        emailer=dict(
-            smtp_host="smtp",
-            sender="pipeline@.com",
-            recipients="pipeline@.com",
-        ),
-    ),
-    build_system=dict(
-        cmake=dict(
-            install_pyc=False
-        )
-    ),
-    release_vcs=dict(
-        check_tag=True
-    )
-)
+plugins = {
+    "release_vcs": {
+        "check_tag": True,
+    },
+    "build_system": {
+        "cmake": {
+            "install_pyc": False,
+        },
+    },
+    "release_hook": {
+        "emailer": {
+            "smtp_host": "smtp",
+            "sender": "pipeline@.com",
+            "recipients": "pipeline@.com",
+        },
+    },
+}

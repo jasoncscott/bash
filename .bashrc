@@ -165,7 +165,8 @@ export PYTHONDONTWRITEBYTECODE=true
 # REZ
 # =============================================================================
 
-export REZ_CONFIG_FILE=${REZ_CONFIG_FILE}:"${DOTFILES_LOC}/rez/rezconfig.py"
+# Needs to be symlink'd from `~/.rezconfig.py` if there's a "studio" `${REZ_CONFIG_FILE}`
+export REZ_CONFIG_FILE="${DOTFILES_LOC}/rez/rezconfig.py"
 
 # `rez` tab-complete
 if [[ "${OS}" == "Windows"* ]]; then
@@ -179,7 +180,7 @@ source-safe ${rez_complete_file}
 
 
 # =============================================================================
-# REZ
+# VCPKG
 # =============================================================================
 
 export VCPKG_DISABLE_METRICS=true
